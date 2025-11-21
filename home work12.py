@@ -1,0 +1,11 @@
+my_string="Python is fun"
+print(f"Исходная строка: {my_string}")
+uppercase_string=my_string.upper()
+lowercase_string=my_string.lower()
+print(f"Строка в верхнем регистре:{uppercase_string}")
+print(f"Строка в нижнем регистре:{lowercase_string}")
+my_string.count('n')
+n_count=my_string.lower().count('n')
+print(f"Количество букв 'n' в строке:{n_count}")
+new_string=my_string.replace("fun","awesom")
+print(f"Строка после замены:{new_string}")
