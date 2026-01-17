@@ -1,105 +1,115 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        // Часть 1: Броски костей
-        int firstRoll = 7, secondRoll = 3, totalScore = firstRoll + secondRoll;
-        System.out.println(totalScore);
+public static void main(String[] args)
+{
+  // Создаем объект Scanner для чтения данных с клавиатуры
+  //Scanner scanner = new Scanner(System.in);
 
-        // Часть 2: Распределение призов
-        int prizes = 15;
-        int teams = 4;
+  // Считываем строку текста (пароль) с помощью метода nextLine()
+  //String password = scanner.nextLine();
 
-        System.out.println(prizes / teams); // Призов каждой команде
-        System.out.println(prizes % teams); // Остаток призов
+  // Выводим введенный пароль на экран
+  //System.out.println(password);
 
-        // Часть 3: Персонаж
-        int heroHealth = 10;
+  // Закрываем сканер
+  //scanner.close();
 
-        // Увеличиваем на 1
-        heroHealth++;
-        System.out.println(heroHealth);
+  // Создаем объект Scanner для чтения данных
+  //Scanner scanner = new Scanner(System.in);
 
-        // Уменьшаем на 1
-        heroHealth--;
-        System.out.println(heroHealth);
+  // 1. Запрашиваем и считываем имя игрока (строка)
+  //String name = scanner.nextLine();
 
-        // Часть 4: Будущее
-        String futureMessage = "Good news everyone!";
-        System.out.println(futureMessage);
+  // 2. Запрашиваем и считываем возраст игрока (целое число)
+  //int age = scanner.nextInt();
 
-        // Часть 5: Профиль для пользователя
-        String firstName = "Luke";
-        String lastName = "Skywalker";
+  // 3. Выводим сначала возраст
+  //System.out.println(age);
 
-        // Объединяем строки с пробелом и выводим на экран
-        System.out.println(firstName + " " + lastName);
+  // 4. Затем выводим имя
+  //System.out.println(name);
 
-        // Часть 6: Поехали
-        // Используем обратную косую черту для экранирования кавычек внутри строки
-        String heroQuote = "\"Поехали!\"";
+  // Закрываем сканер
+  //scanner.close();
 
-        System.out.println(heroQuote);
+  // Создаем объект Scanner для чтения данных с клавиатуры
+  //Scanner scanner = new Scanner(System.in);
 
-        // Часть 7: Минск
-        // Создаем строку с пробелами в начале и конце
-        String cityName = "  Minsk  ";
+  // Считываем цену первого товара (целое число)
+  //int price1 = scanner.nextInt();
 
-        // Выводим длину строки до удаления пробелов
-        System.out.println(cityName.length());
+  // Считываем цену второго товара (целое число)
+  //int price2 = scanner.nextInt();
 
-        // Удаляем пробелы
-        String trimmedCity = cityName.trim();
+  // Вычисляем общую стоимость
+  //int total = price1 + price2;
 
-        // Выводим длину строки после удаления пробелов
-        System.out.println(trimmedCity.length());
+  // Выводим результат на экран
+  //System.out.println(total);
 
-        // Выводим название города в верхнем регистре
-        System.out.println(trimmedCity.toUpperCase());
+  // Закрываем сканер
+  //scanner.close();
 
-        // Выводим название города в нижнем регистре
-        System.out.println(trimmedCity.toLowerCase());
+  // Создаем объект Scanner для чтения данных с клавиатуры
+  //Scanner scanner = new Scanner(System.in);
 
-        // Часть 8: Код доступа
-        // Создаем переменную типа int с кодом доступа
-        int accessCode = 54321;
+  // Считываем имя пользователя (строка)
+  //String name = scanner.nextLine();
 
-        // Преобразуем число в строку (используя метод String.valueOf)
-        String codeMessage = String.valueOf(accessCode);
+  // Считываем возраст пользователя (целое число)
+  //int age = scanner.nextInt();
 
-        // Выводим полученную строку на экран
-        System.out.println(codeMessage);
+  // Выводим готовую строку с подставленными значениями
+  //System.out.println("Меня зовут " + name + ", мне " + age + " лет.");
 
-        // Часть 9: Отслеживание рейса
-        int flight = 123;
-        String city = "Минска";
+  // Закрываем сканер
+  //scanner.close();
 
-        // Объединяем переменные в одну строку и выводим на экран
-        System.out.println("Рейс " + flight + " до " + city);
+  // Объявляем переменную visitorAge и присваиваем ей значение 17
+  //int visitorAge = 17;
 
-        // Часть 10: Название фильма
-        // Создаем строковую переменную с годом
-        String filmYearStr = "1999";
+  // Используем оператор if-else для проверки возраста
+  //if (visitorAge < 18) {
+    // Если возраст меньше 18, выводим сообщение о запрете
+    //System.out.println("Доступ запрещен");
+  //} else {
+    // В противном случае выводим приветствие
+    //System.out.println("Добро пожаловать!");
+// Объявляем переменную currentTemperature и присваиваем ей значение -5
+  //int currentTemperature = -5;
 
-        // Преобразуем строку в число (тип int)
-        int filmYear = Integer.parseInt(filmYearStr);
+  // Используем оператор if-else для проверки температуры
+  //if (currentTemperature < 0) {
+    // Если температура меньше 0, выводим сообщение о морозе
+    //System.out.println("Оденьтесь потеплее, на улице мороз!");
+  //} else {
+    // В противном случае сообщаем, что можно идти в легкой одежде
+   // System.out.println("Можно идти в легкой одежде!");
 
-        // Выводим число на экран
-        System.out.println(filmYear);
+  // Объявляем переменную userPassword и присваиваем ей значение "qwerty"
+  //String userPassword = "qwerty";
 
-        // Часть 11: Очки в игре
-        // Создаем строковые переменные
-        String point1Str = "-10";
-        String point2Str = "-25";
+  // Используем оператор if без else для проверки пароля
+  // Для сравнения строк в Java используется метод .equals()
+  //if (userPassword.equals("qwerty")) {
+    // Если условие верно, выводим сообщение
+    //System.out.println("Вход выполнен успешно");
 
-        // Преобразуем строки в целые числа
-        int point1 = Integer.parseInt(point1Str);
-        int point2 = Integer.parseInt(point2Str);
+  // Объявляем переменную currentHour и присваиваем ей значение 20
+  //int currentHour = 20;
 
-        // Складываем числа для получения общего счета
-        int Score = point1 + point2;
+  // Используем оператор if-else if-else для выбора приветствия
+  //if (currentHour < 12) {
+    // Если значение меньше 12
+    //System.out.println("Доброе утро!");
+  //} else if (currentHour <= 18) {
+    // Если значение от 12 до 18 включительно
+    //System.out.println("Добрый день!");
+  //} else {
+    // Во всех остальных случаях
+    //System.out.println("Добрый вечер!");
 
-        // Выводим результат на экран
-        System.out.println(Score);
+
     }
 }
+
