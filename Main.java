@@ -84,7 +84,8 @@ public static void main(String[] args) {
     //} else {
     // В противном случае сообщаем, что можно идти в легкой одежде
     // System.out.println("Можно идти в легкой одежде!");
-
+//Scanner scan = new Scanner(System.in);
+    //System.out.println("Enter userPassword:");
     // Объявляем переменную userPassword и присваиваем ей значение "qwerty"
     //String userPassword = "qwerty";
 
@@ -217,5 +218,89 @@ public static void main(String[] args) {
 //    boolean isComfortable = roomTemperature >= 20 && roomTemperature <= 25;
 
 //    System.out.println(isComfortable);
+    // Инициализация переменных по условию
+//    boolean ticketsOnSale = false;
+//    boolean haveMoneyForTicket = true;
+//    boolean concertNotCanceled = false;
+
+    // Условие покупки: (билеты в продаже) ИЛИ (есть деньги И концерт не отменен)
+//    boolean canBuyTicket = ticketsOnSale || (haveMoneyForTicket && concertNotCanceled);
+
+    // Вывод результата
+//    if (canBuyTicket) {
+        System.out.println("Вы можете купить билет!");
+  //  } else {
+ //       System.out.println("К сожалению, купить билет не получится.");
+    // Инициализация переменных
+    //boolean hasInvitation = true;
+    //boolean dressCodeMet = false;
+    //boolean passwordIsCorrect = true;
+
+    // Основное выражение
+   // boolean admitted = hasInvitation && dressCodeMet && passwordIsCorrect;
+
+    // Выражения с разной расстановкой скобок
+   // boolean option1 = (hasInvitation && dressCodeMet) && passwordIsCorrect;
+   // boolean option2 = hasInvitation && (dressCodeMet && passwordIsCorrect);
+
+    // Вывод результатов
+   // System.out.println("Результат admitted: " + admitted);
+   // System.out.println("Результат (hasInvitation && dressCodeMet) && passwordIsCorrect: " + option1);
+   // System.out.println("Результат hasInvitation && (dressCodeMet && passwordIsCorrect): " + option2);
+// Инициализация переменных
+    //int yourAge = 25;
+    //boolean hasJob = true;
+    //boolean hasCreditHistory = false;
+    //boolean hasGuarantor = true;
+
+    // Первое правило: («возраст > 21» И «есть работа») ИЛИ («кредитная история» И «поручитель»)
+    //boolean rule1 = (yourAge > 21 && hasJob) || (hasCreditHistory && hasGuarantor);
+
+    // Второе правило: «возраст > 21» И («есть работа» ИЛИ «кредитная история») И «есть поручитель»
+    //boolean rule2 = (yourAge > 21) && (hasJob || hasCreditHistory) && hasGuarantor;
+
+    // Вывод результатов
+    //System.out.println("Результат по первому правилу: " + rule1);
+    //System.out.println("Результат по второму правилу: " + rule2);
+    // Объявление и инициализация времени спортсменов в секундах
+    //int alexsTime = 12; // Например, 12 секунд
+    //int mikesTime = 10; // Например, 10 секунд
+
+    // Используем тернарный оператор для поиска наименьшего времени
+    // Условие: если время Алекса меньше времени Майка, берем alexsTime, иначе mikesTime
+    //int fastestTime = (alexsTime < mikesTime) ? alexsTime : mikesTime;
+
+    // Вывод результата на экран
+    //System.out.println("Наименьшее время (лучший результат): " + fastestTime + " сек.");
+    // Объявление переменной и присвоение номера заказа
+    //int orderNumber = 12345;
+
+    // Тернарный оператор для определения статуса
+    // Условие: остаток от деления на 2 равен 0
+    //String orderStatus = (orderNumber % 2 == 0) ? "Чётный" : "Нечётный";
+
+    // Вывод результата на экран
+    //System.out.println("Номер заказа " + orderNumber + " является: " + orderStatus);
+    // Объявление переменной текущего часа (от 0 до 23)
+    //int currentHour = 10;
+
+    // Тернарный оператор для выбора приветствия
+    // Если currentHour < 12, то "Доброе утро", иначе "Добрый день"
+    //String greetingMessage = (currentHour < 12) ? "Доброе утро" : "Добрый день";
+
+    // Вывод сообщения на экран
+    //System.out.println(greetingMessage);
+    // Объявление переменной возраста посетителя
+    //int visitorAge = 25;
+
+    // Использование вложенных тернарных операторов
+    //String ticketCategory = (visitorAge < 7) ? "Детский" :
+    //        (visitorAge <= 17) ? "Подростковый" :
+                    //(visitorAge <= 64) ? "Взрослый" : "Пенсионный";
+
+    // Вывод результата на экран
+    //System.out.println("Возраст посетителя: " + visitorAge);
+    //System.out.println("Категория билета: " + ticketCategory);
+}
 }
 
