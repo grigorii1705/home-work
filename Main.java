@@ -1,306 +1,423 @@
+import java.util.Scanner;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public static void main(String[] args) {
-    // Создаем объект Scanner для чтения данных с клавиатуры
-    //Scanner scanner = new Scanner(System.in);
+public class Main {
+    public static void main(String[] args) {
+//start
+        //        int count = 3;
+//
+//        while (count >= 1) {
+//            System.out.println(count);
+//            count--;
+//        }
+//
+//        System.out.println("Старт!");
+ //       Scanner scanner = new Scanner(System.in);
+  //      String password = "";
 
-    // Считываем строку текста (пароль) с помощью метода nextLine()
-    //String password = scanner.nextLine();
+        // Цикл продолжается, пока введенная строка не будет равна "java"
+ //       while (!password.equals("java")) {
+ //           System.out.print("Введите пароль: ");
+//            password = scanner.nextLine();
+ //       }
 
-    // Выводим введенный пароль на экран
-    //System.out.println(password);
+ //       System.out.println("Смартфон разблокирован!");
+//        scanner.close();
+ //       Scanner scanner = new Scanner(System.in);
+ //       String password;
 
-    // Закрываем сканер
-    //scanner.close();
+//        do {
+//            System.out.print("Введите пароль: ");
+//            password = scanner.nextLine();
+ //       } while (!password.equals("java"));
 
-    // Создаем объект Scanner для чтения данных
-    //Scanner scanner = new Scanner(System.in);
+//        System.out.println("Смартфон разблокирован!");
+//        scanner.close();
+//        int seat = 2;
+//
+ //        while (seat <= 10) {
+ //           System.out.println(seat);
+ //           seat += 2; // Увеличиваем номер кресла на 2
+//        }
+//    }
+// Цикл for: начинаем с 5, продолжаем пока i >= 1, на каждом шаге уменьшаем i на 1
+//        for (int i = 5; i >= 1; i--) {
+//            System.out.println(i);
+//        }
 
-    // 1. Запрашиваем и считываем имя игрока (строка)
-    //String name = scanner.nextLine();
-
-    // 2. Запрашиваем и считываем возраст игрока (целое число)
-    //int age = scanner.nextInt();
-
-    // 3. Выводим сначала возраст
-    //System.out.println(age);
-
-    // 4. Затем выводим имя
-    //System.out.println(name);
-
-    // Закрываем сканер
-    //scanner.close();
-
-    // Создаем объект Scanner для чтения данных с клавиатуры
-    //Scanner scanner = new Scanner(System.in);
-
-    // Считываем цену первого товара (целое число)
-    //int price1 = scanner.nextInt();
-
-    // Считываем цену второго товара (целое число)
-    //int price2 = scanner.nextInt();
-
-    // Вычисляем общую стоимость
-    //int total = price1 + price2;
-
-    // Выводим результат на экран
-    //System.out.println(total);
-
-    // Закрываем сканер
-    //scanner.close();
-
-    // Создаем объект Scanner для чтения данных с клавиатуры
-    //Scanner scanner = new Scanner(System.in);
-
-    // Считываем имя пользователя (строка)
-    //String name = scanner.nextLine();
-
-    // Считываем возраст пользователя (целое число)
-    //int age = scanner.nextInt();
-
-    // Выводим готовую строку с подставленными значениями
-    //System.out.println("Меня зовут " + name + ", мне " + age + " лет.");
-
-    // Закрываем сканер
-    //scanner.close();
-
-    // Объявляем переменную visitorAge и присваиваем ей значение 17
-    //int visitorAge = 17;
-
-    // Используем оператор if-else для проверки возраста
-    //if (visitorAge < 18) {
-    // Если возраст меньше 18, выводим сообщение о запрете
-    //System.out.println("Доступ запрещен");
-    //} else {
-    // В противном случае выводим приветствие
-    //System.out.println("Добро пожаловать!");
-// Объявляем переменную currentTemperature и присваиваем ей значение -5
-    //int currentTemperature = -5;
-
-    // Используем оператор if-else для проверки температуры
-    //if (currentTemperature < 0) {
-    // Если температура меньше 0, выводим сообщение о морозе
-    //System.out.println("Оденьтесь потеплее, на улице мороз!");
-    //} else {
-    // В противном случае сообщаем, что можно идти в легкой одежде
-    // System.out.println("Можно идти в легкой одежде!");
-//Scanner scan = new Scanner(System.in);
-    //System.out.println("Enter userPassword:");
-    // Объявляем переменную userPassword и присваиваем ей значение "qwerty"
-    //String userPassword = "qwerty";
-
-    // Используем оператор if без else для проверки пароля
-    // Для сравнения строк в Java используется метод .equals()
-    //if (userPassword.equals("qwerty")) {
-    // Если условие верно, выводим сообщение
-    //System.out.println("Вход выполнен успешно");
-
-    // Объявляем переменную currentHour и присваиваем ей значение 20
-    //int currentHour = 20;
-
-    // Используем оператор if-else if-else для выбора приветствия
-    //if (currentHour < 12) {
-    // Если значение меньше 12
-    //System.out.println("Доброе утро!");
-    //} else if (currentHour <= 18) {
-    // Если значение от 12 до 18 включительно
-    //System.out.println("Добрый день!");
-    //} else {
-    // Во всех остальных случаях
-    //System.out.println("Добрый вечер!");
-    // Конференция
-    //Scanner scanner = new Scanner(System.in);
-
-    // Ввод данных
-    //System.out.print("Введите ваш возраст: ");
-    //int age = scanner.nextInt();
-
-    // Очистка буфера после ввода числа
-    //scanner.nextLine();
-
-    //if (age >= 21) {
-    //  System.out.print("Введите код приглашения: ");
-    // String code = scanner.nextLine();
-
-    // Проверка кода
-    //if (code.equalsIgnoreCase("VIP")) {
-    //  System.out.println("Доступ к VIP-залу разрешен.");
-    //} else if (code.equalsIgnoreCase("GUEST")) {
-    //  System.out.println("Гостевой доступ разрешен.");
-    //} else {
-    //  System.out.println("Неверный код приглашения.");
-    //}
-    //} else {
-    // Если возраст меньше 21
-    //  System.out.println("К сожалению, только с 21 года.");
+//        System.out.println("С Новым годом!");
+//    }
 //}
-//    scanner.close();
-   // Фейсконтроль
-   // Scanner scanner = new Scanner(System.in);
-
-    //System.out.print("Введите ваш возраст: ");
-    //int age = scanner.nextInt();
-
-    //scanner.nextLine(); // Очистка буфера
-
-    //System.out.print("Введите секретный код: ");
-    //String code = scanner.nextLine();
-
-    // Проверяем первое условие (возраст)
-    //if (age >= 18) {
-        // Если возраст подошел, проверяем второе условие (код)
-      //  if (code.equals("OPEN")) {
-        //    System.out.println("Вход разрешен!");
-        //} else {
-            // Если возраст ок, но код неверный
-          //  System.out.println("Вам сегодня не повезло, вход запрещен");
-        //}
-    //} else {
-        // Если возраст меньше 18
-        //System.out.println("Вам сегодня не повезло, вход запрещен");
-   // }
-
-    //scanner.close();
+        // Цикл for: начинаем с 0, идем до 10 включительно, прибавляем по 2 на каждом шаге
+//        for (int i = 0; i <= 10; i += 2) {
+//            System.out.println(i);
+//        }
+//    }
 //}
-    //MINSK
-    //Scanner scanner = new Scanner(System.in);
+//        int n = 7; // Количество товаров
+//        int totalSum = 0; // Переменная для хранения итоговой суммы
 
-    // Ввод возраста
-   // System.out.print("Введите ваш возраст: ");
-   // int age = scanner.nextInt();
+//        for (int i = 1; i <= n; i++) {
+//            totalSum += i; // Прибавляем порядковый номер (цену) к общей сумме
+//        }
 
-    // Очистка буфера (чтобы прочитать строку после числа)
-    //scanner.nextLine();
+//        System.out.println(totalSum);
+//    }
+//}
+        // В цикле for можно инициализировать и изменять сразу несколько переменных
+//        for (int i = 1, j = 5; i <= 5; i++, j--) {
+//            System.out.println(i + " " + j);
+//        }
+//    }
+//}
+//        int gameVersion = 10;
 
-    // Ввод города
-    //System.out.print("Введите ваш город: ");
-    //String city = scanner.nextLine();
+//        do {
+//            System.out.println("Загрузка данных...");
+//            System.out.println(gameVersion);
 
-    // Логика без использования &&
-    //if (age >= 21) {
-        // Если возраст подходит, проверяем город
-        //if (city.equalsIgnoreCase("Минск")) {
-           // System.out.println("Добро пожаловать в клуб, Минск!");
-        //} else {
-            // Если возраст 21+, но город не Минск
-           // System.out.println("Извините, вход запрещен.");
-       // }
- //   } else {
- //       // Если возраст меньше 21
- //       System.out.println("Извините, вход запрещен.");
- //   }
+//            // В данном примере мы не меняем условие внутри,
+//            // чтобы цикл гарантированно выполнился только один раз
+//        } while (gameVersion < 10);
+//    }
+//}
+//        Scanner scanner = new Scanner(System.in);
+//        int pin;
 
-//    scanner.close();
-//    boolean isJavaFun = true;
-//    System.out.println(isJavaFun);
-//    int ourScore = 3;
-//    int opponentScore = 1;
+//        do {
+//            System.out.print("Введите PIN-код: ");
+//            pin = scanner.nextInt();
+//        } while (pin <= 0); // Цикл продолжается, если число не положительное
+//
+ //                System.out.println("PIN-код принят");
+//        scanner.close();
+//    }
+//}
+//        Scanner scanner = new Scanner(System.in);
+//        int choice;
 
-//    boolean weWon = ourScore > opponentScore;
+//        do {
+//            // Вывод меню на экран
+//            System.out.println("Меню:");
+//            System.out.println("1. Вывести приветствие");
+//            System.out.println("2. Выйти");
 
-//    System.out.println(weWon);
-    // Объявление исходных переменных
-//    boolean isSunny = true;
-//    boolean isWeekend = true;
+//            // Чтение выбора пользователя
+//            choice = scanner.nextInt();
 
-    // canGoToPark будет true, только если оба условия верны
-//    boolean canGoToPark = isSunny && isWeekend;
+//            // Обработка выбора
+//            if (choice == 1) {
+//                System.out.println("Привет!");
+//            }
 
-    // canStayHome будет true, если не солнечно ИЛИ если не выходной
-//    boolean canStayHome = !isSunny || !isWeekend;
+//        } while (choice != 2); // Цикл повторяется, пока пользователь не введет 2
 
-    // Вывод результатов на экран
-//    System.out.println(canGoToPark);
-//    System.out.println(canStayHome);
-//    int roomTemperature = 22; // Можно установить любое значение
+//        scanner.close();
+//    }
+//}
+//        Scanner scanner = new Scanner(System.in);
+//        String password;
 
-    // Проверка диапазона от 20 до 25 включительно
-//    boolean isComfortable = roomTemperature >= 20 && roomTemperature <= 25;
+//        do {
+//            System.out.print("Придумайте пароль (не менее 6 символов): ");
+//            password = scanner.nextLine();
+//        } while (password.length() < 6); // Повторять, если длина меньше 6
 
-//    System.out.println(isComfortable);
-    // Инициализация переменных по условию
-//    boolean ticketsOnSale = false;
-//    boolean haveMoneyForTicket = true;
-//    boolean concertNotCanceled = false;
+//        System.out.println("Пароль надёжен, аккаунт создан!");
+//        scanner.close();
+//    }
+//}
+//        Задача 2.
+//        for (int i = 1; i <= 20; i++) {
+//            // Если остаток от деления на 2 равен 0, то число чётное
+//            if (i % 2 == 0) {
+//                System.out.println(i);
+//            }
+//        }
+//    }
+//}
+// Задача 3
+//        int n = 20; // Можно изменить на любое число
 
-    // Условие покупки: (билеты в продаже) ИЛИ (есть деньги И концерт не отменен)
-//    boolean canBuyTicket = ticketsOnSale || (haveMoneyForTicket && concertNotCanceled);
+//        for (int i = 1; i <= n; i++) {
+//            // Если число делится на 3 без остатка
+//            if (i % 3 == 0) {
+//                System.out.print(i + " ");
+//            }
+//        }
+//    }
+//}
+//            Задача 4
+//        int n = 15; // Заданное число
+//        int sum = 0; // Переменная для хранения суммы
+//
+ //        for (int i = 1; i <= n; i++) {
+//            sum += i; // Прибавляем текущее число к общей сумме
+//        }
 
-    // Вывод результата
-//    if (canBuyTicket) {
-        System.out.println("Вы можете купить билет!");
-  //  } else {
- //       System.out.println("К сожалению, купить билет не получится.");
-    // Инициализация переменных
-    //boolean hasInvitation = true;
-    //boolean dressCodeMet = false;
-    //boolean passwordIsCorrect = true;
+//        System.out.println(sum);
+//    }
+//}
+//        Задача 5
+//        int n = 65787; // Исходное число
+//        int count = 0;
 
-    // Основное выражение
-   // boolean admitted = hasInvitation && dressCodeMet && passwordIsCorrect;
+//        // Если число равно 0, в нем 1 цифра
+//        if (n == 0) {
+//            count = 1;
+//        } else {
+//            // Работаем с абсолютным значением на случай отрицательного n
+//            int temp = Math.abs(n);
 
-    // Выражения с разной расстановкой скобок
-   // boolean option1 = (hasInvitation && dressCodeMet) && passwordIsCorrect;
-   // boolean option2 = hasInvitation && (dressCodeMet && passwordIsCorrect);
+//            while (temp > 0) {
+//                temp /= 10; // Отсекаем последнюю цифру делением нацело
+//                count++;    // Увеличиваем счетчик
+//            }
+//        }
 
-    // Вывод результатов
-   // System.out.println("Результат admitted: " + admitted);
-   // System.out.println("Результат (hasInvitation && dressCodeMet) && passwordIsCorrect: " + option1);
-   // System.out.println("Результат hasInvitation && (dressCodeMet && passwordIsCorrect): " + option2);
-// Инициализация переменных
-    //int yourAge = 25;
-    //boolean hasJob = true;
-    //boolean hasCreditHistory = false;
-    //boolean hasGuarantor = true;
+//        System.out.println(count);
+//    }
+//}
+//        Задача 6
+//        int n = 5834; // Исходное число
+//        int max = 0;
 
-    // Первое правило: («возраст > 21» И «есть работа») ИЛИ («кредитная история» И «поручитель»)
-    //boolean rule1 = (yourAge > 21 && hasJob) || (hasCreditHistory && hasGuarantor);
+        // Работаем с положительным значением (на случай отрицательного n)
+//        int temp = Math.abs(n);
 
-    // Второе правило: «возраст > 21» И («есть работа» ИЛИ «кредитная история») И «есть поручитель»
-    //boolean rule2 = (yourAge > 21) && (hasJob || hasCreditHistory) && hasGuarantor;
+        // Если число 0, то максимальная цифра 0
+//        if (temp == 0) {
+//            max = 0;
+//        }
 
-    // Вывод результатов
-    //System.out.println("Результат по первому правилу: " + rule1);
-    //System.out.println("Результат по второму правилу: " + rule2);
-    // Объявление и инициализация времени спортсменов в секундах
-    //int alexsTime = 12; // Например, 12 секунд
-    //int mikesTime = 10; // Например, 10 секунд
+//        while (temp > 0) {
+//            int currentDigit = temp % 10; // Получаем последнюю цифру
 
-    // Используем тернарный оператор для поиска наименьшего времени
-    // Условие: если время Алекса меньше времени Майка, берем alexsTime, иначе mikesTime
-    //int fastestTime = (alexsTime < mikesTime) ? alexsTime : mikesTime;
+//            if (currentDigit > max) {
+//                max = currentDigit; // Обновляем максимум, если текущая цифра больше
+//            }
 
-    // Вывод результата на экран
-    //System.out.println("Наименьшее время (лучший результат): " + fastestTime + " сек.");
-    // Объявление переменной и присвоение номера заказа
-    //int orderNumber = 12345;
+//            temp /= 10; // Убираем последнюю цифру
+//        }
 
-    // Тернарный оператор для определения статуса
-    // Условие: остаток от деления на 2 равен 0
-    //String orderStatus = (orderNumber % 2 == 0) ? "Чётный" : "Нечётный";
+//        System.out.println(max);
+//    }
+//}
+//        Задача 7
+//        String str = "banana";
+//        int count = 0;
 
-    // Вывод результата на экран
-    //System.out.println("Номер заказа " + orderNumber + " является: " + orderStatus);
-    // Объявление переменной текущего часа (от 0 до 23)
-    //int currentHour = 10;
+        // Проходим циклом по всей длине строки
+//        for (int i = 0; i < str.length(); i++) {
+//            // Проверяем, является ли текущий символ буквой 'a'
+//            if (str.charAt(i) == 'a') {
+//                count++;
+//            }
+//        }
+//        Задача 8
+//        String str = "hello";
+//        String reversed = "";
 
-    // Тернарный оператор для выбора приветствия
-    // Если currentHour < 12, то "Доброе утро", иначе "Добрый день"
-    //String greetingMessage = (currentHour < 12) ? "Доброе утро" : "Добрый день";
+        // Сначала сохраняем перевёрнутую строку в переменную
+//        for (int i = str.length() - 1; i >= 0; i--) {
+//            reversed += str.charAt(i);
+//        }
 
-    // Вывод сообщения на экран
-    //System.out.println(greetingMessage);
-    // Объявление переменной возраста посетителя
-    //int visitorAge = 25;
+        // Выводим результат в формате "исходное" -> "перевёрнутое"
+//        System.out.println(str + " -> " + reversed);
+//    }
+//}
+ //        Задача 9
+//        int n = 5;
 
-    // Использование вложенных тернарных операторов
-    //String ticketCategory = (visitorAge < 7) ? "Детский" :
-    //        (visitorAge <= 17) ? "Подростковый" :
-                    //(visitorAge <= 64) ? "Взрослый" : "Пенсионный";
+//        for (int i = 1; i <= 10; i++) {
+//            System.out.println(n + " * " + i + " = " + (n * i));
+//        }
+//    }
+//}
+//        Задача 10
+//                Scanner scanner = new Scanner(System.in);
+//
+ //                int max = -1;  // Изначально ставим меньше минимально возможной оценки
+ //               int min = 101; // Изначально ставим больше максимально возможной оценки
+//
+ //                System.out.println("Вводите оценки (от 0 до 100). Для завершения введите -1:");
+//
+ //                while (true) {
+//                    int grade = scanner.nextInt();
+//
+ //                    // Проверка на выход из цикла
+//                    if (grade == -1) {
+//                        break;
+//                    }
+//
+                    // Проверка корректности диапазона (необязательно, но полезно)
+//                    if (grade >= 0 && grade <= 100) {
+//                        // Ищем максимум
+//                        if (grade > max) {
+//                            max = grade;
+//                        }
+                        // Ищем минимум
+//                        if (grade < min) {
+//                            min = grade;
+//                        }
+//                    } else {
+//                        System.out.println("Пожалуйста, введите число от 0 до 100.");
+//                    }
+//                }
 
-    // Вывод результата на экран
-    //System.out.println("Возраст посетителя: " + visitorAge);
-    //System.out.println("Категория билета: " + ticketCategory);
-}
-}
+                // Проверяем, были ли введены оценки вообще
+//                if (max == -1) {
+//                    System.out.println("Оценки не были введены.");
+//                } else {
+//                    System.out.println("Максимальная оценка: " + max);
+//                    System.out.println("Минимальная оценка: " + min);
+//                }
+//
+ //                scanner.close();
+//            }
+//        }
+//        Задача 11
+//                Scanner scanner = new Scanner(System.in);
+//
+ //                double totalSum = 0;   // Общая сумма покупок
+//                int count = 0;         // Количество товаров
+//
+ //                System.out.println("Введите цены товаров:");
+//
+ //                while (true) {
+//                    double price = scanner.nextDouble();
+//
+                    // Проверяем, не превысит ли общая сумма 200 при добавлении этого товара
+//                    if (totalSum + price > 200) {
+//                        System.out.println("Лимит в 200 превышен. Последний товар не включен.");
+//                        break; // Выход из цикла, товар не добавляется
+//                    }
+//
+ //                    totalSum += price; // Добавляем цену к сумме
+//                    count++;           // Увеличиваем счетчик товаров
+//                }
+//
+ //                System.out.println("Общая сумма покупок: " + totalSum);
+//
+                // Расчет средней цены, если куплен хотя бы один товар
+//                if (count > 0) {
+//                    double average = totalSum / count;
+//                    System.out.println("Средняя цена товара: " + average);
+//                } else {
+//                    System.out.println("Ни один товар не был куплен.");
+//                }
+//
+ //                scanner.close();
+//            }
+//        }
+//        Задача 12
+//                Scanner scanner = new Scanner(System.in);
+//
+ //                // Инициализируем переменные.
+//                // Для min и max используем крайние значения или флаг первого ввода.
+//                double maxTemp = Double.NEGATIVE_INFINITY;
+//                double minTemp = Double.POSITIVE_INFINITY;
+//                int hotDaysCount = 0;
+//                int inputCount = 0;
+//
+ //                System.out.println("Введите значения температуры (для выхода введите -99):");
+//
+ //                while (true) {
+//                    double currentTemp = scanner.nextDouble();
+//
+ //                    // Проверка на выход
+//                    if (currentTemp == -99) {
+//                        break;
+//                    }
+//
+ //                    // Находим максимум
+//                    if (currentTemp > maxTemp) {
+//                        maxTemp = currentTemp;
+//                    }
+//
+ //                    // Находим минимум
+//                    if (currentTemp < minTemp) {
+//                        minTemp = currentTemp;
+//                    }
+//
+ //                    // Считаем количество значений выше 30
+//                    if (currentTemp > 30) {
+//                        hotDaysCount++;
+//                    }
+//
+ //                    inputCount++;
+//                }
+//
+ //                // Проверяем, были ли введены данные перед выводом
+//                if (inputCount > 0) {
+//                    System.out.println("Самая высокая температура: " + maxTemp);
+//                    System.out.println("Самая низкая температура: " + minTemp);
+//                    System.out.println("Количество замеров выше 30 градусов: " + hotDaysCount);
+//                } else {
+//                    System.out.println("Данные не были введены.");
+//                }
+//
+ //                scanner.close();
+//            }
+//        }
+//        Задача 13
+                Scanner scanner = new Scanner(System.in);
+
+                int ticketsAvailable = 50;
+                int ticketPrice = 20;
+                int totalMoney = 0;
+
+                String bestCustomer = "Нет покупателей";
+                int maxTicketsBought = 0;
+
+                System.out.println("--- Система продажи билетов (2026) ---");
+
+                while (ticketsAvailable > 0) {
+                    System.out.println("\nОсталось билетов: " + ticketsAvailable);
+                    System.out.print("Введите ваше имя (или -99 для выхода): ");
+                    String name = scanner.next();
+
+                    if (name.equals("-99")) {
+                        break;
+                    }
+
+                    System.out.print("Сколько билетов вы хотите купить? ");
+                    int ticketsRequested = scanner.nextInt();
+
+                    if (ticketsRequested <= 0) {
+                        System.out.println("Ошибка: введите положительное число.");
+                        continue;
+                    }
+
+                    if (ticketsRequested <= ticketsAvailable) {
+                        // Покупка подтверждена
+                        ticketsAvailable -= ticketsRequested;
+                        int cost = ticketsRequested * ticketPrice;
+                        totalMoney += cost;
+
+                        System.out.println("Покупка подтверждена, " + name + "! К оплате: " + cost + " шекелей.");
+
+                        // Проверяем, является ли этот клиент рекордсменом
+                        if (ticketsRequested > maxTicketsBought) {
+                            maxTicketsBought = ticketsRequested;
+                            bestCustomer = name;
+                        }
+                    } else {
+                        System.out.println("Недостаточно билетов! Доступно только: " + ticketsAvailable);
+                    }
+                }
+
+                // Итоговые результаты
+                System.out.println("\n--- Работа программы завершена ---");
+                if (maxTicketsBought > 0) {
+                    System.out.println("Имя клиента с наибольшим кол-вом билетов: " + bestCustomer + " (" + maxTicketsBought + ")");
+                }
+                System.out.println("Общая сумма в кассе: " + totalMoney + " шекелей.");
+
+                scanner.close();
+            }
+        }
+
 
