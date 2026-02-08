@@ -671,7 +671,7 @@ public class Main {
 //        int maxTemp = hourlyTemperatures[0];
 
         // Проходим циклом по массиву, начиная со второго элемента
- //       for (int i = 1; i < hourlyTemperatures.length; i++) {
+//        for (int i = 1; i < hourlyTemperatures.length; i++) {
             // Если текущее значение больше нашего максимума, обновляем максимум
 //            if (hourlyTemperatures[i] > maxTemp) {
 //                maxTemp = hourlyTemperatures[i];
@@ -682,8 +682,175 @@ public class Main {
 //        System.out.println("Самая высокая температура за день: " + maxTemp + "°C");
 //    }
 //}
+        // Создаем массив, например, из 6 элементов
+//        int[] numbers = new int[6];
 
+        // 1. Распечатываем нулевой массив (состояние до заполнения)
+//        System.out.println("До заполнения: " + Arrays.toString(numbers));
 
+        // 2. Заполняем массив: значение элемента = его индекс
+//        for (int i = 0; i < numbers.length; i++) {
+//            numbers[i] = i; // Здесь происходит магия: в ячейку 0 пишем 0, в 1 пишем 1 и т.д.
+//        }
 
+        // 3. Распечатываем массив после присвоения
+//        System.out.println("После заполнения: " + Arrays.toString(numbers));
+//    }
+//}
+    //practica
+    // zadacha 1
+        // 1. Создаем массив
+//                int[] numbers = {1, 2, 3, 4, 5};
+
+        // Заменяем элемент
+//        numbers[2] = 10;
+
+        // Просто выводим числа через пробел
+//        for (int i = 0; i < numbers.length; i++) {
+//            System.out.print(numbers[i] + " ");
+//        }
+//    }
+//}
+    //zadacha 2
+//        int[] nums = {1, 2, 3, 4, 5};
+
+//        for (int i = 0; i < nums.length; i++) {
+//            System.out.println(nums[i]);
+//        }
+//    }
+//}
+    //zadacha 3
+//        int[] nums = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+
+//        for (int i = 0; i < nums.length; i++) {
+//            System.out.println(nums[i]);
+//        }
+//    }
+//}
+    //zadacha 4
+//        int[] nums = {5, 10, 15, 20};
+//        int sum = 0;
+
+//        for (int i = 0; i < nums.length; i++) {
+//            sum = sum + nums[i];
+//        }
+
+//        System.out.println(sum);
+//    }
+//}
+    //zadacha 5
+//        int[] nums = {2, 4, 6, 8, 10};
+//        int sum = 0;
+
+//        for (int i = 0; i < nums.length; i++) {
+//            sum = sum + nums[i];
+//        }
+
+//        double average = (double) sum / nums.length;
+
+//        System.out.println(average);
+//    }
+//}
+    //zadacha 6
+//        int[] nums = {3, 17, 5, 24, 8};
+//        int max = nums[0]; // Предполагаем, что первое число — самое большое
+
+//        for (int i = 1; i < nums.length; i++) {
+//            if (nums[i] > max) {
+//                max = nums[i]; // Если нашли число больше, запоминаем его
+//            }
+//        }
+
+//        System.out.println(max);
+//    }
+//}
+    //zadacha 7
+//        int[] nums = {12, 4, 56, 2, 8};
+//        int min = nums[0]; // Берем первое число за образец
+
+//        for (int i = 1; i < nums.length; i++) {
+//            if (nums[i] < min) {
+//                min = nums[i]; // Если нашли число меньше, запоминаем его
+//            }
+//        }
+
+//        System.out.println(min);
+//    }
+//}
+    //zadacha 8
+//        int[] nums = {1, 2, 3, 4, 5, 6, 8};
+//        int count = 0;
+
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] % 2 == 0) {
+//                count++;
+//            }
+//        }
+
+//        System.out.println(count);
+//    }
+//}
+    //zadacha 9
+//        int[] nums = {15, -3, 7, -1, 0, -8};
+
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] < 0) {
+//                nums[i] = 0;
+//            }
+//        }
+
+        // Вывод результата
+//        for (int x : nums) {
+//            System.out.println(x);
+//        }
+//    }
+//}
+    //zadacha 10
+//        int[] nums = {1, 2, 3, 4, 5};
+
+        // Начинаем с последнего индекса (длина - 1)
+        // Идем до нуля включительно (i >= 0)
+//        for (int i = nums.length - 1; i >= 0; i--) {
+//            System.out.println(nums[i]);
+//        }
+//    }
+//}
+    //zadacha 11
+//        int[] nums = {5, 12, 7, 21, 8};
+//        int x = 7;
+//        boolean found = false;
+
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] == x) {
+//                found = true;
+//                break; // Число найдено, дальше можно не искать
+//            }
+//        }
+
+//        System.out.println(found);
+//    }
+//}
+    //zadacha 12
+        int[] nums = {10, -5, 0, 0, 3, -2, 0};
+
+        int pos = 0; // Положительные
+        int neg = 0; // Отрицательные
+        int zeros = 0; // Нули
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > 0) {
+                pos++;
+            } else if (nums[i] < 0) {
+                neg++;
+            } else {
+                zeros++;
+            }
+        }
+
+        System.out.println("Положительных: " + pos);
+        System.out.println("Отрицательных: " + neg);
+        System.out.println("Нулей: " + zeros);
+    }
+}
 
 
