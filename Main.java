@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 //start
@@ -831,26 +832,151 @@ public class Main {
 //    }
 //}
     //zadacha 12
-        int[] nums = {10, -5, 0, 0, 3, -2, 0};
+//        int[] nums = {10, -5, 0, 0, 3, -2, 0};
 
-        int pos = 0; // Положительные
-        int neg = 0; // Отрицательные
-        int zeros = 0; // Нули
+//        int pos = 0; // Положительные
+//        int neg = 0; // Отрицательные
+//        int zeros = 0; // Нули
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] > 0) {
-                pos++;
-            } else if (nums[i] < 0) {
-                neg++;
-            } else {
-                zeros++;
-            }
-        }
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] > 0) {
+//                pos++;
+//            } else if (nums[i] < 0) {
+//                neg++;
+//            } else {
+//                zeros++;
+//            }
+//        }
 
-        System.out.println("Положительных: " + pos);
-        System.out.println("Отрицательных: " + neg);
-        System.out.println("Нулей: " + zeros);
-    }
-}
+//        System.out.println("Положительных: " + pos);
+//        System.out.println("Отрицательных: " + neg);
+//        System.out.println("Нулей: " + zeros);
+//    }
+//}
+    //dvumernii massiv
+    //zadacha 1
+        // Создаем двумерный массив: 2 ряда, 3 места
+//        int[][] theaterSeating = new int[2][3];
 
+        // Заполняем массив числами от 1 до 6
+//        theaterSeating[0][0] = 1;
+//        theaterSeating[0][1] = 2;
+//        theaterSeating[0][2] = 3;
+//        theaterSeating[1][0] = 4;
+//        theaterSeating[1][1] = 5;
+//        theaterSeating[1][2] = 6;
 
+        // Выводим только значение элемента по индексу [1][0]
+//        System.out.println(theaterSeating[1][0]);
+//    }
+//}
+    //zadacha 2
+        // Создаем массив строк: 3 строки и 2 столбца
+//        String[][] displayGrid = new String[3][2];
+
+        // Присваиваем "Hello" последней ячейке (индексы 2 и 1)
+//        displayGrid[2][1] = "Hello";
+
+        // Выводим этот элемент на экран
+//        System.out.println(displayGrid[2][1]);
+//    }
+//}
+    //zadacha 3
+//        int[][] warehouseInventory = new int[3][4];
+//        int count = 1;
+
+        // 1. Заполняем массив
+//        for (int i = 0; i < 3; i++) {
+//            for (int j = 0; j < 4; j++) {
+//                warehouseInventory[i][j] = count;
+//                count++;
+//            }
+//        }
+
+        // 2. Выводим всю таблицу
+//        for (int i = 0; i < 3; i++) {
+//            for (int j = 0; j < 4; j++) {
+//                System.out.print(warehouseInventory[i][j] + "\t"); // \t добавляет ровный отступ
+//            }
+//            System.out.println(); // Переход на новую строку после каждой строки массива
+//        }
+
+//        // 3. Отдельно выводим значение по запросу (2 строка, 3 столбец)
+//        System.out.println("\nЗначение в [1][2]: " + warehouseInventory[1][2]);
+//    }
+//}
+// zadacha 4
+// Создаем массив датчиков: 2 ряда и 5 столбцов
+//        int[][] sensorData = new int[2][5];
+//        int val = 10;
+
+        // Заполняем массив числами от 10 до 19
+//        for (int i = 0; i < 2; i++) {
+//            for (int j = 0; j < 5; j++) {
+//                sensorData[i][j] = val;
+//                val++;
+//            }
+//        }
+
+        // Выводим массив в виде таблицы
+//        for (int i = 0; i < 2; i++) {
+//            for (int j = 0; j < 5; j++) {
+//                System.out.print(sensorData[i][j]);
+
+                // Добавляем пробел, если это не последний элемент в строке
+//                if (j < 4) {
+//                    System.out.print(" ");
+//                }
+//            }
+            // Переход на новую строку после завершения ряда
+//            System.out.println();
+//        }
+//    }
+//}
+// Arrays
+// zadacha 1
+// Создаем массив с результатами забега
+//        int[] raceTimes = {7, 2, 9, 4, 1};
+
+        // Сортируем массив по возрастанию
+//        Arrays.sort(raceTimes);
+
+        // Выводим результат в красивом виде [1, 2, 4, 7, 9]
+//        System.out.println(Arrays.toString(raceTimes));
+//    }
+//}
+//zadacha 2
+// Создаем массив строк на 6 элементов
+//        String[] warehouseSlots = new String[6];
+
+        // Заполняем весь массив значением "Empty"
+//        Arrays.fill(warehouseSlots, "Empty");
+
+        // Выводим массив в консоль в удобном формате
+//        System.out.println(Arrays.toString(warehouseSlots));
+//    }
+//}
+//zadacha 3
+// Создаем массив с показаниями температур
+//        int[] dailyTemperatures = {10, 20, 30, 40, 50, 60, 70};
+
+        // Копируем диапазон: от индекса 2 (включительно) до индекса 5 (исключая его)
+        // Будут скопированы элементы с индексами 2, 3 и 4
+//        int[] reportData = Arrays.copyOfRange(dailyTemperatures, 2, 5);
+
+        // Выводим новый массив на экран
+//        System.out.println(Arrays.toString(reportData));
+//    }
+//}
+// zadacha 4
+// Создаем два массива с секретными кодами
+//        int[] mainCode = {3, 6, 9, 12};
+//        int[] backupCode = {3, 6, 9, 12};
+
+        // Сравниваем содержимое массивов
+//        boolean isIdentical = Arrays.equals(mainCode, backupCode);
+
+        // Выводим результат сравнения на экран
+//        System.out.println(isIdentical);
+//    }
+//}
