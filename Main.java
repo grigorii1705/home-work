@@ -14,32 +14,32 @@ public class Main {
 //        }
 //
 //        System.out.println("Старт!");
- //       Scanner scanner = new Scanner(System.in);
-  //      String password = "";
+        //       Scanner scanner = new Scanner(System.in);
+        //      String password = "";
 
         // Цикл продолжается, пока введенная строка не будет равна "java"
- //       while (!password.equals("java")) {
- //           System.out.print("Введите пароль: ");
+        //       while (!password.equals("java")) {
+        //           System.out.print("Введите пароль: ");
 //            password = scanner.nextLine();
- //       }
+        //       }
 
- //       System.out.println("Смартфон разблокирован!");
+        //       System.out.println("Смартфон разблокирован!");
 //        scanner.close();
- //       Scanner scanner = new Scanner(System.in);
- //       String password;
+        //       Scanner scanner = new Scanner(System.in);
+        //       String password;
 
 //        do {
 //            System.out.print("Введите пароль: ");
 //            password = scanner.nextLine();
- //       } while (!password.equals("java"));
+        //       } while (!password.equals("java"));
 
 //        System.out.println("Смартфон разблокирован!");
 //        scanner.close();
 //        int seat = 2;
 //
- //        while (seat <= 10) {
- //           System.out.println(seat);
- //           seat += 2; // Увеличиваем номер кресла на 2
+        //        while (seat <= 10) {
+        //           System.out.println(seat);
+        //           seat += 2; // Увеличиваем номер кресла на 2
 //        }
 //    }
 // Цикл for: начинаем с 5, продолжаем пока i >= 1, на каждом шаге уменьшаем i на 1
@@ -91,7 +91,7 @@ public class Main {
 //            pin = scanner.nextInt();
 //        } while (pin <= 0); // Цикл продолжается, если число не положительное
 //
- //                System.out.println("PIN-код принят");
+        //                System.out.println("PIN-код принят");
 //        scanner.close();
 //    }
 //}
@@ -153,7 +153,7 @@ public class Main {
 //        int n = 15; // Заданное число
 //        int sum = 0; // Переменная для хранения суммы
 //
- //        for (int i = 1; i <= n; i++) {
+        //        for (int i = 1; i <= n; i++) {
 //            sum += i; // Прибавляем текущее число к общей сумме
 //        }
 
@@ -229,7 +229,7 @@ public class Main {
 //        System.out.println(str + " -> " + reversed);
 //    }
 //}
- //        Задача 9
+        //        Задача 9
 //        int n = 5;
 
 //        for (int i = 1; i <= 10; i++) {
@@ -240,26 +240,26 @@ public class Main {
 //        Задача 10
 //                Scanner scanner = new Scanner(System.in);
 //
- //                int max = -1;  // Изначально ставим меньше минимально возможной оценки
- //               int min = 101; // Изначально ставим больше максимально возможной оценки
+        //                int max = -1;  // Изначально ставим меньше минимально возможной оценки
+        //               int min = 101; // Изначально ставим больше максимально возможной оценки
 //
- //                System.out.println("Вводите оценки (от 0 до 100). Для завершения введите -1:");
+        //                System.out.println("Вводите оценки (от 0 до 100). Для завершения введите -1:");
 //
- //                while (true) {
+        //                while (true) {
 //                    int grade = scanner.nextInt();
 //
- //                    // Проверка на выход из цикла
+        //                    // Проверка на выход из цикла
 //                    if (grade == -1) {
 //                        break;
 //                    }
 //
-                    // Проверка корректности диапазона (необязательно, но полезно)
+        // Проверка корректности диапазона (необязательно, но полезно)
 //                    if (grade >= 0 && grade <= 100) {
 //                        // Ищем максимум
 //                        if (grade > max) {
 //                            max = grade;
 //                        }
-                        // Ищем минимум
+        // Ищем минимум
 //                        if (grade < min) {
 //                            min = grade;
 //                        }
@@ -268,7 +268,7 @@ public class Main {
 //                    }
 //                }
 
-                // Проверяем, были ли введены оценки вообще
+        // Проверяем, были ли введены оценки вообще
 //                if (max == -1) {
 //                    System.out.println("Оценки не были введены.");
 //                } else {
@@ -276,33 +276,33 @@ public class Main {
 //                    System.out.println("Минимальная оценка: " + min);
 //                }
 //
- //                scanner.close();
+        //                scanner.close();
 //            }
 //        }
 //        Задача 11
 //                Scanner scanner = new Scanner(System.in);
 //
- //                double totalSum = 0;   // Общая сумма покупок
+        //                double totalSum = 0;   // Общая сумма покупок
 //                int count = 0;         // Количество товаров
 //
- //                System.out.println("Введите цены товаров:");
+        //                System.out.println("Введите цены товаров:");
 //
- //                while (true) {
+        //                while (true) {
 //                    double price = scanner.nextDouble();
 //
-                    // Проверяем, не превысит ли общая сумма 200 при добавлении этого товара
+        // Проверяем, не превысит ли общая сумма 200 при добавлении этого товара
 //                    if (totalSum + price > 200) {
 //                        System.out.println("Лимит в 200 превышен. Последний товар не включен.");
 //                        break; // Выход из цикла, товар не добавляется
 //                    }
 //
- //                    totalSum += price; // Добавляем цену к сумме
+        //                    totalSum += price; // Добавляем цену к сумме
 //                    count++;           // Увеличиваем счетчик товаров
 //                }
 //
- //                System.out.println("Общая сумма покупок: " + totalSum);
+        //                System.out.println("Общая сумма покупок: " + totalSum);
 //
-                // Расчет средней цены, если куплен хотя бы один товар
+        // Расчет средней цены, если куплен хотя бы один товар
 //                if (count > 0) {
 //                    double average = totalSum / count;
 //                    System.out.println("Средняя цена товара: " + average);
@@ -310,48 +310,48 @@ public class Main {
 //                    System.out.println("Ни один товар не был куплен.");
 //                }
 //
- //                scanner.close();
+        //                scanner.close();
 //            }
 //        }
 //        Задача 12
 //                Scanner scanner = new Scanner(System.in);
 //
- //                // Инициализируем переменные.
+        //                // Инициализируем переменные.
 //                // Для min и max используем крайние значения или флаг первого ввода.
 //                double maxTemp = Double.NEGATIVE_INFINITY;
 //                double minTemp = Double.POSITIVE_INFINITY;
 //                int hotDaysCount = 0;
 //                int inputCount = 0;
 //
- //                System.out.println("Введите значения температуры (для выхода введите -99):");
+        //                System.out.println("Введите значения температуры (для выхода введите -99):");
 //
- //                while (true) {
+        //                while (true) {
 //                    double currentTemp = scanner.nextDouble();
 //
- //                    // Проверка на выход
+        //                    // Проверка на выход
 //                    if (currentTemp == -99) {
 //                        break;
 //                    }
 //
- //                    // Находим максимум
+        //                    // Находим максимум
 //                    if (currentTemp > maxTemp) {
 //                        maxTemp = currentTemp;
 //                    }
 //
- //                    // Находим минимум
+        //                    // Находим минимум
 //                    if (currentTemp < minTemp) {
 //                        minTemp = currentTemp;
 //                    }
 //
- //                    // Считаем количество значений выше 30
+        //                    // Считаем количество значений выше 30
 //                    if (currentTemp > 30) {
 //                        hotDaysCount++;
 //                    }
 //
- //                    inputCount++;
+        //                    inputCount++;
 //                }
 //
- //                // Проверяем, были ли введены данные перед выводом
+        //                // Проверяем, были ли введены данные перед выводом
 //                if (inputCount > 0) {
 //                    System.out.println("Самая высокая температура: " + maxTemp);
 //                    System.out.println("Самая низкая температура: " + minTemp);
@@ -360,13 +360,13 @@ public class Main {
 //                    System.out.println("Данные не были введены.");
 //                }
 //
- //                scanner.close();
+        //                scanner.close();
 //            }
 //        }
 //        Задача 13
 //                Scanner scanner = new Scanner(System.in);
 //
- //                int ticketsAvailable = 50;
+        //                int ticketsAvailable = 50;
 //                   int ticketPrice = 20;
 //                int totalMoney = 0;
 
@@ -398,9 +398,9 @@ public class Main {
 //                        int cost = ticketsRequested * ticketPrice;
 //                        totalMoney += cost;
 //
- //                        System.out.println("Покупка подтверждена, " + name + "! К оплате: " + cost + " шекелей.");
+        //                        System.out.println("Покупка подтверждена, " + name + "! К оплате: " + cost + " шекелей.");
 //
- //                        // Проверяем, является ли этот клиент рекордсменом
+        //                        // Проверяем, является ли этот клиент рекордсменом
 //                        if (ticketsRequested > maxTicketsBought) {
 //                            maxTicketsBought = ticketsRequested;
 //                            bestCustomer = name;
@@ -417,8 +417,8 @@ public class Main {
 //                }
 //                System.out.println("Общая сумма в кассе: " + totalMoney + " шекелей.");
 //
- //                scanner.close();
- //           }
+        //                scanner.close();
+        //           }
 //        }
 //      Задача персонаж
         // Базовые характеристики героя
@@ -439,12 +439,12 @@ public class Main {
 //        System.out.println("Шанс крита: " + (criticalHitChance * 100) + "%");
 //    }
 //}
-    // Gold
+        // Gold
         // Огромный запас золота с использованием подчеркиваний и суффикса L
- //       long dragonHoard = 10_000_000_000L;
+        //       long dragonHoard = 10_000_000_000L;
 
- //       System.out.println("В сокровищнице дракона: " + dragonHoard + " золотых монет!");
- //   }
+        //       System.out.println("В сокровищнице дракона: " + dragonHoard + " золотых монет!");
+        //   }
 //}
         // Объявляем загадочный символ
 //        char mysteryCharacter = 'W';
@@ -453,11 +453,11 @@ public class Main {
 //        int decryptedCode = mysteryCharacter;
 
         // Вывод результата исследования
- //       System.out.println("Код символа '" + mysteryCharacter + "': " + decryptedCode);
+        //       System.out.println("Код символа '" + mysteryCharacter + "': " + decryptedCode);
 //    }
 //}
         // Объявляем символ кириллицы
- //       char russianChar = 'Ж';
+        //       char russianChar = 'Ж';
 
         // Превращаем символ в его числовое откровение
 //        int characterCode = (int) russianChar;
@@ -475,19 +475,19 @@ public class Main {
 
         // Вывод результата на экран навигатора
 //        System.out.println("Средняя скорость полёта: " + averageSpeed + " св. лет за цикл");
- //   }
+        //   }
 //}
         //программное обеспечение для нового, умного вендингового автомата.
- //       Scanner input = new Scanner(System.in);
+        //       Scanner input = new Scanner(System.in);
 
- //       System.out.print("Введите сумму: ");
+        //       System.out.print("Введите сумму: ");
 
         // Считываем как текст и сразу превращаем в число
 //        String data = input.next().replace(',', '.');
- //       double customerPayment = Double.parseDouble(data);
+        //       double customerPayment = Double.parseDouble(data);
 
- //       System.out.println("Внесено средств: " + customerPayment);
- //   }
+        //       System.out.println("Внесено средств: " + customerPayment);
+        //   }
 //}
         // Цена товара с лишними знаками
 //        double productPrice = 1234.56789;
@@ -557,7 +557,7 @@ public class Main {
 //    }
 //}
 // massivi
-       // zadacha 1
+        // zadacha 1
         // Создаем рюкзак на 5 ячеек
 //        int[] inventorySlots = new int[5];
 
@@ -568,7 +568,7 @@ public class Main {
 //        System.out.println("Предмет в первой ячейке: " + inventorySlots[0]);
 //    }
 //}
-    // zadacha 2
+        // zadacha 2
         // Создаем массив для хранения трех наименований
         // Создаем массив для хранения трех строк
 //        String[] favoriteLanguages = new String[3];
@@ -582,7 +582,7 @@ public class Main {
 //        System.out.println("Количество записей в списке: " + favoriteLanguages.length);
 //    }
 //}
-    // zadacha 3
+        // zadacha 3
         // Создаем массив для 4-х измерений
 //        double[] sensorReadings = new double[4];
 
@@ -596,13 +596,13 @@ public class Main {
 //        System.out.print(sensorReadings[3]);
 //    }
 //}
-    // zadacha 4
+        // zadacha 4
         // Создаем массив для 10 раундов
 //        int[] roundScores = new int[10];
 
         // Используем цикл для заполнения массива
 //        for (int i = 0; i < roundScores.length; i++) {
-            // Индекс i идет от 0 до 9, поэтому прибавляем 1, чтобы получить очки от 1 до 10
+        // Индекс i идет от 0 до 9, поэтому прибавляем 1, чтобы получить очки от 1 до 10
 //            roundScores[i] = i + 1;
 //        }
 
@@ -612,18 +612,18 @@ public class Main {
 //        }
 //    }
 //}
-    // zadacha 5
+        // zadacha 5
         // Быстрая инициализация массива с 5 результатами
 //        int[] gameHighScores = {10, 20, 30, 40, 50};
 
         // Используем цикл for-each для вывода каждого рекорда
 //        for (int score : gameHighScores) {
-            // System.out.println автоматически переносит текст на новую строку
+        // System.out.println автоматически переносит текст на новую строку
 //            System.out.println(score);
 //        }
 //    }
 //}
-    // zadacha 6
+        // zadacha 6
         // Создаем сканер для чтения ввода пользователя
 //        Scanner input = new Scanner(System.in);
 
@@ -648,7 +648,7 @@ public class Main {
 //        input.close();
 //    }
 //}
-    // zadacha 7
+        // zadacha 7
         // Быстрая инициализация массива с ценами товаров
 //        int[] itemPrices = {5, 7, 2, 9};
 
@@ -664,7 +664,7 @@ public class Main {
 //        System.out.println("Общая сумма к оплате: " + totalSum + " кредитов");
 //    }
 //}
-    // zadacha 8
+        // zadacha 8
         // Инициализируем массив с показаниями температуры
 //        int[] hourlyTemperatures = {3, 11, 7, 4, 15, 2};
 
@@ -673,7 +673,7 @@ public class Main {
 
         // Проходим циклом по массиву, начиная со второго элемента
 //        for (int i = 1; i < hourlyTemperatures.length; i++) {
-            // Если текущее значение больше нашего максимума, обновляем максимум
+        // Если текущее значение больше нашего максимума, обновляем максимум
 //            if (hourlyTemperatures[i] > maxTemp) {
 //                maxTemp = hourlyTemperatures[i];
 //            }
@@ -698,8 +698,8 @@ public class Main {
 //        System.out.println("После заполнения: " + Arrays.toString(numbers));
 //    }
 //}
-    //practica
-    // zadacha 1
+        //practica
+        // zadacha 1
         // 1. Создаем массив
 //                int[] numbers = {1, 2, 3, 4, 5};
 
@@ -712,7 +712,7 @@ public class Main {
 //        }
 //    }
 //}
-    //zadacha 2
+        //zadacha 2
 //        int[] nums = {1, 2, 3, 4, 5};
 
 //        for (int i = 0; i < nums.length; i++) {
@@ -720,7 +720,7 @@ public class Main {
 //        }
 //    }
 //}
-    //zadacha 3
+        //zadacha 3
 //        int[] nums = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
 
 //        for (int i = 0; i < nums.length; i++) {
@@ -728,7 +728,7 @@ public class Main {
 //        }
 //    }
 //}
-    //zadacha 4
+        //zadacha 4
 //        int[] nums = {5, 10, 15, 20};
 //        int sum = 0;
 
@@ -739,7 +739,7 @@ public class Main {
 //        System.out.println(sum);
 //    }
 //}
-    //zadacha 5
+        //zadacha 5
 //        int[] nums = {2, 4, 6, 8, 10};
 //        int sum = 0;
 
@@ -752,7 +752,7 @@ public class Main {
 //        System.out.println(average);
 //    }
 //}
-    //zadacha 6
+        //zadacha 6
 //        int[] nums = {3, 17, 5, 24, 8};
 //        int max = nums[0]; // Предполагаем, что первое число — самое большое
 
@@ -765,7 +765,7 @@ public class Main {
 //        System.out.println(max);
 //    }
 //}
-    //zadacha 7
+        //zadacha 7
 //        int[] nums = {12, 4, 56, 2, 8};
 //        int min = nums[0]; // Берем первое число за образец
 
@@ -778,7 +778,7 @@ public class Main {
 //        System.out.println(min);
 //    }
 //}
-    //zadacha 8
+        //zadacha 8
 //        int[] nums = {1, 2, 3, 4, 5, 6, 8};
 //        int count = 0;
 
@@ -791,7 +791,7 @@ public class Main {
 //        System.out.println(count);
 //    }
 //}
-    //zadacha 9
+        //zadacha 9
 //        int[] nums = {15, -3, 7, -1, 0, -8};
 
 //        for (int i = 0; i < nums.length; i++) {
@@ -806,7 +806,7 @@ public class Main {
 //        }
 //    }
 //}
-    //zadacha 10
+        //zadacha 10
 //        int[] nums = {1, 2, 3, 4, 5};
 
         // Начинаем с последнего индекса (длина - 1)
@@ -816,7 +816,7 @@ public class Main {
 //        }
 //    }
 //}
-    //zadacha 11
+        //zadacha 11
 //        int[] nums = {5, 12, 7, 21, 8};
 //        int x = 7;
 //        boolean found = false;
@@ -831,7 +831,7 @@ public class Main {
 //        System.out.println(found);
 //    }
 //}
-    //zadacha 12
+        //zadacha 12
 //        int[] nums = {10, -5, 0, 0, 3, -2, 0};
 
 //        int pos = 0; // Положительные
@@ -853,8 +853,8 @@ public class Main {
 //        System.out.println("Нулей: " + zeros);
 //    }
 //}
-    //dvumernii massiv
-    //zadacha 1
+        //dvumernii massiv
+        //zadacha 1
         // Создаем двумерный массив: 2 ряда, 3 места
 //        int[][] theaterSeating = new int[2][3];
 
@@ -870,7 +870,7 @@ public class Main {
 //        System.out.println(theaterSeating[1][0]);
 //    }
 //}
-    //zadacha 2
+        //zadacha 2
         // Создаем массив строк: 3 строки и 2 столбца
 //        String[][] displayGrid = new String[3][2];
 
@@ -881,7 +881,7 @@ public class Main {
 //        System.out.println(displayGrid[2][1]);
 //    }
 //}
-    //zadacha 3
+        //zadacha 3
 //        int[][] warehouseInventory = new int[3][4];
 //        int count = 1;
 
@@ -923,12 +923,12 @@ public class Main {
 //            for (int j = 0; j < 5; j++) {
 //                System.out.print(sensorData[i][j]);
 
-                // Добавляем пробел, если это не последний элемент в строке
+        // Добавляем пробел, если это не последний элемент в строке
 //                if (j < 4) {
 //                    System.out.print(" ");
 //                }
 //            }
-            // Переход на новую строку после завершения ряда
+        // Переход на новую строку после завершения ряда
 //            System.out.println();
 //        }
 //    }
@@ -978,5 +978,61 @@ public class Main {
 
         // Выводим результат сравнения на экран
 //        System.out.println(isIdentical);
+//    }
+//}
+// Метод main для проверки работы программы
+        // Метод main для проверки работы программы
+//        PersonalGreeter.welcomeNewUser("Аня");
+
+//        }
+//    }
+// Имитируем покупку товаров по цене 7 и 5
+//        StoreCashier.calculateAndShowCost(7, 5);
+//    }
+//}
+// Пример использования метода
+//        HRProfileManager.displayEmployeeCard("Олег", 30);
+//    }
+//}
+// Вызываем метод трижды с разными параметрами
+//        ShapeDesigner.printRectangleSpecs(5, 10);
+//        ShapeDesigner.printRectangleSpecs(3, 7);
+//        ShapeDesigner.printRectangleSpecs(12, 4);
+//    }
+//}
+// Вызываем метод и сохраняем результат в переменную
+//        String greeting = Solution.generateGreetingMessage("Алиса");
+
+        // Выводим полученную фразу на экран
+//        System.out.println(greeting);
+//    }
+//}
+//        int numberToTest = 18;
+
+        // Проверяем число и сохраняем результат (true/false)
+//        boolean isEven = Solution.checkIfEven(numberToTest);
+
+        // Используем условие, чтобы выбрать правильное объявление
+//        if (isEven) {
+//            System.out.println("Это число чётное!");
+//        } else {
+//            System.out.println("Это число нечётное!");
+//        }
+//    }
+//}
+// Проводим сравнение результатов 10 и 25
+//        int championsScore = Solution.getHigherScore(10, 25);
+
+        // Объявляем результат
+//        System.out.println("Наивысший балл: " + championsScore);
+//    }
+//}
+//        int[] currentGrades = {5, 4, 3, 5, 4};
+
+        // Вызываем метод и сохраняем результат в переменную finalTotalPoints
+//        int finalTotalPoints = Solution.calculateTotalGrades(currentGrades);
+
+        // С удовлетворением выводим результат на экран
+//        System.out.println("Сумма всех оценок: " + finalTotalPoints);
 //    }
 //}
