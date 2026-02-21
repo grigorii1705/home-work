@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -1036,3 +1037,253 @@ public class Main {
 //        System.out.println("Сумма всех оценок: " + finalTotalPoints);
 //    }
 //}
+//        String email = "ivan.pet.rov@mail.com";
+
+//        System.out.print("Индексы точек: ");
+
+//        for (int i = 0; i < email.length(); i++) {
+//            if (email.charAt(i) == '.') {
+//                System.out.print(i + " ");
+//            }
+//        }
+//    }
+//}
+//stroki
+        //zadacha 1
+// Записываем путь. Используем двойной слэш, чтобы Java не ругалась
+//        String javaPath = "C:\\Program Files\\Java";
+
+//        System.out.println("Инструкция для нового сотрудника:");
+//        System.out.println("Исполнительные файлы Java искать здесь: " + javaPath);
+//    }
+//}
+// zadacha 2
+// Используем одну команду и управляющий символ \n для переноса
+//        System.out.println("Первая строка\nВторая строка\nТретья строка");
+//    }
+//}
+// zadacha 3
+// \" — выведет кавычки
+        // \t — сделает красивый отступ (табуляцию)
+//        System.out.println("\"Java\"\t— язык программирования!");
+//    }
+//}
+// zadacha 4
+// \u2600 — это код для солнца (☀️)
+        // \uD83D\uDE0A — это пара кодов (surrogate pair) для улыбающегося лица (😊)
+//        System.out.println("Привет, мир! \u2600\uD83D\uDE0A");
+//    }
+//}
+// formatirovanie strok
+// zadacha 1
+// Объявляем переменные пользователя
+//        String userName = "Анна";
+//        int userAge = 25;
+
+        // Формируем строку по шаблону
+        // %s подставит строку, %d подставит число
+//        String report = String.format("Имя: %s, возраст: %d лет.", userName, userAge);
+
+        // Выводим результат в консоль
+//        System.out.println(report);
+//    }
+//}
+// zadacha 2
+// Цена товара с лишними знаками
+//        double productPrice = 123.456;
+
+        // %.2f — форматирует число с плавающей точкой до 2 знаков
+//        String formattedPrice = String.format("Цена: %.2f евро.", productPrice);
+
+//        System.out.println(formattedPrice);
+//    }
+//}
+// zadacha 3
+//        String itemName = "Яблоки";
+//        int itemCount = 7;
+//        double itemWeight = 1.234;
+
+        // Уменьшаем ширину колонок:
+        // %-7s — 7 символов для названия (влево)
+        // %2d — всего 2 символа для количества
+        // %4.2f — 4 символа всего (1.23) для веса
+//        String reportLine = String.format("Товар: [%-7s] | Кол-во: [%2d] | Вес: [%4.2f кг]",
+//                itemName, itemCount, itemWeight);
+
+//        System.out.println(reportLine);
+//    }
+//}
+// zadacha 4
+//        String studentName = "Анна";
+//        int correctAnswers = 45;
+//        int totalQuestions = 50;
+
+        // Вычисляем процент. Приводим к double, чтобы не потерять дробную часть
+//        double percentage = (double) correctAnswers / totalQuestions * 100;
+
+        // Используем Locale.GERMANY для запятой
+        // %.1f — один знак после запятой
+        // %% — так в формате пишется обычный знак процента
+//        String result = String.format(Locale.GERMANY, "%s: %.1f%% правильных ответов.",
+//                studentName, percentage);
+
+//        System.out.println(result);
+//    }
+//}
+// string
+// zadacha 1
+//        String secretCode = "Java";
+
+        // Проникаем в слово и забираем второй символ (индекс 1)
+//        char secretSymbol = secretCode.charAt(1);
+
+        // Выводим добычу на экран
+//        System.out.println(secretSymbol);
+//    }
+//}
+// zadacha 2
+//        String phrase = "I love programming in Java";
+
+        // Ищем индекс, с которого начинается слово "Java"
+//        int coordinates = phrase.indexOf("Java");
+
+        // Выводим результат
+//        System.out.println(coordinates);
+//    }
+//}
+// zadacha 3
+//        String word = "programming";
+
+        // Вырезаем "gram": начинаем с 3-го индекса (включительно)
+        // до 7-го индекса (не включая его)
+//        String result = word.substring(3, 7);
+
+        // Выводим результат на экран
+//        System.out.println(result);
+//    }
+//}
+// zadacha 4
+//        String productName = "Example";
+
+        // Проверяем, начинается ли название с буквы 'E'
+//        if (productName.startsWith("E")) {
+            // Извлекаем первые три символа (индексы 0, 1, 2)
+//            String shortName = productName.substring(0, 3);
+//            System.out.println(shortName);
+//        } else {
+            // Если первая буква любая другая
+//            System.out.println("Первая буква не E");
+//        }
+//    }
+//}
+// sravnenie strok
+// zadacha 1
+// Объявляем две переменные
+//        String greeting1 = "Hello";
+//        String greeting2 = "HELLO";
+
+        // Сравниваем их, игнорируя регистр
+//        boolean isEqual = greeting1.equalsIgnoreCase(greeting2);
+
+        // Выводим результат (true или false)
+//        System.out.println(isEqual);
+//    }
+//}
+// zadacha 2
+//        String fileName = "document.pdf";
+
+        // Проверяем, начинается ли имя с "doc"
+//        boolean isDoc = fileName.startsWith("doc");
+
+        // Проверяем, заканчивается ли имя на ".pdf"
+//        boolean isPdf = fileName.endsWith(".pdf");
+
+        // Выводим результаты через пробел
+//        System.out.println(isDoc + " " + isPdf);
+//    }
+//}
+// zadacha 3
+// Шаг 1: Сравниваем "apple" и "banana"
+//        String s1 = "apple";
+//        String s2 = "banana";
+
+//        int result1 = s1.compareTo(s2);
+//        System.out.println("Результат apple vs banana: " + result1);
+
+        // Шаг 2: Меняем значения местами и сравниваем снова
+//        s1 = "banana";
+//        s2 = "apple";
+
+//        int result2 = s1.compareTo(s2);
+//        System.out.println("Результат banana vs apple: " + result2);
+//    }
+//}
+// zadacha 4
+// Объявляем переменные с email-адресами
+//        String emailOne = "User@Example.com";
+//        String emailTwo = "user@example.com";
+
+        // Сравниваем их, игнорируя регистр
+//        boolean isEqual = emailOne.equalsIgnoreCase(emailTwo);
+
+        // Создаем строку с сообщением о регистрации
+//        String registrationMessage = "user@example.com is registered";
+
+        // Проверяем наличие подстроки "example"
+//        boolean hasExample = registrationMessage.contains("example");
+
+        // Выводим оба результата в одну строку через пробел
+//        System.out.println(isEqual + " " + hasExample);
+//    }
+//}
+//StringBuilder и StringBuffer
+// zadacha 1
+// Создаем объект StringBuilder с начальным словом
+//        StringBuilder message = new StringBuilder("Java");
+
+        // Добавляем "изюминку" к нашей основе
+//        message.append(" - это круто!");
+
+        // Выводим готовый лозунг на экран
+//        System.out.println(message.toString());
+//    }
+//}
+// zadacha 2
+// Создаем StringBuilder с начальной фразой
+//        StringBuilder sb = new StringBuilder("Привет, мир!");
+
+        // Вставляем "Java " после запятой и пробела (индекс 8)
+//        sb.insert(8, "Java ");
+
+        // Выводим результат
+//        System.out.println(sb.toString());
+//    }
+//}
+// zadacha 3
+// Создаем объект StringBuilder с загадочной последовательностью
+//        StringBuilder secret = new StringBuilder("abcdef");
+
+        // Используем метод reverse() для разворота строки
+//        secret.reverse();
+
+        // Выводим "отзеркаленный" результат на экран
+//        System.out.println(secret.toString());
+//    }
+//}
+// zadacha 4
+// Стартовая фраза
+        StringBuilder sb = new StringBuilder("Я люблю Java!");
+
+        // 1. Удаляем "люблю " (индексы со 2 по 8, чтобы убрать и слово, и один пробел)
+        // 'л' на индексе 2, последняя 'ю' на 6, пробел на 7. Удаляем по 8 (не включая).
+        sb.delete(2, 8);
+
+        // Теперь фраза: "Я Java!"
+        // 2. Заменяем "Java" на "программирование"
+        // Слово "Java" теперь начинается с индекса 2 и заканчивается на 6
+        sb.replace(2, 6, "программирование");
+
+        // Выводим обновлённый результат
+        System.out.println(sb.toString());
+    }
+}
