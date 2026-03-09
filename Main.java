@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -17,9 +18,9 @@ public class Main {
 
 
        public static void main(String[] args) {
-        // obertka
-        // zadacha 1
-        // 1. Создаем строковую переменную
+              // obertka
+              // zadacha 1
+              // 1. Создаем строковую переменную
 //        String playerScoreText = "500";
 //
 //        // 2. Превращаем строку в целое число (Integer)
@@ -28,8 +29,8 @@ public class Main {
 //        // 3. Выводим результат, чтобы убедиться в успехе
 //        System.out.println("Число успешно получено: " + actualPlayerScore);
 
-        // zadacha 2
-        // 1. Создаем переменную с символом
+              // zadacha 2
+              // 1. Создаем переменную с символом
 //        char symbol = '7';
 //
 //        // 2. Используем класс Character, чтобы проверить, является ли символ цифрой
@@ -37,7 +38,7 @@ public class Main {
 //
 // 3. Выводим результат проверки
 //        System.out.println("Является ли символ '" + symbol + "' цифрой? Ответ: " + isDigit);
-        //zadacha 3
+              //zadacha 3
 //        // 1. Обычная переменная (примитив)
 //        double productPrice = 3.14;
 //
@@ -49,7 +50,7 @@ public class Main {
 //
 //        // Выводим результат на экран
 //        System.out.println("Финальная цена после распаковки: " + finalCalculatedPrice);
-        //zadacha 4
+              //zadacha 4
 //        // 1. Строка от датчика с некорректным значением
 //        String sensorReadingText = "NaN";
 //
@@ -62,15 +63,15 @@ public class Main {
 //        // 4. Выводим результат проверки
 //        System.out.println("Полученные данные: " + parsedSensorData);
 //        System.out.println("Это ошибка: " + isError);
-        //konstanti
-        //zadacha 1
-        // Используем var вместо String.
-        // Java сама поймет, что это строка, увидев текст в кавычках.
+              //konstanti
+              //zadacha 1
+              // Используем var вместо String.
+              // Java сама поймет, что это строка, увидев текст в кавычках.
 //        var welcomeMessage = "Привет, Java!";
 //
 //        // Выводим переменную на экран
 //        System.out.println(welcomeMessage);
-        // zadacha 2
+              // zadacha 2
 //        // Объявляем константу с помощью ключевого слова final
 //        final int DAYS_IN_CALENDAR_WEEK = 7;
 //
@@ -79,7 +80,7 @@ public class Main {
 //
 //        // Если попытаться написать DAYS_IN_CALENDAR_WEEK = 8;
 //        // Java выдаст ошибку еще на этапе сборки программы.
-        // zadacha 3
+              // zadacha 3
 //        class MathFormulas {
 //            // public — доступна везде
 //            // static — принадлежит классу (не нужно создавать объект)
@@ -94,7 +95,7 @@ public class Main {
 //                double radius = 10;
 //                double area = MathFormulas.PI_VALUE * (radius * radius);
 //                System.out.println("Площадь круга с радиусом 10: " + area);
-        // zadacha 4
+              // zadacha 4
 //        // 1. Объявляем константу с лимитом игроков
 //        final int MAX_PLAYERS_ON_SERVER = 100;
 //
@@ -103,9 +104,9 @@ public class Main {
 //
 //        // 3. ПОПЫТКА ИЗМЕНЕНИЯ (раскомментируй строку ниже, чтобы увидеть ошибку):
 //         //MAX_PLAYERS_ON_SERVER = 200;
-        // switch
-        // zadacha 1
-        // Создаем объект сканера
+              // switch
+              // zadacha 1
+              // Создаем объект сканера
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите номер дня (1-3): ");
@@ -131,7 +132,7 @@ public class Main {
 //        scanner.close(); // Закрываем сканер (хорошая привычка)
 //    }
 //}
-        // zadacha 2
+              // zadacha 2
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите команду для робота (start, stop, exit): ");
@@ -158,7 +159,7 @@ public class Main {
 //        scanner.close();
 //    }
 //}
-        // zadacha 3
+              // zadacha 3
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите номер месяца (1-12): ");
@@ -198,7 +199,7 @@ public class Main {
 //        scanner.close();
 //    }
 //}
-        //zadacha 4
+              //zadacha 4
 //        Scanner scanner = new Scanner(System.in);
 //
 //        // 1. Просим ввести числа
@@ -239,9 +240,9 @@ public class Main {
 //        scanner.close();
 //    }
 //}
-        //enum
-        //zadacha 1
-        // 1. Создаем перечисление (обычно пишется вне класса Main или в отдельном файле)
+              //enum
+              //zadacha 1
+              // 1. Создаем перечисление (обычно пишется вне класса Main или в отдельном файле)
 //        enum TrafficSignalState {
 //            RED, YELLOW, GREEN
 //        }
@@ -259,7 +260,7 @@ public class Main {
 //                }
 //            }
 //        }
-        // zadacha 2
+              // zadacha 2
 //        // 1. Объявляем перечисление сезонов
 //        enum Season {
 //            WINTER, SPRING, SUMMER, AUTUMN
@@ -285,7 +286,7 @@ public class Main {
 //                }
 //            }
 //        }
-        //zadacha 3
+              //zadacha 3
 //        // 1. Объявляем перечисление всех дней недели
 //        enum DayOfWeek {
 //            MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
@@ -300,7 +301,7 @@ public class Main {
 //                }
 //            }
 //        }
-        // zadacha 4
+              // zadacha 4
 //        // 1. Объявляем перечисление небесных тел
 //        enum CelestialBody {
 //            EARTH, MARS, JUPITER
@@ -327,8 +328,8 @@ public class Main {
 //                System.out.println("Навигация перенастроена на: " + newTarget);
 //            }
 //        }
-        // switch NEW
-        // zadacha 1
+              // switch NEW
+              // zadacha 1
 //        int httpStatusCode = 200;
 //
 //        // Используем switch как выражение (expression), которое возвращает строку
@@ -343,7 +344,7 @@ public class Main {
 //        System.out.println("Статус запроса: " + responseMessage);
 //    }
 //}
-        // zadacha 2
+              // zadacha 2
 //        // 1. Команда, пришедшая на дрон
 //        String droneCommand = "pause";
 //
@@ -359,7 +360,7 @@ public class Main {
 //        System.out.println("Статус дрона: " + droneStatusMessage);
 //    }
 //}
-        // zadacha 3
+              // zadacha 3
 //        // 1. Входные данные (номер дня)
 //        int dayNumber = 2;
 //
@@ -376,7 +377,7 @@ public class Main {
 //        System.out.println("Сегодня по плану: " + dayNameString);
 //    }
 //}
-        // zadacha 4
+              // zadacha 4
 //        // 1. Текущий балл студента
 //        int studentScore = 9;
 //
@@ -391,7 +392,7 @@ public class Main {
 //        System.out.println("Ваша оценка: " + finalGrade);
 //    }
 //}
-        // praktika enum
+              // praktika enum
 //    // zadacha 1
 //        // 1. Создаем перечисление
 //        enum Season {
@@ -402,7 +403,7 @@ public class Main {
 //                System.out.println(Season.SUMMER);
 //            }
 //        }
-        // zadacha 2
+              // zadacha 2
 //        // 1. Создаем перечисление всех дней недели
 //        enum Day {
 //            MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
@@ -414,7 +415,7 @@ public class Main {
 //                }
 //            }
 //        }
-        // zadacha 3
+              // zadacha 3
 //        enum TrafficLight {
 //            RED, YELLOW, GREEN
 //        }
@@ -429,7 +430,7 @@ public class Main {
 //                }
 //            }
 //        }
-        // zadacha 4
+              // zadacha 4
 //        enum Planet {
 //            MERCURY(0.33),
 //            VENUS(4.87),
@@ -451,7 +452,7 @@ public class Main {
 //
 //            }
 //        }
-        // zadacha 5
+              // zadacha 5
 //        enum Operation {
 //            ADD {
 //                public double apply(double a, double b) { return a + b; }
@@ -479,8 +480,8 @@ public class Main {
 //                System.out.println("Умножение: " + Operation.MULTIPLY.apply(x, y));
 //            }
 //        }
-        // SWITCH
-        // zadacha 1
+              // SWITCH
+              // zadacha 1
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите число от 1 до 7: ");
@@ -931,33 +932,215 @@ public class Main {
 //       }
 //}
 // zadacha 4
-              System.out.println("1. [Main]: Получен запрос от пользователя. Начинаем цепочку...");
-
-              // Запуск первого уровня
-              processInitialRequest();
-
-              System.out.println("5. [Main]: Запрос успешно обработан."); // Эта строка не выполнится
-       }
-
-       public static void processInitialRequest() {
-              System.out.println("2. [Level 1]: Первичная обработка пройдена. Передаем управление...");
-              handleIntermediateStep();
-       }
-
-       public static void handleIntermediateStep() {
-              System.out.println("3. [Level 2]: Промежуточный этап выполнен. Выполняем финальное действие...");
-              executeFinalAction();
-       }
-
-       public static void executeFinalAction() {
-              System.out.println("4. [Level 3]: Попытка сохранить данные в массив...");
-
-              // Создаем маленький массив
-              int[] temporaryData = {10, 20};
-
-              // КРИТИЧЕСКАЯ ОШИБКА: Доступ к индексу 10 (его не существует)
-              int value = temporaryData[10];
-
-              System.out.println("Значение получено: " + value);
-       }
-}
+//              System.out.println("1. [Main]: Получен запрос от пользователя. Начинаем цепочку...");
+//
+//              // Запуск первого уровня
+//              processInitialRequest();
+//
+//              System.out.println("5. [Main]: Запрос успешно обработан."); // Эта строка не выполнится
+//       }
+//
+//       public static void processInitialRequest() {
+//              System.out.println("2. [Level 1]: Первичная обработка пройдена. Передаем управление...");
+//              handleIntermediateStep();
+//       }
+//
+//       public static void handleIntermediateStep() {
+//              System.out.println("3. [Level 2]: Промежуточный этап выполнен. Выполняем финальное действие...");
+//              executeFinalAction();
+//       }
+//
+//       public static void executeFinalAction() {
+//              System.out.println("4. [Level 3]: Попытка сохранить данные в массив...");
+//
+//              // Создаем маленький массив
+//              int[] temporaryData = {10, 20};
+//
+//              // КРИТИЧЕСКАЯ ОШИБКА: Доступ к индексу 10 (его не существует)
+//              int value = temporaryData[10];
+//
+//              System.out.println("Значение получено: " + value);
+//       }
+//
+//              Scanner scanner = new Scanner(System.in);
+//
+//              // Пример массива (можно заменить на null для проверки)
+//              int[] arr = {10, 20, 30, 40, 50};
+//
+//              System.out.print("Введите индекс элемента: ");
+//              int index = scanner.nextInt();
+//
+//              printArrayElement(arr, index);
+//       }
+//
+//       public static void printArrayElement(int[] arr, int index) {
+//              try {
+//                     System.out.println("Элемент массива: " + arr[index]);
+//              } catch (ArrayIndexOutOfBoundsException e) {
+//                     System.out.println("Индекс вне диапазона");
+//              } catch (NullPointerException e) {
+//                     System.out.println("Массив не инициализирован");
+//              }
+//       }
+//}
+//              double balance = 100.0;
+//
+//              String[] tests = {
+//                      "100",     // корректно
+//                      "50.5",    // корректно
+//                      "abc",     // не число
+//                      "-30",     // отрицательная сумма
+//                      "200"      // больше баланса
+//              };
+//
+//              for (String test : tests) {
+//                     try {
+//                            System.out.println("\nТекущий баланс: " + balance);
+//                            balance = processPayment(test, balance);
+//                            System.out.println("Новый баланс: " + balance);
+//
+//                     } catch (IllegalArgumentException e) {
+//                            System.out.println("Ошибка ввода: " + e.getMessage());
+//
+//                     } catch (ArithmeticException e) {
+//                            System.out.println("Ошибка операции: " + e.getMessage());
+//                     }
+//              }
+//       }
+//
+//       public static double processPayment(String amountText, double balance) {
+//              double amount;
+//
+//              try {
+//                     amount = Double.parseDouble(amountText);
+//
+//                     if (amount <= 0) {
+//                            throw new IllegalArgumentException("Сумма должна быть больше нуля");
+//                     }
+//
+//                     if (balance < amount) {
+//                            throw new ArithmeticException("Недостаточно средств на счёте");
+//                     }
+//
+//                     return balance - amount;
+//
+//              } catch (NumberFormatException e) {
+//                     throw new IllegalArgumentException(
+//                             "Сумма '" + amountText + "' не является числом"
+//                     );
+//              } finally {
+//                     System.out.println("Попытка списания: " + amountText);
+//              }
+//       }
+//}
+// Stack Trace
+// zadacha 1
+//              int portions = 10 / 0;
+//              System.out.println(portions);
+//       }
+//}
+// zadacha 2
+//              int[] playerInventory = {101, 202, 303};
+//
+//              // попытка получить "пятый" слот
+//              System.out.println(playerInventory[5]);
+//
+//       }
+//}
+// zadacha 3
+//              calculateReportData();
+//       }
+//
+//       public static void calculateReportData() {
+//              processRawNumbers();
+//       }
+//
+//       public static void processRawNumbers() {
+//              int result = 100 / 0; // намеренная ошибка
+//              System.out.println(result);
+//       }
+//}
+// zadacha 4
+//              processInitialRequest();
+//       }
+//
+//       public static void processInitialRequest() {
+//              handleIntermediateStep();
+//       }
+//
+//       public static void handleIntermediateStep() {
+//              executeFinalAction();
+//       }
+//
+//       public static void executeFinalAction() {
+//              int[] temporaryData = {5, 10};
+//              System.out.println(temporaryData[10]); // ошибка
+//       }
+//}
+// создаём динамический список идентификаторов
+              // ArrayList
+              // zadacha 1
+//              ArrayList<Integer> artifactIds = new ArrayList<>();
+//
+//              // добавляем новый артефакт
+//              artifactIds.add(42);
+//
+//              // получаем первый элемент (индекс 0)
+//              System.out.println(artifactIds.get(0));
+//       }
+//}
+// zadacha 2
+// создаём список фруктов
+//              ArrayList<String> fruits = new ArrayList<>();
+//
+//              // добавляем начальные фрукты
+//              fruits.add("Яблоко");
+//              fruits.add("Банан");
+//              fruits.add("Апельсин");
+//
+//              // заменяем "Банан" на "Груша"
+//              fruits.set(1, "Груша");
+//
+//              // удаляем первый элемент ("Яблоко")
+//              fruits.remove(0);
+//
+//              // выводим весь список
+//              for (String fruit : fruits) {
+//                     System.out.println(fruit);
+//              }
+//       }
+//}
+// zadacha 3
+// создаём список приглашённых
+//              ArrayList<String> guests = new ArrayList<>();
+//
+//              // добавляем имена
+//              guests.add("Анна");
+//              guests.add("Иван");
+//              guests.add("Петр");
+//              guests.add("Мария");
+//
+//              // проверяем наличие гостей
+//              System.out.println(guests.contains("Петр"));
+//              System.out.println(guests.contains("Сергей"));
+//       }
+//}
+// zadacha 4
+//              Scanner scanner = new Scanner(System.in);
+//              ArrayList<String> tasks = new ArrayList<>();
+//
+//              while (true) {
+//                     String task = scanner.nextLine();
+//
+//                     if (task.isEmpty()) {
+//                            break;
+//                     }
+//
+//                     tasks.add(task);
+//              }
+//
+//              for (int i = tasks.size() - 1; i >= 0; i--) {
+//                     System.out.println(tasks.get(i));
+//              }
+//       }
+//}
