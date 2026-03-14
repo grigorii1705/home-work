@@ -1,26 +1,21 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-import java.util.Arrays;
 
-import static java.awt.Color.*;
-import static java.util.concurrent.Future.State.CANCELLED;
-import static javax.print.attribute.standard.PrinterState.PROCESSING;
 
 public class Main {
 
 
-       public static void main(String[] args) {
-              // obertka
-              // zadacha 1
-              // 1. Создаем строковую переменную
+// obertka
+       // zadacha 1
+       // 1. Создаем строковую переменную
 //        String playerScoreText = "500";
 //
 //        // 2. Превращаем строку в целое число (Integer)
@@ -29,8 +24,8 @@ public class Main {
 //        // 3. Выводим результат, чтобы убедиться в успехе
 //        System.out.println("Число успешно получено: " + actualPlayerScore);
 
-              // zadacha 2
-              // 1. Создаем переменную с символом
+       // zadacha 2
+       // 1. Создаем переменную с символом
 //        char symbol = '7';
 //
 //        // 2. Используем класс Character, чтобы проверить, является ли символ цифрой
@@ -38,7 +33,7 @@ public class Main {
 //
 // 3. Выводим результат проверки
 //        System.out.println("Является ли символ '" + symbol + "' цифрой? Ответ: " + isDigit);
-              //zadacha 3
+       //zadacha 3
 //        // 1. Обычная переменная (примитив)
 //        double productPrice = 3.14;
 //
@@ -50,7 +45,7 @@ public class Main {
 //
 //        // Выводим результат на экран
 //        System.out.println("Финальная цена после распаковки: " + finalCalculatedPrice);
-              //zadacha 4
+       //zadacha 4
 //        // 1. Строка от датчика с некорректным значением
 //        String sensorReadingText = "NaN";
 //
@@ -63,15 +58,15 @@ public class Main {
 //        // 4. Выводим результат проверки
 //        System.out.println("Полученные данные: " + parsedSensorData);
 //        System.out.println("Это ошибка: " + isError);
-              //konstanti
-              //zadacha 1
-              // Используем var вместо String.
-              // Java сама поймет, что это строка, увидев текст в кавычках.
+       //konstanti
+       //zadacha 1
+       // Используем var вместо String.
+       // Java сама поймет, что это строка, увидев текст в кавычках.
 //        var welcomeMessage = "Привет, Java!";
 //
 //        // Выводим переменную на экран
 //        System.out.println(welcomeMessage);
-              // zadacha 2
+       // zadacha 2
 //        // Объявляем константу с помощью ключевого слова final
 //        final int DAYS_IN_CALENDAR_WEEK = 7;
 //
@@ -80,7 +75,7 @@ public class Main {
 //
 //        // Если попытаться написать DAYS_IN_CALENDAR_WEEK = 8;
 //        // Java выдаст ошибку еще на этапе сборки программы.
-              // zadacha 3
+       // zadacha 3
 //        class MathFormulas {
 //            // public — доступна везде
 //            // static — принадлежит классу (не нужно создавать объект)
@@ -95,7 +90,7 @@ public class Main {
 //                double radius = 10;
 //                double area = MathFormulas.PI_VALUE * (radius * radius);
 //                System.out.println("Площадь круга с радиусом 10: " + area);
-              // zadacha 4
+       // zadacha 4
 //        // 1. Объявляем константу с лимитом игроков
 //        final int MAX_PLAYERS_ON_SERVER = 100;
 //
@@ -104,9 +99,9 @@ public class Main {
 //
 //        // 3. ПОПЫТКА ИЗМЕНЕНИЯ (раскомментируй строку ниже, чтобы увидеть ошибку):
 //         //MAX_PLAYERS_ON_SERVER = 200;
-              // switch
-              // zadacha 1
-              // Создаем объект сканера
+       // switch
+       // zadacha 1
+       // Создаем объект сканера
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите номер дня (1-3): ");
@@ -132,7 +127,7 @@ public class Main {
 //        scanner.close(); // Закрываем сканер (хорошая привычка)
 //    }
 //}
-              // zadacha 2
+       // zadacha 2
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите команду для робота (start, stop, exit): ");
@@ -159,7 +154,7 @@ public class Main {
 //        scanner.close();
 //    }
 //}
-              // zadacha 3
+       // zadacha 3
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите номер месяца (1-12): ");
@@ -199,7 +194,7 @@ public class Main {
 //        scanner.close();
 //    }
 //}
-              //zadacha 4
+       //zadacha 4
 //        Scanner scanner = new Scanner(System.in);
 //
 //        // 1. Просим ввести числа
@@ -240,9 +235,9 @@ public class Main {
 //        scanner.close();
 //    }
 //}
-              //enum
-              //zadacha 1
-              // 1. Создаем перечисление (обычно пишется вне класса Main или в отдельном файле)
+       //enum
+       //zadacha 1
+       // 1. Создаем перечисление (обычно пишется вне класса Main или в отдельном файле)
 //        enum TrafficSignalState {
 //            RED, YELLOW, GREEN
 //        }
@@ -260,7 +255,7 @@ public class Main {
 //                }
 //            }
 //        }
-              // zadacha 2
+       // zadacha 2
 //        // 1. Объявляем перечисление сезонов
 //        enum Season {
 //            WINTER, SPRING, SUMMER, AUTUMN
@@ -286,7 +281,7 @@ public class Main {
 //                }
 //            }
 //        }
-              //zadacha 3
+       //zadacha 3
 //        // 1. Объявляем перечисление всех дней недели
 //        enum DayOfWeek {
 //            MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
@@ -301,7 +296,7 @@ public class Main {
 //                }
 //            }
 //        }
-              // zadacha 4
+       // zadacha 4
 //        // 1. Объявляем перечисление небесных тел
 //        enum CelestialBody {
 //            EARTH, MARS, JUPITER
@@ -328,8 +323,8 @@ public class Main {
 //                System.out.println("Навигация перенастроена на: " + newTarget);
 //            }
 //        }
-              // switch NEW
-              // zadacha 1
+       // switch NEW
+       // zadacha 1
 //        int httpStatusCode = 200;
 //
 //        // Используем switch как выражение (expression), которое возвращает строку
@@ -344,7 +339,7 @@ public class Main {
 //        System.out.println("Статус запроса: " + responseMessage);
 //    }
 //}
-              // zadacha 2
+       // zadacha 2
 //        // 1. Команда, пришедшая на дрон
 //        String droneCommand = "pause";
 //
@@ -360,7 +355,7 @@ public class Main {
 //        System.out.println("Статус дрона: " + droneStatusMessage);
 //    }
 //}
-              // zadacha 3
+       // zadacha 3
 //        // 1. Входные данные (номер дня)
 //        int dayNumber = 2;
 //
@@ -377,7 +372,7 @@ public class Main {
 //        System.out.println("Сегодня по плану: " + dayNameString);
 //    }
 //}
-              // zadacha 4
+       // zadacha 4
 //        // 1. Текущий балл студента
 //        int studentScore = 9;
 //
@@ -392,7 +387,7 @@ public class Main {
 //        System.out.println("Ваша оценка: " + finalGrade);
 //    }
 //}
-              // praktika enum
+       // praktika enum
 //    // zadacha 1
 //        // 1. Создаем перечисление
 //        enum Season {
@@ -403,7 +398,7 @@ public class Main {
 //                System.out.println(Season.SUMMER);
 //            }
 //        }
-              // zadacha 2
+       // zadacha 2
 //        // 1. Создаем перечисление всех дней недели
 //        enum Day {
 //            MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
@@ -415,7 +410,7 @@ public class Main {
 //                }
 //            }
 //        }
-              // zadacha 3
+       // zadacha 3
 //        enum TrafficLight {
 //            RED, YELLOW, GREEN
 //        }
@@ -430,7 +425,7 @@ public class Main {
 //                }
 //            }
 //        }
-              // zadacha 4
+       // zadacha 4
 //        enum Planet {
 //            MERCURY(0.33),
 //            VENUS(4.87),
@@ -452,7 +447,7 @@ public class Main {
 //
 //            }
 //        }
-              // zadacha 5
+       // zadacha 5
 //        enum Operation {
 //            ADD {
 //                public double apply(double a, double b) { return a + b; }
@@ -480,8 +475,8 @@ public class Main {
 //                System.out.println("Умножение: " + Operation.MULTIPLY.apply(x, y));
 //            }
 //        }
-              // SWITCH
-              // zadacha 1
+       // SWITCH
+       // zadacha 1
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите число от 1 до 7: ");
@@ -1078,8 +1073,8 @@ public class Main {
 //       }
 //}
 // создаём динамический список идентификаторов
-              // ArrayList
-              // zadacha 1
+       // ArrayList
+       // zadacha 1
 //              ArrayList<Integer> artifactIds = new ArrayList<>();
 //
 //              // добавляем новый артефакт
@@ -1144,3 +1139,140 @@ public class Main {
 //              }
 //       }
 //}
+//Свой словарь» — HashMap<K,V
+       // zadacha 1
+
+       //              public static void main(String[] args) {
+//
+//                     // создаем словарь
+//                     HashMap<String, String> travelPhrasebook = new HashMap<>();
+//
+//                     // добавляем перевод
+//                     travelPhrasebook.put("дом", "house");
+//
+//                     // получаем перевод и выводим на экран
+//                     System.out.println(travelPhrasebook.get("дом"));
+//              }
+//       }
+// zadacha 2
+//       public static void main(String[] args) {
+//
+//              // создаем реестр пользователей
+//              HashMap<Integer, String> userRegistry = new HashMap<>();
+//
+//              // добавляем пользователей
+//              userRegistry.put(1, "Иван");
+//              userRegistry.put(2, "Мария");
+//
+//              // удаляем пользователя с ID 1
+//              userRegistry.remove(1);
+//
+//              // пытаемся получить пользователя с ID 1
+//              System.out.println(userRegistry.get(1));
+//       }
+//}
+// zadacha 3
+//       public static void main(String[] args) {
+//
+//              // создаем журнал оценок
+//              HashMap<String, Integer> studentGrades = new HashMap<>();
+//
+//              // добавляем оценку Анны
+//              studentGrades.put("Анна", 5);
+//
+//              // проверяем, есть ли запись для Анны
+//              if (studentGrades.containsKey("Анна")) {
+//                     System.out.println("Оценка Анны: " + studentGrades.get("Анна"));
+//              }
+//       }
+//}
+// zadacha 4
+//       public static void main(String[] args) {
+//
+//              String textContent = "java core java map";
+//
+//              // создаем словарь для подсчета слов
+//              HashMap<String, Integer> wordCount = new HashMap<>();
+//
+//              // разбиваем строку на слова
+//              String[] words = textContent.split(" ");
+//
+//              // считаем количество вхождений
+//              for (String word : words) {
+//                     if (wordCount.containsKey(word)) {
+//                            wordCount.put(word, wordCount.get(word) + 1);
+//                     } else {
+//                            wordCount.put(word, 1);
+//                     }
+//              }
+//
+//              // выводим результат
+//              for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+//                     System.out.println(entry.getKey() + ": " + entry.getValue());
+//              }
+//       }
+//}
+// Знакомство с файлами и картинками
+// zadacha 1
+//       public static void main(String[] args) throws IOException {
+//
+//              // создаем путь к файлу
+//              Path filePath = Path.of("note.txt");
+//
+//              // записываем строку в файл
+//              Files.writeString(filePath, "Сегодня отличный день!");
+//       }
+//}
+// zadacha 2
+//       public static void main(String[] args) throws IOException {
+//
+//              // путь к файлу
+//              Path filePath = Path.of("note.txt");
+//
+//              // читаем весь текст из файла
+//              String content = Files.readString(filePath);
+//
+//              // выводим текст на экран
+//              System.out.println(content);
+//       }
+//}
+// zadacha 3
+//       public static void main(String[] args) throws IOException {
+//
+//              // создаем массив байтов
+//              byte[] letters = {72, 73, 74};
+//
+//              // путь к файлу
+//              Path path = Path.of("letters.bin");
+//
+//              // записываем байты в файл
+//              Files.write(path, letters);
+//
+//              // читаем байты обратно из файла
+//              byte[] readLetters = Files.readAllBytes(path);
+//
+//              // выводим каждый байт как символ
+//              for (byte b : readLetters) {
+//                     System.out.print((char) b + " ");
+//              }
+//       }
+//}
+// zadacha 4
+//       public static void main(String[] args) throws IOException {
+//
+//              // путь к исходному файлу
+//              Path source = Path.of("letters.bin");
+//
+//              // путь к копии файла
+//              Path copy = Path.of("letters_copy.bin");
+//
+//              // читаем все байты из исходного файла
+//              byte[] data = Files.readAllBytes(source);
+//
+//              // записываем байты в новый файл
+//              Files.write(copy, data);
+//       }
+//}
+
+
+
