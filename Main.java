@@ -1,4 +1,11 @@
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URI;
+import java.net.URL;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -1273,6 +1280,215 @@ public class Main {
 //              Files.write(copy, data);
 //       }
 //}
+// Скачиваем картинки из интернета
+// zadacha 1
+//       public static void main(String[] args) throws IOException {
+//
+//           // создаем URL
+//           URL url = new URL("https://httpbin.org/image/png");
+//
+//           // открываем поток данных
+//           InputStream in = url.openStream();
+//
+//           // путь для сохранения файла
+//           Path outputPath = Path.of("image01.png");
+//
+//           // копируем данные из потока в файл
+//           Files.copy(in, outputPath);
+//
+//           // закрываем поток
+//           in.close();
+//
+//           System.out.println("Изображение загружено!");
+//       }
+//}
+// zadacha 2
+//       public static void main(String[] args) throws IOException {
+//
+//           // URL изображения
+//           URL url = new URL("https://httpbin.org/image/jpeg");
+//
+//           // путь для сохранения файла
+//           Path outputPath = Path.of("image02.jpg");
+//
+//           // открываем входной и выходной потоки
+//           try (InputStream in = url.openStream();
+//                OutputStream out = Files.newOutputStream(outputPath)) {
+//
+//               // передаем данные напрямую
+//               in.transferTo(out);
+//           }
+//
+//           System.out.println("Изображение успешно загружено!");
+//       }
+//}
+// zadacha 3
+//       public static void main(String[] args) throws IOException, InterruptedException {
+//
+//           // создаем клиент
+//           HttpClient client = HttpClient.newHttpClient();
+//
+//           // создаем запрос
+//           HttpRequest request = HttpRequest.newBuilder()
+//                   .uri(URI.create("https://httpbin.org/image/webp"))
+//                   .build();
+//
+//           // отправляем запрос и получаем ответ как массив байтов
+//           HttpResponse<byte[]> response = client.send(request,
+//                   HttpResponse.BodyHandlers.ofByteArray());
+//
+//           // проверяем статус ответа
+//           if (response.statusCode() == 200) {
+//               // сохраняем файл
+//               Files.write(Path.of("image03.webp"), response.body());
+//               System.out.println("Файл успешно загружен!");
+//           } else {
+//               // выводим ошибку
+//               System.out.println("Ошибка загрузки: код ответа " + response.statusCode());
+//           }
+//       }
+//}
+// zadacha 4
+//       public static void main(String[] args) throws IOException, InterruptedException {
+//
+//           // создаем клиент
+//           HttpClient client = HttpClient.newHttpClient();
+//
+//           // создаем запрос
+//           HttpRequest request = HttpRequest.newBuilder()
+//                   .uri(URI.create("https://httpbin.org/image/png"))
+//                   .build();
+//
+//           // отправляем запрос
+//           HttpResponse<byte[]> response = client.send(
+//                   request,
+//                   HttpResponse.BodyHandlers.ofByteArray()
+//           );
+//
+//           // получаем тип содержимого
+//           String contentType = response.headers()
+//                   .firstValue("Content-Type")
+//                   .orElse("неизвестно");
+//
+//           // получаем размер файла (по факту — длина массива байтов)
+//           int size = response.body().length;
+//
+//           // выводим информацию
+//           System.out.println("Тип: " + contentType + ", Размер: " + size + " байт");
+//
+//           // сохраняем файл
+//           Files.write(Path.of("image04.png"), response.body());
+//       }
+//}
+// Учимся работать с API и следим за МКС
+// zadacha 1
+//       public static void main(String[] args) throws IOException, InterruptedException {
+//
+//           // создаем HTTP-клиент
+//           HttpClient client = HttpClient.newHttpClient();
+//
+//           // создаем GET-запрос
+//           HttpRequest request = HttpRequest.newBuilder()
+//                   .uri(URI.create("https://api.open-meteo.com/v1/forecast?latitude=50.45&longitude=30.52&current_weather=true"))
+//                   .GET()
+//                   .build();
+//
+//           // отправляем запрос и получаем ответ как строку
+//           HttpResponse<String> response = client.send(
+//                   request,
+//                   HttpResponse.BodyHandlers.ofString()
+//           );
+//
+//           // выводим JSON-ответ полностью
+//           System.out.println(response.body());
+//       }
+//}
+// zadacha 2
+//       public static void main(String[] args) throws IOException, InterruptedException {
+//
+//           // создаем HTTP-клиент
+//           HttpClient client = HttpClient.newHttpClient();
+//
+//           // создаем GET-запрос
+//           HttpRequest request = HttpRequest.newBuilder()
+//                   .uri(URI.create("http://api.open-notify.org/iss-now.json"))
+//                   .GET()
+//                   .build();
+//
+//           // отправляем запрос
+//           HttpResponse<Void> response = client.send(
+//                   request,
+//                   HttpResponse.BodyHandlers.discarding() // тело не нужно
+//           );
+//
+//           // выводим HTTP-статус
+//           System.out.println(response.statusCode());
+//       }
+//}
+// zadacha 3
+//       public static void main(String[] args) throws IOException, InterruptedException {
+//
+//           // создаем HTTP-клиент
+//           HttpClient client = HttpClient.newHttpClient();
+//
+//           // создаем GET-запрос
+//           HttpRequest request = HttpRequest.newBuilder()
+//                   .uri(URI.create("https://catfact.ninja/fact"))
+//                   .GET()
+//                   .build();
+//
+//           // отправляем запрос и получаем ответ как строку
+//           HttpResponse<String> response = client.send(
+//                   request,
+//                   HttpResponse.BodyHandlers.ofString()
+//           );
+//
+//           // выводим JSON-ответ
+//           System.out.println(response.body());
+//       }
+//}
+// zadacha 4
+       public static void main(String[] args) throws IOException, InterruptedException {
 
+           HttpClient client = HttpClient.newHttpClient();
+           HttpRequest request = HttpRequest.newBuilder()
+                   .uri(URI.create("http://api.open-notify.org/iss-now.json"))
+                   .GET()
+                   .build();
 
+           HttpResponse<String> response = client.send(
+                   request,
+                   HttpResponse.BodyHandlers.ofString()
+           );
+
+           String body = response.body();
+
+           // ключи без кавычек
+           String latKey = "\"latitude\":";
+           String lonKey = "\"longitude\":";
+
+           // извлекаем latitude
+           int latStart = body.indexOf(latKey);
+           if (latStart == -1) {
+               System.out.println("Ошибка: не удалось найти latitude");
+               return;
+           }
+           latStart += latKey.length();
+           int latEnd = body.indexOf(",", latStart);
+           String latitude = body.substring(latStart, latEnd).trim();
+
+           // извлекаем longitude
+           int lonStart = body.indexOf(lonKey);
+           if (lonStart == -1) {
+               System.out.println("Ошибка: не удалось найти longitude");
+               return;
+           }
+           lonStart += lonKey.length();
+           int lonEnd = body.indexOf("}", lonStart);
+           String longitude = body.substring(lonStart, lonEnd).trim();
+
+           System.out.println("Текущие координаты МКС: широта = "
+                   + latitude + ", долгота = " + longitude);
+       }
+}
 
