@@ -8,10 +8,14 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -1448,47 +1452,258 @@ public class Main {
 //       }
 //}
 // zadacha 4
-       public static void main(String[] args) throws IOException, InterruptedException {
-
-           HttpClient client = HttpClient.newHttpClient();
-           HttpRequest request = HttpRequest.newBuilder()
-                   .uri(URI.create("http://api.open-notify.org/iss-now.json"))
-                   .GET()
-                   .build();
-
-           HttpResponse<String> response = client.send(
-                   request,
-                   HttpResponse.BodyHandlers.ofString()
-           );
-
-           String body = response.body();
-
-           // ключи без кавычек
-           String latKey = "\"latitude\":";
-           String lonKey = "\"longitude\":";
-
-           // извлекаем latitude
-           int latStart = body.indexOf(latKey);
-           if (latStart == -1) {
-               System.out.println("Ошибка: не удалось найти latitude");
-               return;
-           }
-           latStart += latKey.length();
-           int latEnd = body.indexOf(",", latStart);
-           String latitude = body.substring(latStart, latEnd).trim();
-
-           // извлекаем longitude
-           int lonStart = body.indexOf(lonKey);
-           if (lonStart == -1) {
-               System.out.println("Ошибка: не удалось найти longitude");
-               return;
-           }
-           lonStart += lonKey.length();
-           int lonEnd = body.indexOf("}", lonStart);
-           String longitude = body.substring(lonStart, lonEnd).trim();
-
-           System.out.println("Текущие координаты МКС: широта = "
-                   + latitude + ", долгота = " + longitude);
-       }
-}
-
+//       public static void main(String[] args) throws IOException, InterruptedException {
+//
+//           HttpClient client = HttpClient.newHttpClient();
+//           HttpRequest request = HttpRequest.newBuilder()
+//                   .uri(URI.create("http://api.open-notify.org/iss-now.json"))
+//                   .GET()
+//                   .build();
+//
+//           HttpResponse<String> response = client.send(
+//                   request,
+//                   HttpResponse.BodyHandlers.ofString()
+//           );
+//
+//           String body = response.body();
+//
+//           // ключи без кавычек
+//           String latKey = "\"latitude\":";
+//           String lonKey = "\"longitude\":";
+//
+//           // извлекаем latitude
+//           int latStart = body.indexOf(latKey);
+//           if (latStart == -1) {
+//               System.out.println("Ошибка: не удалось найти latitude");
+//               return;
+//           }
+//           latStart += latKey.length();
+//           int latEnd = body.indexOf(",", latStart);
+//           String latitude = body.substring(latStart, latEnd).trim();
+//
+//           // извлекаем longitude
+//           int lonStart = body.indexOf(lonKey);
+//           if (lonStart == -1) {
+//               System.out.println("Ошибка: не удалось найти longitude");
+//               return;
+//           }
+//           lonStart += lonKey.length();
+//           int lonEnd = body.indexOf("}", lonStart);
+//           String longitude = body.substring(lonStart, lonEnd).trim();
+//
+//           System.out.println("Текущие координаты МКС: широта = "
+//                   + latitude + ", долгота = " + longitude);
+//       }
+//}
+//       public static void main(String[] args) throws IOException, InterruptedException {
+//           String url = "https://api.open-meteo.com/v1/forecast?latitude=32.0853&longitude=34.7818&current_weather=true";
+//           HttpClient client = HttpClient.newHttpClient();
+//           HttpRequest req = HttpRequest.newBuilder(URI.create(url)).GET().build();
+//           HttpResponse<String> resp = client.send(req, HttpResponse.BodyHandlers.ofString());
+//           String body = resp.body();
+//
+//           Pattern tempPattern = Pattern.compile("\"temperature\":\\s*([0-9.+-]+)");
+//           Pattern windPattern = Pattern.compile("\"windspeed\":\\s*([0-9.+-]+)");
+//
+//           Matcher tempMatcher = tempPattern.matcher(body);
+//           Matcher windMatcher = windPattern.matcher(body);
+//
+//           if (tempMatcher.find() && windMatcher.find()) {
+//               String temperature = tempMatcher.group(1);
+//               String windspeed = windMatcher.group(1);
+//               System.out.println("Текущая температура в Тель-Авиве: " + temperature + "°C, ветер " + windspeed + " км/ч");
+//           } else {
+//               System.out.println("Не удалось получить данные о погоде.");
+//           }
+//       }
+//}
+// DATA I VREMYA
+// zadacha 1
+//       public static void main(String[] args) {
+//
+//           LocalDate currentCalendarDate = LocalDate.now();
+//
+//           System.out.println(currentCalendarDate);
+//       }
+//}
+// zadacha 2
+//       public static void main(String[] args) {
+//
+//           LocalDate today = LocalDate.now();
+//           LocalDate yesterday = today.minusDays(1);
+//
+//           System.out.println(yesterday);
+//       }
+//}
+// zadacha 3
+//       public static void main(String[] args) {
+//
+//           LocalDate today = LocalDate.now();
+//           LocalDate tomorrow = today.plusDays(1);
+//
+//           System.out.println(tomorrow);
+//       }
+//}
+// zadacha 4
+//       public static void main(String[] args) {
+//
+//           LocalDateTime historicMoment = LocalDateTime.of(2022, 3, 20, 10, 0);
+//
+//           System.out.println(historicMoment);
+//       }
+//}
+// LocalDate, LocalTime, LocalDateTime
+// zadacha 1
+//       public static void main(String[] args) {
+//
+//           LocalTime currentTime = LocalTime.now();
+//
+//           int displayHours = currentTime.getHour();
+//           int displayMinutes = currentTime.getMinute();
+//           int displaySeconds = currentTime.getSecond();
+//
+//           System.out.println("Часы: " + displayHours +
+//                   ", минуты: " + displayMinutes +
+//                   ", секунды: " + displaySeconds);
+//       }
+//}
+// zadacha 2
+//       public static void main(String[] args) {
+//
+//           LocalDate userBirthDate = LocalDate.of(1990, 12, 15);
+//
+//           DayOfWeek dayOfWeek = userBirthDate.getDayOfWeek();
+//
+//           System.out.println(dayOfWeek);
+//       }
+//}
+// zadacha 3
+//       public static void main(String[] args) {
+//
+//           LocalTime morningMeeting = LocalTime.of(8, 0);
+//           LocalTime afternoonPresentation = LocalTime.of(14, 30);
+//
+//           if (morningMeeting.isBefore(afternoonPresentation)) {
+//               System.out.println("8:00 раньше 14:30");
+//           } else {
+//               System.out.println("8:00 не раньше 14:30");
+//           }
+//       }
+//}
+// zadacha 4
+//       public static void main(String[] args) {
+//
+//           LocalDateTime missionBriefing = LocalDateTime.of(2025, 6, 1, 14, 0);
+//
+//           LocalDateTime finalMissionTime = missionBriefing
+//                   .plusHours(2)
+//                   .minusMinutes(30);
+//
+//           System.out.println(finalMissionTime);
+//       }
+//}
+//ZonedDateTime, Instant, работа с таймзонами
+// zadacha 1
+//       public static void main(String[] args) {
+//
+//           ZonedDateTime currentTimeInMinsk = ZonedDateTime.now(ZoneId.of("Europe/Minsk"));
+//           ZonedDateTime currentTimeInNewYork = ZonedDateTime.now(ZoneId.of("America/New_York"));
+//           ZonedDateTime currentTimeInTokyo = ZonedDateTime.now(ZoneId.of("Asia/Tokyo"));
+//
+//           System.out.println("Minsk: " + currentTimeInMinsk);
+//           System.out.println("New York: " + currentTimeInNewYork);
+//           System.out.println("Tokyo: " + currentTimeInTokyo);
+//       }
+//}
+// zadacha 2
+//       public static void main(String[] args) {
+//
+//           LocalDateTime conferenceStartLocal = LocalDateTime.of(2025, 6, 1, 14, 0);
+//
+//           ZonedDateTime conferenceStartMinskZoned =
+//                   conferenceStartLocal.atZone(ZoneId.of("Europe/Minsk"));
+//
+//           System.out.println(conferenceStartMinskZoned);
+//       }
+//}
+// zadacha 3
+//       public static void main(String[] args) {
+//
+//           LocalDateTime teleportScheduledLocal = LocalDateTime.of(2025, 6, 1, 18, 0);
+//
+//           ZonedDateTime teleportTimeMinskZoned =
+//                   teleportScheduledLocal.atZone(ZoneId.of("Europe/Minsk"));
+//
+//           ZonedDateTime teleportTimeNewYorkZoned =
+//                   teleportTimeMinskZoned.withZoneSameInstant(ZoneId.of("America/New_York"));
+//
+//           System.out.println("Minsk: " + teleportTimeMinskZoned);
+//           System.out.println("New York: " + teleportTimeNewYorkZoned);
+//       }
+//}
+// zadacha 4
+//       public static void main(String[] args) {
+//
+//           ZonedDateTime originalEventTime =
+//                   ZonedDateTime.of(2025, 6, 1, 12, 0, 0, 0, ZoneId.of("Europe/Minsk"));
+//
+//           Instant universalInstant = originalEventTime.toInstant();
+//
+//           ZonedDateTime eventTimeTokyoZoned =
+//                   universalInstant.atZone(ZoneId.of("Asia/Tokyo"));
+//
+//           System.out.println("Original (Minsk): " + originalEventTime);
+//           System.out.println("Instant: " + universalInstant);
+//           System.out.println("Tokyo: " + eventTimeTokyoZoned);
+//       }
+//}
+// Форматирование и парсинг дат: DateTimeFormatter
+// zadacha 1
+//       public static void main(String[] args) {
+//
+//           LocalDate currentReportDate = LocalDate.now();
+//
+//           DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE;
+//
+//           String formattedReportDate = currentReportDate.format(formatter);
+//
+//           System.out.println(formattedReportDate);
+//       }
+//}
+// zadacha 2
+//       public static void main(String[] args) {
+//
+//           String inputDateString = "2024-12-31";
+//
+//           DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE;
+//
+//           LocalDate parsedLocalDate = LocalDate.parse(inputDateString, formatter);
+//
+//           System.out.println(parsedLocalDate);
+//       }
+//}
+// zadacha 3
+//       public static void main(String[] args) {
+//
+//           LocalDate specificEventDate = LocalDate.of(2023, 3, 15);
+//
+//           DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+//
+//           String friendlyDisplayDateString = specificEventDate.format(formatter);
+//
+//           System.out.println(friendlyDisplayDateString);
+//       }
+//}
+// zadacha 4
+//       public static void main(String[] args) {
+//
+//           String orderTimestampString = "01.06.2025 14:30";
+//
+//           DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
+//
+//           LocalDateTime parsedOrderDateTime =
+//                   LocalDateTime.parse(orderTimestampString, formatter);
+//
+//           System.out.println(parsedOrderDateTime);
+//       }
+//}
