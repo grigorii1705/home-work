@@ -10,10 +10,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -1707,3 +1705,52 @@ public class Main {
 //           System.out.println(parsedOrderDateTime);
 //       }
 //}
+//Вычисления и сравнение дат, Duration, Period
+// zadacha 1
+//       public static void main(String[] args) {
+//
+//           LocalDate today = LocalDate.now();
+//           LocalDate holidayCountdownStart = today.plusDays(10);
+//
+//           System.out.println(holidayCountdownStart);
+//       }
+//}
+// zadacha 2
+//       public static void main(String[] args) {
+//
+//           LocalDate today = LocalDate.now();
+//           LocalDate futureMilestone = LocalDate.of(2025, 1, 1);
+//
+//           if (futureMilestone.isBefore(today)) {
+//               System.out.println("2025 уже наступил");
+//           } else {
+//               System.out.println("2025 еще не наступил");
+//           }
+//       }
+//}
+// zadacha 3
+//       public static void main(String[] args) {
+//
+//           LocalDate today = LocalDate.now();
+//           LocalDate projectDeadline = LocalDate.of(2025, 5, 15);
+//
+//           long daysRemaining = Math.abs(ChronoUnit.DAYS.between(today, projectDeadline));
+//
+//           System.out.println("Days remaining: " + daysRemaining);
+//       }
+//}
+// zadacha 4
+//       public static void main(String[] args) {
+//
+//           LocalDate today = LocalDate.now();
+//           LocalDate constructionDate = LocalDate.of(2000, 3, 20);
+//
+//           Period buildingAgePeriod = Period.between(constructionDate, today);
+//
+//           System.out.println("Возраст: "
+//                   + buildingAgePeriod.getYears() + " лет, "
+//                   + buildingAgePeriod.getMonths() + " месяцев, "
+//                   + buildingAgePeriod.getDays() + " дней");
+//       }
+//}
+
