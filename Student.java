@@ -1,9 +1,15 @@
 class Student {
-    String studentName;
-    int studentGrade;
+    int studentGrade = 1;
 
-    Student(String n, int g) {
-        studentName = n;
-        studentGrade = g;
+    // Первый блок
+    {
+        System.out.println("Блок 1: grade = " + studentGrade);
+        studentGrade = 5;
+    }
+
+    // Второй блок
+    {
+        System.out.println("Блок 2: grade = " + studentGrade);
     }
 }
+

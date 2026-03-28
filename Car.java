@@ -1,8 +1,8 @@
 class Car {
-    String carBrand;
-    int productionYear;
+    String carModel = "Неизвестно";
 
-    void displayDetails() {
-        System.out.println("Марка: " + carBrand + ", год выпуска: " + productionYear);
+    // Нестатический блок инициализации
+    {
+        System.out.println("Создаётся объект Car, model = " + carModel);
     }
 }

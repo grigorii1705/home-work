@@ -1832,5 +1832,150 @@ public class Main {
 //        b.printInfo();
 //    }
 //}
-
-
+//Создание объектов с помощью new
+// zadacha 1
+//    public static void main(String[] args) {
+//
+//        Cat myCat = new Cat();
+//        myCat.catName = "Барсик";
+//        myCat.catAge = 3;
+//
+//        System.out.println("Имя: " + myCat.catName + ", возраст: " + myCat.catAge);
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//
+//        // Регистрируем нового пса сразу с именем и возрастом
+//        Dog newDog = new Dog("Шарик", 5);
+//
+//        System.out.println("Собаку зовут " + newDog.dogName + ", ей " + newDog.dogAge + " лет");
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//
+//        Car car1 = new Car();
+//        car1.carBrand = "Toyota";
+//        car1.carYear = 2020;
+//
+//        Car car2 = new Car();
+//        car2.carBrand = "Lada";
+//        car2.carYear = 2010;
+//
+//        System.out.println("Марка: " + car1.carBrand + ", год выпуска: " + car1.carYear);
+//        System.out.println("Марка: " + car2.carBrand + ", год выпуска: " + car2.carYear);
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//
+//        // Первая книга — без данных
+//        Book book1 = new Book();
+//
+//        // Вторая книга — с конкретными данными
+//        Book book2 = new Book("Java для начинающих", 350);
+//
+//        System.out.println("Книга: " + book1.bookTitle + ", страниц: " + book1.numberOfPages);
+//        System.out.println("Книга: " + book2.bookTitle + ", страниц: " + book2.numberOfPages);
+//    }
+//}
+//Перегрузка конструкторов
+// zadacha 1
+//    public static void main(String[] args) {
+//
+//        // Регистрируем книгу только с названием
+//        Book book1 = new Book("Загадочный роман");
+//
+//        // Регистрируем книгу с названием и количеством страниц
+//        Book book2 = new Book("Путешествие по космосу", 500);
+//
+//        System.out.println("Книга: " + book1.bookTitle + ", страниц: " + book1.pageCount);
+//        System.out.println("Книга: " + book2.bookTitle + ", страниц: " + book2.pageCount);
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//
+//        // Регистрируем анонимного пользователя
+//        User user1 = new User();
+//
+//        // Регистрируем пользователя с именем
+//        User user2 = new User("Алиса");
+//
+//        System.out.println("Пользователь: " + user1.userName + ", возраст: " + user1.userAge);
+//        System.out.println("Пользователь: " + user2.userName + ", возраст: " + user2.userAge);
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//
+//        // Используем первый конструктор
+//        Car car1 = new Car("Toyota", "Camry", 2022);
+//
+//        // Используем второй конструктор
+//        Car car2 = new Car("Lada", "Granta");
+//
+//        // Используем третий конструктор
+//        Car car3 = new Car();
+//
+//        // Вывод информации о машинах
+//        System.out.println(car1.carBrand + " " + car1.carModel + " " + car1.productionYear);
+//        System.out.println(car2.carBrand + " " + car2.carModel + " " + car2.productionYear);
+//        System.out.println(car3.carBrand + " " + car3.carModel + " " + car3.productionYear);
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//
+//        // 1. Полный профиль
+//        Student s1 = new Student("Анна", "Группа A", 95);
+//
+//        // 2. Имя и группа
+//        Student s2 = new Student("Борис", "Группа B");
+//
+//        // 3. Только имя
+//        Student s3 = new Student("Виктор");
+//
+//        // 4. Без данных
+//        Student s4 = new Student();
+//
+//        // Вывод информации о студентах
+//        System.out.println(s1.studentName + ", " + s1.studentGroup + ", " + s1.studentScore);
+//        System.out.println(s2.studentName + ", " + s2.studentGroup + ", " + s2.studentScore);
+//        System.out.println(s3.studentName + ", " + s3.studentGroup + ", " + s3.studentScore);
+//        System.out.println(s4.studentName + ", " + s4.studentGroup + ", " + s4.studentScore);
+//    }
+//}
+//Инициализация объекта: порядок инициализации
+// zadacha 1
+//    public static void main(String[] args) {
+//        Animal wildAnimal = new Animal();  // создаем животное
+//
+//        // Выводим значения полей по умолчанию
+//        System.out.println("Возраст: " + wildAnimal.animalAge);
+//        System.out.println("Имя: " + wildAnimal.animalName);
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        Book standardBook = new Book(); // создаем книгу с базовыми параметрами
+//
+//        // выводим стандартные значения полей
+//        System.out.println("Название книги: " + standardBook.bookTitle);
+//        System.out.println("Количество страниц: " + standardBook.pageCount);
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//
+//        // Запускаем "сборку" машины
+//        Car newCar = new Car();
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//
+//        Student newStudent = new Student(); // создаем студента
+//    }
+//}
