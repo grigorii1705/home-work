@@ -23,8 +23,8 @@ public class Main {
 
 
 // obertka
-       // zadacha 1
-       // 1. Создаем строковую переменную
+    // zadacha 1
+    // 1. Создаем строковую переменную
 //        String playerScoreText = "500";
 //
 //        // 2. Превращаем строку в целое число (Integer)
@@ -33,8 +33,8 @@ public class Main {
 //        // 3. Выводим результат, чтобы убедиться в успехе
 //        System.out.println("Число успешно получено: " + actualPlayerScore);
 
-       // zadacha 2
-       // 1. Создаем переменную с символом
+    // zadacha 2
+    // 1. Создаем переменную с символом
 //        char symbol = '7';
 //
 //        // 2. Используем класс Character, чтобы проверить, является ли символ цифрой
@@ -42,7 +42,7 @@ public class Main {
 //
 // 3. Выводим результат проверки
 //        System.out.println("Является ли символ '" + symbol + "' цифрой? Ответ: " + isDigit);
-       //zadacha 3
+    //zadacha 3
 //        // 1. Обычная переменная (примитив)
 //        double productPrice = 3.14;
 //
@@ -54,7 +54,7 @@ public class Main {
 //
 //        // Выводим результат на экран
 //        System.out.println("Финальная цена после распаковки: " + finalCalculatedPrice);
-       //zadacha 4
+    //zadacha 4
 //        // 1. Строка от датчика с некорректным значением
 //        String sensorReadingText = "NaN";
 //
@@ -67,15 +67,15 @@ public class Main {
 //        // 4. Выводим результат проверки
 //        System.out.println("Полученные данные: " + parsedSensorData);
 //        System.out.println("Это ошибка: " + isError);
-       //konstanti
-       //zadacha 1
-       // Используем var вместо String.
-       // Java сама поймет, что это строка, увидев текст в кавычках.
+    //konstanti
+    //zadacha 1
+    // Используем var вместо String.
+    // Java сама поймет, что это строка, увидев текст в кавычках.
 //        var welcomeMessage = "Привет, Java!";
 //
 //        // Выводим переменную на экран
 //        System.out.println(welcomeMessage);
-       // zadacha 2
+    // zadacha 2
 //        // Объявляем константу с помощью ключевого слова final
 //        final int DAYS_IN_CALENDAR_WEEK = 7;
 //
@@ -84,7 +84,7 @@ public class Main {
 //
 //        // Если попытаться написать DAYS_IN_CALENDAR_WEEK = 8;
 //        // Java выдаст ошибку еще на этапе сборки программы.
-       // zadacha 3
+    // zadacha 3
 //        class MathFormulas {
 //            // public — доступна везде
 //            // static — принадлежит классу (не нужно создавать объект)
@@ -99,7 +99,7 @@ public class Main {
 //                double radius = 10;
 //                double area = MathFormulas.PI_VALUE * (radius * radius);
 //                System.out.println("Площадь круга с радиусом 10: " + area);
-       // zadacha 4
+    // zadacha 4
 //        // 1. Объявляем константу с лимитом игроков
 //        final int MAX_PLAYERS_ON_SERVER = 100;
 //
@@ -108,9 +108,9 @@ public class Main {
 //
 //        // 3. ПОПЫТКА ИЗМЕНЕНИЯ (раскомментируй строку ниже, чтобы увидеть ошибку):
 //         //MAX_PLAYERS_ON_SERVER = 200;
-       // switch
-       // zadacha 1
-       // Создаем объект сканера
+    // switch
+    // zadacha 1
+    // Создаем объект сканера
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите номер дня (1-3): ");
@@ -136,7 +136,7 @@ public class Main {
 //        scanner.close(); // Закрываем сканер (хорошая привычка)
 //    }
 //}
-       // zadacha 2
+    // zadacha 2
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите команду для робота (start, stop, exit): ");
@@ -163,7 +163,7 @@ public class Main {
 //        scanner.close();
 //    }
 //}
-       // zadacha 3
+    // zadacha 3
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите номер месяца (1-12): ");
@@ -203,7 +203,7 @@ public class Main {
 //        scanner.close();
 //    }
 //}
-       //zadacha 4
+    //zadacha 4
 //        Scanner scanner = new Scanner(System.in);
 //
 //        // 1. Просим ввести числа
@@ -244,9 +244,9 @@ public class Main {
 //        scanner.close();
 //    }
 //}
-       //enum
-       //zadacha 1
-       // 1. Создаем перечисление (обычно пишется вне класса Main или в отдельном файле)
+    //enum
+    //zadacha 1
+    // 1. Создаем перечисление (обычно пишется вне класса Main или в отдельном файле)
 //        enum TrafficSignalState {
 //            RED, YELLOW, GREEN
 //        }
@@ -264,7 +264,7 @@ public class Main {
 //                }
 //            }
 //        }
-       // zadacha 2
+    // zadacha 2
 //        // 1. Объявляем перечисление сезонов
 //        enum Season {
 //            WINTER, SPRING, SUMMER, AUTUMN
@@ -290,7 +290,7 @@ public class Main {
 //                }
 //            }
 //        }
-       //zadacha 3
+    //zadacha 3
 //        // 1. Объявляем перечисление всех дней недели
 //        enum DayOfWeek {
 //            MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
@@ -305,7 +305,7 @@ public class Main {
 //                }
 //            }
 //        }
-       // zadacha 4
+    // zadacha 4
 //        // 1. Объявляем перечисление небесных тел
 //        enum CelestialBody {
 //            EARTH, MARS, JUPITER
@@ -332,8 +332,8 @@ public class Main {
 //                System.out.println("Навигация перенастроена на: " + newTarget);
 //            }
 //        }
-       // switch NEW
-       // zadacha 1
+    // switch NEW
+    // zadacha 1
 //        int httpStatusCode = 200;
 //
 //        // Используем switch как выражение (expression), которое возвращает строку
@@ -348,7 +348,7 @@ public class Main {
 //        System.out.println("Статус запроса: " + responseMessage);
 //    }
 //}
-       // zadacha 2
+    // zadacha 2
 //        // 1. Команда, пришедшая на дрон
 //        String droneCommand = "pause";
 //
@@ -364,7 +364,7 @@ public class Main {
 //        System.out.println("Статус дрона: " + droneStatusMessage);
 //    }
 //}
-       // zadacha 3
+    // zadacha 3
 //        // 1. Входные данные (номер дня)
 //        int dayNumber = 2;
 //
@@ -381,7 +381,7 @@ public class Main {
 //        System.out.println("Сегодня по плану: " + dayNameString);
 //    }
 //}
-       // zadacha 4
+    // zadacha 4
 //        // 1. Текущий балл студента
 //        int studentScore = 9;
 //
@@ -396,7 +396,7 @@ public class Main {
 //        System.out.println("Ваша оценка: " + finalGrade);
 //    }
 //}
-       // praktika enum
+    // praktika enum
 //    // zadacha 1
 //        // 1. Создаем перечисление
 //        enum Season {
@@ -407,7 +407,7 @@ public class Main {
 //                System.out.println(Season.SUMMER);
 //            }
 //        }
-       // zadacha 2
+    // zadacha 2
 //        // 1. Создаем перечисление всех дней недели
 //        enum Day {
 //            MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
@@ -419,7 +419,7 @@ public class Main {
 //                }
 //            }
 //        }
-       // zadacha 3
+    // zadacha 3
 //        enum TrafficLight {
 //            RED, YELLOW, GREEN
 //        }
@@ -434,7 +434,7 @@ public class Main {
 //                }
 //            }
 //        }
-       // zadacha 4
+    // zadacha 4
 //        enum Planet {
 //            MERCURY(0.33),
 //            VENUS(4.87),
@@ -456,7 +456,7 @@ public class Main {
 //
 //            }
 //        }
-       // zadacha 5
+    // zadacha 5
 //        enum Operation {
 //            ADD {
 //                public double apply(double a, double b) { return a + b; }
@@ -484,8 +484,8 @@ public class Main {
 //                System.out.println("Умножение: " + Operation.MULTIPLY.apply(x, y));
 //            }
 //        }
-       // SWITCH
-       // zadacha 1
+    // SWITCH
+    // zadacha 1
 //        Scanner scanner = new Scanner(System.in);
 //
 //        System.out.print("Введите число от 1 до 7: ");
@@ -1082,8 +1082,8 @@ public class Main {
 //       }
 //}
 // создаём динамический список идентификаторов
-       // ArrayList
-       // zadacha 1
+    // ArrayList
+    // zadacha 1
 //              ArrayList<Integer> artifactIds = new ArrayList<>();
 //
 //              // добавляем новый артефакт
@@ -1149,9 +1149,9 @@ public class Main {
 //       }
 //}
 //Свой словарь» — HashMap<K,V
-       // zadacha 1
+    // zadacha 1
 
-       //              public static void main(String[] args) {
+    //              public static void main(String[] args) {
 //
 //                     // создаем словарь
 //                     HashMap<String, String> travelPhrasebook = new HashMap<>();
@@ -1753,4 +1753,84 @@ public class Main {
 //                   + buildingAgePeriod.getDays() + " дней");
 //       }
 //}
+//       public static void main(String[] args) {
+//
+//           LocalDateTime start = LocalDateTime.of(2025, 6, 1, 9, 30);
+//           LocalDateTime end = LocalDateTime.of(2025, 6, 1, 17, 45);
+//
+//           Duration duration = Duration.between(start, end);
+//
+//           long hours = duration.toHours();
+//           long minutes = duration.toMinutes() % 60;
+//
+//           System.out.println("Рабочее время: " + hours + " часов " + minutes + " минут");
+//       }
+//}
+//       Понятие класса и объекта
+//zadacha 1
+//       class Dog {}
+// zadacha 2
+//       class Cat {}
+//
+//    public class Main {
+//        public static void main(String[] args) {
+//            Cat myCat = new Cat();
+//        }
+//    }
+// zadacha 3
+//       public static void main(String[] args) {
+//           Book b = new Book();
+//           b.title = "Java для начинающих";
+//           b.pages = 350;
+//           b.printInfo();
+//       }
+//}
+// zadacha 4
+
+    //        public static void main(String[] args) {
+//            Student a = new Student(), b = new Student();
+//
+//            a.studentName = "Анна";
+//            a.enrollmentYear = 2022;
+//            b.studentName = "Иван";
+//            b.enrollmentYear = 2023;
+//
+//            System.out.println("Имя: " + a.studentName + ", год поступления: " + a.enrollmentYear);
+//            System.out.println("Имя: " + b.studentName + ", год поступления: " + b.enrollmentYear);
+//        }
+//    }
+// Структура класса: поля, методы, конструкторы
+// zadacha 1
+//    public static void main(String[] args) {
+//        Car c = new Car();
+//        c.carBrand = "Toyota";
+//        c.productionYear = 2020;
+//        c.displayDetails();
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        Student s = new Student("Анна", 5);
+//        System.out.println("Имя: " + s.studentName + ", оценка: " + s.studentGrade);
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        Counter c = new Counter();
+//        c.increment(); c.increment(); c.increment();
+//        c.printValue();
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        BankAccount a = new BankAccount("Анна", 1000);
+//        BankAccount b = new BankAccount("Иван");
+//
+//        b.deposit(500);
+//
+//        a.printInfo();
+//        b.printInfo();
+//    }
+//}
+
 
