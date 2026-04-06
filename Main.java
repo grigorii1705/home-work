@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
 
-public class Main {
+public class Main{
 
 
 // obertka
@@ -2203,5 +2203,34 @@ public class Main {
 //
 //        // "Полная" регистрация с именем
 //        UserProfile fullRegistration = new UserProfile("Дарья");
+//    }
+//}
+//Внутренние классы (non-static inner)
+// zadacha 1
+//    public static void main(String[] args) {
+//        Box box = new Box();
+//        Box.Label label = box.new Label();
+//        label.printLabel();
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        Person person = new Person("Anna");
+//        Person.Greeting greeting = person.new Greeting();
+//        greeting.sayHello();
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        Library library = new Library();
+//        Library.Scroll scroll = library.new Scroll("Ancient Runes");
+//        scroll.revealTitle();
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        House house = new House("Sunny Valley Lane");
+//        House.Room room = house.new Room("Master Bedroom");
+//        room.printAddresses();
 //    }
 //}

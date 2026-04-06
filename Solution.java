@@ -157,12 +157,40 @@
 //        new SystemComponent();
 //    }
 //}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // "Быстрая" регистрация
+//        UserProfile fastRegistration = new UserProfile();
+//
+//        // "Полная" регистрация с именем
+//        UserProfile fullRegistration = new UserProfile("Дарья");
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Box box = new Box();
+//        Box.Label label = box.new Label();
+//        label.printLabel();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Person person = new Person("Anna");
+//        Person.Greeting greeting = person.new Greeting();
+//        greeting.sayHello();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Library library = new Library();
+//        Library.Scroll scroll = library.new Scroll("Ancient Runes");
+//        scroll.revealTitle();
+//    }
+//}
 public class Solution {
     public static void main(String[] args) {
-        // "Быстрая" регистрация
-        UserProfile fastRegistration = new UserProfile();
-
-        // "Полная" регистрация с именем
-        UserProfile fullRegistration = new UserProfile("Дарья");
+        House house = new House("Sunny Valley Lane");
+        House.Room room = house.new Room("Master Bedroom");
+        room.printAddresses();
     }
 }
