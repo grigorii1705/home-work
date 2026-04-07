@@ -2234,3 +2234,37 @@ public class Main{
 //        room.printAddresses();
 //    }
 //}
+//Статические вложенные классы (static nested)
+// zadacha 1
+//    public static void main(String[] args) {
+//        Spellbook.BasicCharm charm = new Spellbook.BasicCharm();
+//        charm.castSpell();
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        Vault.SecurityDisplayUnit display = new Vault.SecurityDisplayUnit();
+//        display.showSecurityLevel();
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        ArtifactChain chain = new ArtifactChain();
+//
+//        chain.addArtifact(5);
+//        chain.addArtifact(10);
+//        chain.addArtifact(15);
+//
+//        chain.displayChain(); // 15, 10, 5
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        System.out.println(
+//                new Book.Builder()
+//                        .setTitle("Java Basics")
+//                        .setPages(500)
+//                        .build()
+//        );
+//    }
+//}

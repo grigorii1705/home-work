@@ -187,10 +187,36 @@
 //        scroll.revealTitle();
 //    }
 //}
-public class Solution {
-    public static void main(String[] args) {
-        House house = new House("Sunny Valley Lane");
-        House.Room room = house.new Room("Master Bedroom");
-        room.printAddresses();
-    }
-}
+//public class Solution {
+//    public static void main(String[] args) {
+//        House house = new House("Sunny Valley Lane");
+//        House.Room room = house.new Room("Master Bedroom");
+//        room.printAddresses();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Spellbook.BasicCharm charm = new Spellbook.BasicCharm();
+//        charm.castSpell();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Book book = new Book.Builder()
+//                .setTitle("Java Basics")
+//                .setPages(500)
+//                .build();
+//
+//        System.out.println(book);
+//    }
+//}
+//class Solution {
+//    public static void main(String[] args) {
+//        System.out.println(
+//                new Book.Builder()
+//                        .setTitle("Java Basics")
+//                        .setPages(500)
+//                        .build()
+//        );
+//    }
+//}
