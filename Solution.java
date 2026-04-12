@@ -1,222 +1,146 @@
 //public class Solution {
-//    public static void main(String[] args) {
-//        // Создаём товар
-//        Product product = new Product(101, "Молоко");
-//
-//        // Получаем данные через геттеры
-//        System.out.println(product.getProductID());
-//        System.out.println(product.getProductName());
-//
-//        // ❌ Эти строки НЕ скомпилируются:
-//        product.productID = 202;
-//        product.productName = "Кефир";
-//        product.setProductID(202);
-//        product.setProductName("Кефир");
-//    }
-//}
-//
-//public class Solution {
-//    public static void main(String[] args) {
-//        MagicCalculator calculator = new MagicCalculator();
-//
-//        // Вызываем публичный метод
-//        int sum = calculator.addNumbers(10, 15);
-//
-//        // Выводим результат
-//        System.out.println(sum);
-//
-//        // ❌ Это НЕ скомпилируется:
-//        calculator.displayInternalResult(sum);
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//
-//        DigitalLibraryManager manager = new DigitalLibraryManager();
-//
-//        // ✅ Работает
-//        manager.announceOpening();
-//
-//        // ✅ Работает (тот же пакет)
-//        manager.conductStaffMeeting();
-//
-//        // ✅ Работает (тот же пакет)
-//        manager.manageBookInventory();
-//
-//        // ❌ НЕ скомпилируется
-//        manager.handleFinancialAudits();
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        // Создаем товар с исходным названием "Старый товар"
-//        Product product = new Product("Старый товар");
-//
-//        // Переименовываем товар на "Новый товар" с помощью сеттера
-//        product.setProductName("Новый товар");
-//
-//        // Выводим обновлённое название с помощью геттера
-//        System.out.println(product.getProductName());
-//    }
-//}
-//public class Solution {
-    //    public static void main(String[] args) {
-//        // Создаем объект профиля студента с начальным возрастом 18
-//        StudentProfile profile = new StudentProfile(18);
-//
-//        // Обновляем возраст до 20 с помощью сеттера
-//        profile.setStudentAge(20);
-//
-//        // Выводим текущий возраст, чтобы убедиться, что он обновился
-//        System.out.println(profile.getStudentAge());
-//    }
-//}
-//    public class Solution {
-//        public static void main(String[] args) {
-//            // Создаем объект "умной лампы" (по умолчанию выключена)
-//            SmartLamp lamp = new SmartLamp();
-//
-//            // Включаем лампу
-//            lamp.setCurrentlyOn(true);
-//
-//            // Проверяем состояние через boolean-геттер
-//            System.out.println(lamp.isCurrentlyOn());
-//        }
-//    }
-//}
-//    public class Solution {
-//        public static void main(String[] args) {
-//            // Создаем студента с начальным возрастом 10
-//            SchoolStudent student = new SchoolStudent(10);
-//
-//            // Пытаемся установить отрицательный возраст
-//            student.setCurrentAge(-5);
-//
-//            // Проверяем, что возраст не изменился
-//            System.out.println(student.getCurrentAge()); // Ожидается: 10
-//
-//            // Устанавливаем корректный возраст
-//            student.setCurrentAge(15);
-//
-//            // Проверяем, что возраст обновился
-//            System.out.println(student.getCurrentAge()); // Ожидается: 15
+
+//    public static <T> void printArray(T[] array) {
+//        for (T element : array) {
+//            System.out.println(element);
 //        }
 //    }
 //
-//public class Solution {
 //    public static void main(String[] args) {
-//        // Получаем значение статического поля через имя класса
-//        System.out.println(ApplicationMetrics.getActiveUserCount());
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        // Создаем удостоверение с именем "Алиса"
-//        StudentIdentityCard card = new StudentIdentityCard("Алиса");
+//        Integer[] nums = {1, 2, 3};
+//        String[] words = {"Hello", "Java"};
 //
-//        // Выводим имя студента через геттер
-//        System.out.println(card.getStudentName());
+//        printArray(nums);
+//        printArray(words);
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Небольшая демонстрация работы доски объявлений
+//        DisplayBoard board = new DisplayBoard();
+//        board.showTemporaryMessage();
+//    }
+//}
 //
-//        // Попытка изменить имя невозможна:
-//        // card.studentName = "Боб"; // Ошибка компиляции: поле private и final
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        // Выводим значение языка по умолчанию через имя класса
-//        System.out.println(ApplicationConfiguration.APPLICATION_DEFAULT_LANGUAGE);
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        // Обращаемся к константам напрямую через имя класса
-//        System.out.println(GlobalConstants.MATH_PI);
-//        System.out.println(GlobalConstants.CALENDAR_DAYS_IN_YEAR);
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        // Создание объекта спровоцирует загрузку класса и выполнение статического блока
-//        new ApplicationModule();
+//class DisplayBoard {
 //
-//        // Никакого дополнительного вывода здесь быть не должно
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        // Создаем два объекта ShelterPet
-//        // Для каждого сначала отработает нестатический блок, затем конструктор
-//        ShelterPet first = new ShelterPet();
-//        ShelterPet second = new ShelterPet();
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        // Создаем два объекта SystemComponent
-//        new SystemComponent();
-//        new SystemComponent();
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        // "Быстрая" регистрация
-//        UserProfile fastRegistration = new UserProfile();
+//    // Метод, внутри которого объявляется локальный класс
+//    public void showTemporaryMessage() {
 //
-//        // "Полная" регистрация с именем
-//        UserProfile fullRegistration = new UserProfile("Дарья");
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        Box box = new Box();
-//        Box.Label label = box.new Label();
-//        label.printLabel();
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        Person person = new Person("Anna");
-//        Person.Greeting greeting = person.new Greeting();
-//        greeting.sayHello();
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        Library library = new Library();
-//        Library.Scroll scroll = library.new Scroll("Ancient Runes");
-//        scroll.revealTitle();
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        House house = new House("Sunny Valley Lane");
-//        House.Room room = house.new Room("Master Bedroom");
-//        room.printAddresses();
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        Spellbook.BasicCharm charm = new Spellbook.BasicCharm();
-//        charm.castSpell();
-//    }
-//}
-//public class Solution {
-//    public static void main(String[] args) {
-//        Book book = new Book.Builder()
-//                .setTitle("Java Basics")
-//                .setPages(500)
-//                .build();
+//        // Локальный класс
+//        class GreetingDisplay {
+//            void displayMessage() {
+//                System.out.println("Привет из локального класса!");
+//            }
+//        }
 //
-//        System.out.println(book);
+//        // Создаем объект локального класса и вызываем его метод
+//        GreetingDisplay greeting = new GreetingDisplay();
+//        greeting.displayMessage();
 //    }
 //}
-//class Solution {
+//public class Solution {
 //    public static void main(String[] args) {
-//        System.out.println(
-//                new Book.Builder()
-//                        .setTitle("Java Basics")
-//                        .setPages(500)
-//                        .build()
-//        );
+//        // Демонстрация работы SecretKeeper
+//        SecretKeeper keeper = new SecretKeeper();
+//        keeper.revealSecret();
+//    }
+//}
+//
+//// Класс-хранитель секрета
+//class SecretKeeper {
+//    // Приватное поле с секретом
+//    private String hiddenSecret = "Java — круто!";
+//
+//    // Метод, внутри которого объявляется локальный класс
+//    public void revealSecret() {
+//
+//        // Локальный класс
+//        class TruthRevealer {
+//            void printSecret() {
+//                System.out.println(hiddenSecret);
+//            }
+//        }
+//
+//        // Создаём объект локального класса и раскрываем секрет
+//        TruthRevealer revealer = new TruthRevealer();
+//        revealer.printSecret();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Демонстрация работы специализированного калькулятора
+//        SpecialCalculator calculator = new SpecialCalculator();
+//        calculator.calculateAndDisplaySum(7, 13); // Ожидаемый вывод: 20
+//    }
+//}
+//
+//class SpecialCalculator {
+//
+//    public void calculateAndDisplaySum(int numA, int numB) {
+//
+//        // Локальный класс
+//        class SumResultPrinter {
+//            void printResult() {
+//                System.out.println(numA + numB);
+//            }
+//        }
+//
+//        // Создаём объект и выводим результат
+//        SumResultPrinter printer = new SumResultPrinter();
+//        printer.printResult();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаём универсальную коробку без знания типа содержимого
+//        StorageBox box = new StorageBox();
+//
+//        // Кладём внутрь строку
+//        box.put("Привет из прошлого!");
+//
+//        // Извлекаем содержимое (тип Object) и выводим на экран
+//        Object content = box.retrieve();
+//        System.out.println(content);
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаём коробку, которая может хранить только целые числа (Integer)
+//        SmartBox<Integer> intBox = new SmartBox<>();
+//
+//        // Помещаем число 42 (автобоксинг int -> Integer)
+//        intBox.store(42);
+//
+//        // Извлекаем содержимое и выводим на экран
+//        Integer value = intBox.getContents();
+//        System.out.println(value);
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем объект DataPair для строк и передаем "Hello" и "World"
+//        DataPair<String> pair = new DataPair<>("Hello", "World");
+//
+//        // Выводим оба значения через пробел
+//        System.out.println(pair.getFirst() + " " + pair.getSecond());
+//    }
+//}
+//public class Solution {
+//
+//    // Публичный статический (вложенный) класс с утилитарным методом
+//    public static class DevUtils {
+//
+//        // Универсальный метод с дженериком: принимает параметр любого типа T
+//        public static <T> void printTwice(T value) {
+//            System.out.println(value);
+//            System.out.println(value);
+//        }
+//    }
+//
+//    public static void main(String[] args) {
+//        // Демонстрация универсальности: строка и число
+//        DevUtils.printTwice("Java");
+//        DevUtils.printTwice(100);
 //    }
 //}

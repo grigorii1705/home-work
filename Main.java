@@ -15,11 +15,13 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
 
-public class Main{
+public class Main {
 
 
 // obertka
@@ -2266,5 +2268,109 @@ public class Main{
 //                        .setPages(500)
 //                        .build()
 //        );
+//    }
+//}
+//Анонимные классы
+// zadacha 1
+//    void makeSound() {
+//        System.out.println("Существо издаёт звук");
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//
+//        new Communicator() {
+//            public void greet() {
+//                System.out.println("Привет, мир!");
+//            }
+//        }.greet();
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        ProductionCounter counter = new ProductionCounter();
+//        counter.startCountOperation();
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//
+//        // 1. Создаём объект
+//        SecureLab lab = new SecureLab();
+//
+//        // 2. Вызываем метод
+//        lab.revealSecret();
+//    }
+//}
+//Локальные классы: объявление внутри методов
+//zadacha 1
+//    public static void main(String[] args) {
+//        // Небольшая демонстрация работы доски объявлений
+//        DisplayBoard board = new DisplayBoard();
+//        board.showTemporaryMessage();
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        // Демонстрация работы SecretKeeper
+//        SecretKeeper keeper = new SecretKeeper();
+//        keeper.revealSecret();
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        // Демонстрация работы специализированного калькулятора
+//        SpecialCalculator calculator = new SpecialCalculator();
+//        calculator.calculateAndDisplaySum(7, 13); // Ожидаемый вывод: 20
+//    }
+//}
+// zadacha 4
+//    ublic static void main(String[] args) {
+//        Scanner console = new Scanner(System.in);
+//        String name = console.nextLine();          // читаем имя с консоли
+//        new TextAnalyzer().generateNameReport(name);
+//    }
+//}
+// Знакомство с дженериками
+// zadacha 1
+//    public static void main(String[] args) {
+//        // Создаём универсальную коробку без знания типа содержимого
+//        StorageBox box = new StorageBox();
+//
+//        // Кладём внутрь строку
+//        box.put("Привет из прошлого!");
+//
+//        // Извлекаем содержимое (тип Object) и выводим на экран
+//        Object content = box.retrieve();
+//        System.out.println(content);
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        // Создаём коробку, которая может хранить только целые числа (Integer)
+//        SmartBox<Integer> intBox = new SmartBox<>();
+//
+//        // Помещаем число 42 (автобоксинг int -> Integer)
+//        intBox.store(42);
+//
+//        // Извлекаем содержимое и выводим на экран
+//        Integer value = intBox.getContents();
+//        System.out.println(value);
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        // Создаем объект DataPair для строк и передаем "Hello" и "World"
+//        DataPair<String> pair = new DataPair<>("Hello", "World");
+//
+//        // Выводим оба значения через пробел
+//        System.out.println(pair.getFirst() + " " + pair.getSecond());
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        // Демонстрация универсальности: строка и число
+//        Solution.DevUtils.printTwice("Java");
+//        Solution.DevUtils.printTwice(100);
 //    }
 //}
