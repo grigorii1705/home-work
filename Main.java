@@ -2374,3 +2374,57 @@ public class Main {
 //        Solution.DevUtils.printTwice(100);
 //    }
 //}
+// Nasledovanie
+// zadacha 1
+//    public static void main(String[] args) {
+//        // Создаем кота и задаем ему имя через поле petName
+//        Cat cat = new Cat();
+//        cat.petName = "Барсик";
+//
+//        // Вызываем действия кота в требуемом порядке
+//        cat.eat();
+//        cat.meow();
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        // Создаем объект собаки
+//        Dog dog = new Dog();
+//
+//        // Присваиваем имя питомцу
+//        dog.petName = "Шарик";
+//
+//        // Демонстрируем наследуемое поведение сна
+//        dog.sleep();
+//
+//        // Демонстрируем уникальное поведение собаки — лай
+//        dog.bark();
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        // Создаем автомобиль, который наследует поведение от Vehicle
+//        Car car = new Car();
+//
+//        // Указываем модель автомобиля
+//        car.vehicleModel = "Lada";
+//
+//        // Запускаем автомобиль
+//        car.start();
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        // Создаем объекты яблока и банана
+//        Apple apple = new Apple();
+//        Banana banana = new Banana();
+//
+//        // Задаем цвета для каждого фрукта (поле унаследовано от Fruit)
+//        apple.fruitColor = "красный";
+//        banana.fruitColor = "жёлтый";
+//
+//        // Выводим цвет каждого фрукта
+//        apple.printColor();
+//        banana.printColor();
+//    }
+//}
