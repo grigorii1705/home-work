@@ -197,3 +197,103 @@
 //        banana.printColor();
 //    }
 //}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Circle circle = new Circle();
+//        circle.draw();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Dog dog = new Dog();
+//        dog.makeSound();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Parent person = new Child();
+//        person.greet();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        AppleBasket appleBasket = new AppleBasket();
+//
+//        Fruit harvestedItem = appleBasket.getFruit();
+//
+//        if (harvestedItem instanceof Apple) {
+//            System.out.println("Apple created");
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Dog dog = new Dog();
+//        dog.makeSound();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Car car = new Car("BMW", 2023);
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Cat cat = new Cat();
+//        cat.printNames();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Student anna = new Student("Анна", 3);
+//    }
+//}
+//
+
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Car car = new Car();
+//        car.move();
+//        car.beep();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        SchoolStudent schoolStudent = new SchoolStudent();
+//        schoolStudent.introduce();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Cat cat = new Cat();
+//        cat.animalName = "Мурка";
+//
+//        cat.eat();
+//        cat.feedMilk();
+//        cat.purr();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Parent parent = new Parent();
+//        parent.printSecret();
+//
+//        new Child().demo();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Student elena = new Student("Елена");
+//    }
+//}
+public class Solution {
+    public static void main(String[] args) {
+        Animal mysteriousCreature = new Cat();
+        mysteriousCreature.sleep();
+    }
+}

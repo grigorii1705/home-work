@@ -24,3 +24,41 @@
 //        car.start();
 //    }
 //}
+//class Vehicle {
+//    Vehicle(String brandName) {
+//        System.out.println("Транспорт: " + brandName);
+//    }
+//}
+//
+//class Car extends Vehicle {
+//
+//    Car(String carBrand, int manufacturingYear) {
+//        super(carBrand); // вызов конструктора родителя
+//        System.out.println("Машина " + carBrand + ", год: " + manufacturingYear);
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Car car = new Car("BMW", 2023);
+//    }
+//}
+//class Vehicle {
+//    void move() {
+//        System.out.println("Транспорт движется.");
+//    }
+//}
+//
+//class Car extends Vehicle {
+//    void beep() {
+//        System.out.println("Машина сигналит: Бип-бип!");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Car car = new Car();
+//        car.move();
+//        car.beep();
+//    }
+//}

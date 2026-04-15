@@ -62,3 +62,155 @@
 //        dog.bark();
 //    }
 //}
+//class Animal {
+//    void makeSound() {
+//        System.out.println("Some animal sound");
+//    }
+//}
+//
+//class Dog extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Woof!");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Dog dog = new Dog();
+//        dog.makeSound();
+//    }
+//}
+//class Animal {
+//    void makeSound() {
+//        System.out.println("Животное издаёт звук");
+//    }
+//}
+
+//class Dog extends Animal {
+//    @Override
+//    void makeSound() {
+//        super.makeSound(); // вызов метода родителя
+//        System.out.println("Собака лает");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Dog dog = new Dog();
+//        dog.makeSound();
+//    }
+//}
+//class Animal {
+//    String name = "Животное";
+//}
+//
+//class Cat extends Animal {
+//    String name = "Кошка";
+//
+//    void printNames() {
+//        System.out.println("Имя из Cat: " + this.name);
+//        System.out.println("Имя из Animal: " + super.name);
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Cat cat = new Cat();
+//        cat.printNames();
+//    }
+//}
+//class Animal {
+//    String petName;
+//
+//    void eat() {
+//        System.out.println(petName + " ест.");
+//    }
+//}
+//
+//class Dog extends Animal {
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Dog bobik = new Dog();
+//        bobik.petName = "Бобик";
+//        bobik.eat();
+//    }
+//}
+//class Animal {
+//    String animalName;
+//
+//    void eat() {
+//        System.out.println(animalName + " ест.");
+//    }
+//}
+//
+//class Mammal extends Animal {
+//    void feedMilk() {
+//        System.out.println(animalName + " кормит детёнышей молоком.");
+//    }
+//}
+
+//class Cat extends Mammal {
+//    @Override
+//    void eat() {
+//        System.out.println(animalName + " ест рыбу.");
+//    }
+//
+//    void purr() {
+//        System.out.println(animalName + " мурлычет.");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Cat cat = new Cat();
+//        cat.animalName = "Мурка";
+//
+//        cat.eat();
+//        cat.feedMilk();
+//        cat.purr();
+//    }
+//}
+//class Animal {
+//}
+//
+//class Robot {
+//}
+//
+//class Dog extends Animal {
+//}
+//
+// ❌ Это вызовет ошибку компиляции
+//class RoboDog extends Animal, Robot {
+//}
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//   }
+//}
+class Animal {
+    void makeSound() {
+        System.out.println("Some sound");
+    }
+
+    void sleep() {
+        System.out.println("Animal is going to sleep...");
+        this.makeSound(); // динамический вызов
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Meow!");
+    }
+}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal mysteriousCreature = new Cat();
+//        mysteriousCreature.sleep();
+//    }
+//}

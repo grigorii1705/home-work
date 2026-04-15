@@ -2428,3 +2428,118 @@ public class Main {
 //        banana.printColor();
 //    }
 //}
+//Переопределение методов (override), аннотация @Override
+// zadacha 1
+//    public static void main(String[] args) {
+//        Circle circle = new Circle();
+//        circle.draw();
+//    }
+//}
+// zadacha 2
+//
+//        public static void main(String[] args) {
+//            Dog dog = new Dog();
+//            dog.makeSound();
+//        }
+//    }
+// zadacha 3
+//    public static void main(String[] args) {
+//        Parent person = new Child();
+//        person.greet();
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        AppleBasket appleBasket = new AppleBasket();
+//
+//        Fruit harvestedItem = appleBasket.getFruit();
+//
+//        if (harvestedItem instanceof Apple) {
+//            System.out.println("Apple created");
+//        }
+//    }
+//}
+//Использование super: вызов конструктора и методов базового класса
+// zadacha 1
+//    public static void main(String[] args) {
+//        Dog dog = new Dog();
+//        dog.makeSound();
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        Car car = new Car("BMW", 2023);
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        Cat cat = new Cat();
+//        cat.printNames();
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        Student anna = new Student("Анна", 3);
+//    }
+//}
+//Создание иерархии классов, примеры из жизни
+// zadacha 1
+//    public static void main(String[] args) {
+//        Dog bobik = new Dog();
+//        bobik.petName = "Бобик";
+//        bobik.eat();
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        Car car = new Car();
+//        car.move();
+//        car.beep();
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        SchoolStudent schoolStudent = new SchoolStudent();
+//        schoolStudent.introduce();
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        Cat cat = new Cat();
+//        cat.animalName = "Мурка";
+//
+//        cat.eat();
+//        cat.feedMilk();
+//        cat.purr();
+//    }
+//}
+//Проблемы и ограничения наследования
+// zadacha 1
+//    public static void main(String[] args) {
+//    }
+//}
+//    java: '{' expected
+//❌ нельзя наследоваться от нескольких классов
+//✅ можно наследовать только от одного класса
+// zadacha 2
+//    public static void main(String[] args) {
+//        Parent parent = new Parent();
+//        parent.printSecret();
+//
+//        new Child().demo();
+//    }
+//}
+// java: '{' expected
+//private → доступ только внутри того же класса
+//даже Child (наследник) НЕ имеет доступа
+// zadacha 3
+//    public static void main(String[] args) {
+//        Student elena = new Student("Елена");
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        Animal mysteriousCreature = new Cat();
+//        mysteriousCreature.sleep();
+//    }
+//}
