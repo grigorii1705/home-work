@@ -29,3 +29,33 @@
 //        banana.printColor();
 //    }
 //}
+//class Fruit {
+//}
+//
+//class Apple extends Fruit {
+//}
+//
+//class Basket {
+//    Fruit getFruit() {
+//        return new Fruit();
+//    }
+//}
+
+//class AppleBasket extends Basket {
+//    @Override
+//    Apple getFruit() { // ковариантный возвращаемый тип
+//        return new Apple();
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        AppleBasket appleBasket = new AppleBasket();
+//
+//        Fruit harvestedItem = appleBasket.getFruit();
+//
+//        if (harvestedItem instanceof Apple) {
+//            System.out.println("Apple created");
+//        }
+//    }
+//}
