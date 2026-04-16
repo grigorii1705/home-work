@@ -161,7 +161,7 @@
 //    void purr() {
 //        System.out.println(animalName + " мурлычет.");
 //    }
-//}
+//
 
 //public class Solution {
 //    public static void main(String[] args) {
@@ -190,27 +190,75 @@
 //    public static void main(String[] args) {
 //   }
 //}
-class Animal {
-    void makeSound() {
-        System.out.println("Some sound");
-    }
-
-    void sleep() {
-        System.out.println("Animal is going to sleep...");
-        this.makeSound(); // динамический вызов
-    }
-}
-
-class Cat extends Animal {
-    @Override
-    void makeSound() {
-        System.out.println("Meow!");
-    }
-}
+//class Animal {
+//    void makeSound() {
+//        System.out.println("Some sound");
+//    }
+//
+//    void sleep() {
+//        System.out.println("Animal is going to sleep...");
+//        this.makeSound(); // динамический вызов
+//    }
+//}
+//
+//class Cat extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Meow!");
+//    }
+//}
 
 //public class Solution {
 //    public static void main(String[] args) {
 //        Animal mysteriousCreature = new Cat();
 //        mysteriousCreature.sleep();
+//    }
+//}
+//class Animal {
+//    void makeSound() {
+//        System.out.println("Какой-то звук...");
+//    }
+//}
+//
+//class Dog extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Гав!");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal pet = new Dog();
+//        pet.makeSound();
+//    }
+//}
+//class Animal {
+//    void makeSound() {
+//        System.out.println("Какой-то звук...");
+//    }
+//}
+//
+//class Cat extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Мяу!");
+//    }
+//}
+//
+//class Cow extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Мууу!");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal[] pen = { new Cat(), new Cow() };
+//
+//        for (Animal animal : pen) {
+//            animal.makeSound();
+//        }
 //    }
 //}

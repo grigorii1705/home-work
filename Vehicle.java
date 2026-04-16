@@ -62,3 +62,43 @@
 //        car.beep();
 //    }
 //}
+//class Vehicle {
+//    void move() {
+//        System.out.println("Транспорт движется.");
+//    }
+//}
+//
+//class Car extends Vehicle {
+//    @Override
+//    void move() {
+//        System.out.println("Машина едет.");
+//    }
+//}
+//
+//class Bicycle extends Vehicle {
+//    @Override
+//    void move() {
+//        System.out.println("Велосипед едет.");
+//    }
+//}
+//
+//class Scooter extends Vehicle {
+//    @Override
+//    void move() {
+//        System.out.println("Самокат едет.");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Vehicle[] parade = {
+//                new Car(),
+//                new Bicycle(),
+//                new Scooter()
+//        };
+//
+//        for (Vehicle v : parade) {
+//            v.move();
+//        }
+//    }
+//}

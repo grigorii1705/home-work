@@ -2543,3 +2543,75 @@ public class Main {
 //        mysteriousCreature.sleep();
 //    }
 //}
+//Понятие полиморфизма, зачем он нужен
+// zadacha 1
+//    public static void main(String[] args) {
+//        Animal pet = new Dog();
+//        pet.makeSound();
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        Animal[] pen = { new Cat(), new Cow() };
+//
+//        for (Animal animal : pen) {
+//            animal.makeSound();
+//        }
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        Employee employee = new Developer();
+//        employee.work();
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        Vehicle[] parade = {
+//                new Car(),
+//                new Bicycle(),
+//                new Scooter()
+//        };
+//
+//        for (Vehicle v : parade) {
+//            v.move();
+//        }
+//    }
+//}
+// Перегрузка методов (overloading)
+// zadacha 1
+//    public static void main(String[] args) {
+//        MessagePrinter printer = new MessagePrinter();
+//
+//        printer.printMessage("Привет, мир!");
+//        printer.printMessage(10, 20);
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        Multiplier multiplier = new Multiplier();
+//
+//        int intResult = multiplier.multiply(5, 4);
+//        double doubleResult = multiplier.multiply(2.5, 3.0);
+//
+//        System.out.println(intResult);
+//        System.out.println(doubleResult);
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        Greetings robot = new Greetings();
+//
+//        robot.sayHello("Алекс");
+//        robot.sayHello("Джон", "Доу");
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        Rectangle square = new Rectangle(5);
+//        Rectangle rectangle = new Rectangle(10, 7);
+//
+//        System.out.println(square.width + " " + square.height);
+//        System.out.println(rectangle.width + " " + rectangle.height);
+//    }
+//}
