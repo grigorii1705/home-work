@@ -291,9 +291,164 @@
 //        Student elena = new Student("Елена");
 //    }
 //}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal mysteriousCreature = new Cat();
+//        mysteriousCreature.sleep();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal pet = new Dog();
+//        pet.makeSound();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal[] pen = { new Cat(), new Cow() };
+//
+//        for (Animal animal : pen) {
+//            animal.makeSound();
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Employee employee = new Developer();
+//        employee.work();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Vehicle[] parade = {
+//                new Car(),
+//                new Bicycle(),
+//                new Scooter()
+//        };
+//
+//        for (Vehicle v : parade) {
+//            v.move();
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        MessagePrinter printer = new MessagePrinter();
+//
+//        printer.printMessage("Привет, мир!");
+//        printer.printMessage(10, 20);
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Multiplier multiplier = new Multiplier();
+//
+//        int intResult = multiplier.multiply(5, 4);
+//        double doubleResult = multiplier.multiply(2.5, 3.0);
+//
+//        System.out.println(intResult);
+//        System.out.println(doubleResult);
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Greetings robot = new Greetings();
+//
+//        robot.sayHello("Алекс");
+//        robot.sayHello("Джон", "Доу");
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Rectangle square = new Rectangle(5);
+//        Rectangle rectangle = new Rectangle(10, 7);
+//
+//        System.out.println(square.width + " " + square.height);
+//        System.out.println(rectangle.width + " " + rectangle.height);
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Dog dog = new Dog();
+//        dog.makeSound();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        ColorPrinter printer = new ColorPrinter();
+//
+//        printer.print(5);
+//        printer.print("Hello");
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Shape shape = new Circle();
+//        shape.draw();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Cat cat = new Cat();
+//        cat.makeSound();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal dog = new Dog();
+//        Animal cat = new Cat();
+//
+//        dog.makeSound();
+//        cat.makeSound();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Employee[] team = {
+//                new Manager(),
+//                new Developer()
+//        };
+//
+//        for (Employee employee : team) {
+//            employee.work();
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Employee[] team = {
+//                new Manager(),
+//                new Developer(),
+//                new Tester()
+//        };
+//
+//        for (Employee e : team) {
+//            e.work();
+//        }
+//    }
+//}
 public class Solution {
     public static void main(String[] args) {
-        Animal mysteriousCreature = new Cat();
-        mysteriousCreature.sleep();
+        Employee[] staff = new Employee[5];
+
+        staff[0] = new Employee();
+        staff[1] = new Manager();
+        staff[2] = new Developer();
+        staff[3] = new Designer();
+
+        printWorkForAll(staff);
+
+        // добавили нового сотрудника без изменения логики
+        staff[4] = new Intern();
+
+        printWorkForAll(staff);
+    }
+
+    private static void printWorkForAll(Employee[] staff) {
+        for (Employee e : staff) {
+            if (e != null) {
+                e.work();
+            }
+        }
     }
 }

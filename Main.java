@@ -2615,3 +2615,90 @@ public class Main {
 //        System.out.println(rectangle.width + " " + rectangle.height);
 //    }
 //}
+//Переопределение методов (overriding): отличие от перегрузки
+//zadacha 1
+//    public static void main(String[] args) {
+//        Dog dog = new Dog();
+//        dog.makeSound();
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        ColorPrinter printer = new ColorPrinter();
+//
+//        printer.print(5);
+//        printer.print("Hello");
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        Shape shape = new Circle();
+//        shape.draw();
+//    }
+//}
+// zadacha 4
+//    public static void main(String[] args) {
+//        Cat cat = new Cat();
+//        cat.makeSound();
+//    }
+//}
+// Использование полиморфизма на практике
+// zadacha 1
+//    public static void main(String[] args) {
+//        Animal dog = new Dog();
+//        Animal cat = new Cat();
+//
+//        dog.makeSound();
+//        cat.makeSound();
+//    }
+//}
+// zadacha 2
+//    public static void main(String[] args) {
+//        Employee[] team = {
+//                new Manager(),
+//                new Developer()
+//        };
+//
+//        for (Employee employee : team) {
+//            employee.work();
+//        }
+//    }
+//}
+// zadacha 3
+//    public static void main(String[] args) {
+//        Employee[] team = {
+//                new Manager(),
+//                new Developer(),
+//                new Tester()
+//        };
+//
+//        for (Employee e : team) {
+//            e.work();
+//        }
+//    }
+//}
+// zadacha 4
+    public static void main(String[] args) {
+        Employee[] staff = new Employee[5];
+
+        staff[0] = new Employee();
+        staff[1] = new Manager();
+        staff[2] = new Developer();
+        staff[3] = new Designer();
+
+        printWorkForAll(staff);
+
+        // добавили нового сотрудника без изменения логики
+        staff[4] = new Intern();
+
+        printWorkForAll(staff);
+    }
+
+    private static void printWorkForAll(Employee[] staff) {
+        for (Employee e : staff) {
+            if (e != null) {
+                e.work();
+            }
+        }
+    }
+}

@@ -262,3 +262,71 @@
 //        }
 //    }
 //}
+//class Animal {
+//    void makeSound() {
+//        System.out.println("Животное издаёт звук");
+//    }
+//}
+//
+//class Dog extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Гав!");
+//    }
+//}
+//class Animal {
+//    void makeSound() {
+//        System.out.println("Животное издаёт звук");
+//    }
+//}
+//
+//class Cat extends Animal {
+//    @Override
+//    void makeSound() {
+//        super.makeSound();
+//        System.out.println("Мяу!");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Cat cat = new Cat();
+//        cat.makeSound();
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Dog dog = new Dog();
+//        dog.makeSound();
+//    }
+//}
+//class Animal {
+//    void makeSound() {
+//        System.out.println("Животное издает звук");
+//    }
+//}
+
+//class Dog extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Собака лает");
+//    }
+//}
+//
+//class Cat extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Кошка мяукает");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal dog = new Dog();
+//        Animal cat = new Cat();
+//
+//        dog.makeSound();
+//        cat.makeSound();
+//    }
+//}
