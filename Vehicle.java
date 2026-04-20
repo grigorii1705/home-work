@@ -88,6 +88,38 @@
 //        System.out.println("Самокат едет.");
 //    }
 //}
+//import java.util.*;
+//
+//abstract class Vehicle {
+//    abstract void move();
+//}
+//
+//class Car extends Vehicle {
+//    @Override
+//    void move() {
+//        System.out.println("Машина едет по дороге");
+//    }
+//}
+//
+//class Bicycle extends Vehicle {
+//    @Override
+//    void move() {
+//        System.out.println("Велосипед крутит педали");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        List<Vehicle> vehicles = new ArrayList<>();
+//
+//        vehicles.add(new Car());
+//        vehicles.add(new Bicycle());
+//
+//        for (Vehicle vehicle : vehicles) {
+//            vehicle.move();
+//        }
+//    }
+//}
 
 //public class Solution {
 //    public static void main(String[] args) {

@@ -330,3 +330,101 @@
 //        cat.makeSound();
 //    }
 //}
+//abstract class Animal {
+//    abstract void makeSound();
+//}
+//
+//class Dog extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Гав-гав!");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal pet = new Dog();
+//        pet.makeSound();
+//    }
+//}
+//abstract class Animal {
+//    String name;
+//
+//    Animal(String name) {
+//        this.name = name;
+//    }
+//
+//    abstract void makeSound();
+//}
+//
+//class Cat extends Animal {
+//
+//    Cat(String name) {
+//        super(name);
+//    }
+//
+//    @Override
+//    void makeSound() {
+//        System.out.println(name + ": Мяу!");
+//    }
+//}
+//
+//class Cow extends Animal {
+//
+//    Cow(String name) {
+//        super(name);
+//    }
+//
+//    @Override
+//    void makeSound() {
+//        System.out.println(name + ": Мууу!");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal[] animals = {
+//                new Cat("Мурка"),
+//                new Cow("Буренка")
+//        };
+//
+//        for (Animal animal : animals) {
+//            animal.makeSound();
+//        }
+//    }
+//}
+//abstract class Animal {
+//    abstract void makeSound();
+//}
+//
+//// пример конкретного животного, чтобы можно было запустить
+//class Dog extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Гав!");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal animal = new Dog();
+//        animal.makeSound();
+//    }
+//}
+//abstract class Animal {
+//    abstract void makeSound();
+//}
+//
+//class Dog extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Гав!");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal dog = new Dog();
+//        dog.makeSound();
+//    }
+//}

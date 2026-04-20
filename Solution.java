@@ -47,6 +47,10 @@
 //    }
 //}
 //
+
+import java.util.ArrayList;
+import java.util.List;
+
 //// Класс-хранитель секрета
 //class SecretKeeper {
 //    // Приватное поле с секретом
@@ -427,28 +431,98 @@
 //        }
 //    }
 //}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Employee[] staff = new Employee[5];
+//
+//        staff[0] = new Employee();
+//        staff[1] = new Manager();
+//        staff[2] = new Developer();
+//        staff[3] = new Designer();
+//
+//        printWorkForAll(staff);
+//
+//        // добавили нового сотрудника без изменения логики
+//        staff[4] = new Intern();
+//
+//        printWorkForAll(staff);
+//    }
+//
+//    private static void printWorkForAll(Employee[] staff) {
+//        for (Employee e : staff) {
+//            if (e != null) {
+//                e.work();
+//            }
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Shape shape = new Shape(); // ❌ нельзя (абстрактный класс)
+//
+//        Shape shape = new Circle(); // ✅ можно через наследника
+//        shape.draw();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal pet = new Dog();
+//        pet.makeSound();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Employee[] team = new Employee[2];
+//
+//        team[0] = new Manager();
+//        team[1] = new Developer();
+//
+//        for (Employee employee : team) {
+//            employee.work();
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal[] animals = {
+//                new Cat("Мурка"),
+//                new Cow("Буренка")
+//        };
+//
+//        for (Animal animal : animals) {
+//            animal.makeSound();
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal animal = new Dog();
+//        animal.makeSound();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal dog = new Dog();
+//        dog.makeSound();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        List<Vehicle> vehicles = new ArrayList<>();
+//
+//        vehicles.add(new Car());
+//        vehicles.add(new Bicycle());
+//
+//        for (Vehicle vehicle : vehicles) {
+//            vehicle.move();
+//        }
+//    }
+//}
 public class Solution {
     public static void main(String[] args) {
-        Employee[] staff = new Employee[5];
+        PaypalPayment payment = new PaypalPayment();
 
-        staff[0] = new Employee();
-        staff[1] = new Manager();
-        staff[2] = new Developer();
-        staff[3] = new Designer();
-
-        printWorkForAll(staff);
-
-        // добавили нового сотрудника без изменения логики
-        staff[4] = new Intern();
-
-        printWorkForAll(staff);
-    }
-
-    private static void printWorkForAll(Employee[] staff) {
-        for (Employee e : staff) {
-            if (e != null) {
-                e.work();
-            }
-        }
+        payment.printInfo();
+        payment.process();
     }
 }
