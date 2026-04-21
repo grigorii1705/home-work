@@ -55,3 +55,35 @@
 //        shape.draw();
 //    }
 //}
+//abstract class Shape {
+//    String name;
+//
+//    Shape(String name) {
+//        this.name = name;
+//    }
+//
+//    abstract double area();
+//}
+//
+//class Circle extends Shape {
+//    double radius;
+//
+//    Circle(String name, double radius) {
+//        super(name);
+//        this.radius = radius;
+//    }
+//
+//    @Override
+//    double area() {
+//        return Math.PI * radius * radius;
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Circle circle = new Circle("Круг", 2.0);
+//
+//        System.out.println(circle.name);
+//        System.out.println(circle.area());
+//    }
+//}

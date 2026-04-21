@@ -134,3 +134,27 @@
 //        }
 //    }
 //}
+// Абстрактный класс
+//abstract class Vehicle {
+//    // Абстрактный метод (без реализации)
+//    abstract void move();
+//}
+//
+//// Конкретный класс Car
+//class Car extends Vehicle {
+//    @Override
+//    void move() {
+//        System.out.println("Машина едет");
+//    }
+//}
+
+// Main-класс
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Полиморфизм: ссылка типа Vehicle на объект Car
+//        Vehicle car = new Car();
+//
+//        // Вызов метода
+//        car.move(); // "Машина едет"
+//    }
+//}

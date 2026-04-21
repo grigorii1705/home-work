@@ -178,3 +178,111 @@
 //        }
 //    }
 //}
+// Абстрактный базовый класс
+//abstract class Employee {
+//    String name;
+//
+//    // Конструктор
+//    public Employee(String name) {
+//        this.name = name;
+//    }
+//
+//    // Геттер для имени
+//    public String getName() {
+//        return name;
+//    }
+//
+//    // Абстрактный метод
+//    public abstract double getSalary();
+//}
+//
+//// Менеджер с фиксированной зарплатой
+//class Manager extends Employee {
+//    double baseSalary;
+//
+//    public Manager(String name, double baseSalary) {
+//        super(name);
+//        this.baseSalary = baseSalary;
+//    }
+//
+//    @Override
+//    public double getSalary() {
+//        return baseSalary;
+//    }
+//}
+//
+//// Разработчик с почасовой оплатой
+//class Developer extends Employee {
+//    double hourlyRate;
+//    int hoursWorked;
+//
+//    public Developer(String name, double hourlyRate, int hoursWorked) {
+//        super(name);
+//        this.hourlyRate = hourlyRate;
+//        this.hoursWorked = hoursWorked;
+//    }
+//
+//    @Override
+//    public double getSalary() {
+//        return hourlyRate * hoursWorked;
+//    }
+//}
+
+// Main-класс
+//public class Solution {
+//    public static void main(String[] args) {
+//        Employee[] staff = new Employee[2];
+//
+//        staff[0] = new Manager("Анна", 100000);
+//        staff[1] = new Developer("Иван", 500, 160);
+//
+//        for (Employee e : staff) {
+//            System.out.println("Имя: " + e.getName() +
+//                    ", зарплата: " + e.getSalary());
+//        }
+//    }
+//}
+// Абстрактный класс
+//abstract class Employee {
+//    String name;
+//
+//    // Конструктор
+//    public Employee(String name) {
+//        this.name = name;
+//    }
+//
+//    // Метод для получения имени
+//    public String getName() {
+//        return name;
+//    }
+//
+//    // Абстрактный метод для зарплаты
+//    public abstract double getSalary();
+//}
+//
+//// Класс Manager
+//class Manager extends Employee {
+//    double salary;
+//
+//    public Manager(String name, double salary) {
+//        super(name);
+//        this.salary = salary;
+//    }
+//
+//    @Override
+//    public double getSalary() {
+//        return salary;
+//    }
+//}
+
+// Main-класс
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаём менеджера
+//        Manager manager = new Manager("Ivan", 50000);
+//
+//        // Выводим имя и зарплату
+//        System.out.println(manager.getName());
+//        System.out.println(manager.getSalary());
+//    }
+//}

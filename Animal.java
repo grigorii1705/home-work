@@ -428,3 +428,20 @@
 //        dog.makeSound();
 //    }
 //}
+//abstract class Animal {
+//    abstract void makeSound();
+//}
+//
+//class Dog extends Animal {
+//    @Override
+//    void makeSound() {
+//        System.out.println("Гав!");
+//    }
+//}
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal dog = new Dog();
+//        dog.makeSound();
+//    }
+//}

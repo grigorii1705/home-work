@@ -518,11 +518,90 @@ import java.util.List;
 //        }
 //    }
 //}
+//public class Solution {
+//    public static void main(String[] args) {
+//        PaypalPayment payment = new PaypalPayment();
+//
+//        payment.printInfo();
+//        payment.process();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Animal dog = new Dog();
+//        dog.makeSound();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Phone phone = new Phone();
+//
+//        phone.turnOn();
+//        phone.turnOff();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Circle circle = new Circle("Круг", 2.0);
+//
+//        System.out.println(circle.name);
+//        System.out.println(circle.area());
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Employee[] staff = new Employee[2];
+//
+//        staff[0] = new Manager("Анна", 100000);
+//        staff[1] = new Developer("Иван", 500, 160);
+//
+//        for (Employee e : staff) {
+//            System.out.println("Имя: " + e.getName() +
+//                    ", зарплата: " + e.getSalary());
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Полиморфизм: ссылка типа Vehicle на объект Car
+//        Vehicle car = new Car();
+//
+//        // Вызов метода
+//        car.move(); // "Машина едет"
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем объекты фигур
+//        Figure square = new Square(4);
+//        Figure circle = new Circle(3);
+//
+//        // Выводим площади
+//        System.out.println(square.area());
+//        System.out.println(circle.area());
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаём менеджера
+//        Manager manager = new Manager("Ivan", 50000);
+//
+//        // Выводим имя и зарплату
+//        System.out.println(manager.getName());
+//        System.out.println(manager.getSalary());
+//    }
+//}
 public class Solution {
     public static void main(String[] args) {
-        PaypalPayment payment = new PaypalPayment();
+        // Массив базового типа
+        Payment[] payments = new Payment[] {
+                new CashPayment(),
+                new OnlinePayment()
+        };
 
-        payment.printInfo();
-        payment.process();
+        // Полиморфизм в действии
+        for (Payment payment : payments) {
+            payment.process();
+        }
     }
 }
