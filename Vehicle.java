@@ -158,3 +158,58 @@
 //        car.move(); // "Машина едет"
 //    }
 //}
+import java.util.*;
+
+// Абстрактный класс
+//abstract class Vehicle {
+//    String model;
+//
+//    // Конструктор
+//    public Vehicle(String model) {
+//        this.model = model;
+//    }
+//
+//    // Абстрактный метод
+//    abstract void move();
+//}
+//
+//// Класс Car
+//class Car extends Vehicle {
+//
+//    public Car(String model) {
+//        super(model);
+//    }
+//
+//    @Override
+//    void move() {
+//        System.out.println("Машина " + model + " едет");
+//    }
+//}
+//
+//// Класс Bicycle
+//class Bicycle extends Vehicle {
+//
+//    public Bicycle(String model) {
+//        super(model);
+//    }
+//
+//    @Override
+//    void move() {
+//        System.out.println("Велосипед " + model + " едет");
+//    }
+//}
+
+// Main-класс
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Динамический список
+//        List<Vehicle> vehicles = new ArrayList<>();
+//
+//        vehicles.add(new Car("Lada"));
+//        vehicles.add(new Bicycle("Stels"));
+//
+//        for (Vehicle v : vehicles) {
+//            v.move();
+//        }
+//    }
+//}

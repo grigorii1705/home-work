@@ -591,17 +591,115 @@ import java.util.List;
 //        System.out.println(manager.getSalary());
 //    }
 //}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Массив базового типа
+//        Payment[] payments = new Payment[] {
+//                new CashPayment(),
+//                new OnlinePayment()
+//        };
+//
+//        // Полиморфизм в действии
+//        for (Payment payment : payments) {
+//            payment.process();
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаём круг радиуса 2.0
+//        Circle circle = new Circle(2.0);
+//
+//        // Выводим площадь
+//        System.out.println(circle.area()); // 12.56
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем сообщения
+//        Message email = new EmailMessage("Привет!");
+//        Message sms = new SmsMessage("Привет!");
+//
+//        // Отправляем
+//        email.send();
+//        sms.send();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Динамический список
+//        List<Vehicle> vehicles = new ArrayList<>();
+//
+//        vehicles.add(new Car("Lada"));
+//        vehicles.add(new Bicycle("Stels"));
+//
+//        for (Vehicle v : vehicles) {
+//            v.move();
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Order[] orders = {
+//                new OnlineOrder(100.0),
+//                new OfflineOrder(50.0),
+//                new OnlineOrder(299.99),
+//                new OfflineOrder(75.5)
+//        };
+//
+//        for (Order order : orders) {
+//            order.process();
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Task task = new SimpleTask("Купить кофе");
+//        task.complete();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        TaskRepository repository = new InMemoryTaskRepository();
+//        TaskService service = new TaskService(repository);
+//
+//        // ВАЖНО: используем конкретный класс, а не абстрактный Task
+//        Task task = new SimpleTask("Написать демо для TaskService");
+//
+//        service.addTask(task);
+//
+//        System.out.println("До выполнения:  " + task);
+//
+//        service.completeTask("Написать демо для TaskService");
+//
+//        System.out.println("После выполнения: " + task);
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        TaskRepository repository = new InMemoryTaskRepository();
+//        TaskService service = new TaskService(repository);
+//        UserInterface ui = new UserInterface(service);
+//
+//        ui.addAndCompleteTask("Выучить внедрение зависимостей через конструктор");
+//    }
+//}
 public class Solution {
     public static void main(String[] args) {
-        // Массив базового типа
-        Payment[] payments = new Payment[] {
-                new CashPayment(),
-                new OnlinePayment()
-        };
+        TaskRepository repository = new InMemoryTaskRepository();
 
-        // Полиморфизм в действии
-        for (Payment payment : payments) {
-            payment.process();
-        }
+        // Добавляем задачи разных типов
+        repository.add(new WorkTask("Подготовить отчёт", "пятница 18:00"));
+        repository.add(new HomeTask("Помыть посуду", "кухня"));
+
+        TaskService service = new TaskService(repository);
+
+        // Вывод информации
+        service.printAllTasksInfo();
+
+        System.out.println();
+
+        // Выполнение задач
+        service.completeAllTasks();
     }
 }

@@ -24,26 +24,26 @@
 //    }
 //}
 // Абстрактный класс
-abstract class Payment {
-    // Абстрактный метод обработки платежа
-    abstract void process();
-}
-
-// Оплата наличными
-class CashPayment extends Payment {
-    @Override
-    void process() {
-        System.out.println("Оплата наличными");
-    }
-}
-
-// Онлайн-оплата
-class OnlinePayment extends Payment {
-    @Override
-    void process() {
-        System.out.println("Онлайн-оплата");
-    }
-}
+//abstract class Payment {
+//    // Абстрактный метод обработки платежа
+//    abstract void process();
+//}
+//
+//// Оплата наличными
+//class CashPayment extends Payment {
+//    @Override
+//    void process() {
+//        System.out.println("Оплата наличными");
+//    }
+//}
+//
+//// Онлайн-оплата
+//class OnlinePayment extends Payment {
+//    @Override
+//    void process() {
+//        System.out.println("Онлайн-оплата");
+//    }
+//}
 
 // Main-класс
 //public class Solution {

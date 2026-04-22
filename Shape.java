@@ -87,3 +87,33 @@
 //        System.out.println(circle.area());
 //    }
 //}
+// Абстрактный класс
+//abstract class Shape {
+//    // Абстрактный метод
+//    abstract double area();
+//}
+//
+//// Класс Circle
+//class Circle extends Shape {
+//    double radius;
+//
+//    public Circle(double radius) {
+//        this.radius = radius;
+//    }
+//
+//    @Override
+//    double area() {
+//        return 3.14 * radius * radius;
+//    }
+//}
+
+// Main-класс
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаём круг радиуса 2.0
+//        Circle circle = new Circle(2.0);
+//
+//        // Выводим площадь
+//        System.out.println(circle.area()); // 12.56
+//    }
+//}
