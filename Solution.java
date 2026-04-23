@@ -684,22 +684,91 @@ import java.util.List;
 //        ui.addAndCompleteTask("Выучить внедрение зависимостей через конструктор");
 //    }
 //}
+//public class Solution {
+//    public static void main(String[] args) {
+//        TaskRepository repository = new InMemoryTaskRepository();
+//
+//        // Добавляем задачи разных типов
+//        repository.add(new WorkTask("Подготовить отчёт", "пятница 18:00"));
+//        repository.add(new HomeTask("Помыть посуду", "кухня"));
+//
+//        TaskService service = new TaskService(repository);
+//
+//        // Вывод информации
+//        service.printAllTasksInfo();
+//
+//        System.out.println();
+//
+//        // Выполнение задач
+//        service.completeAllTasks();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Полиморфизм: используем интерфейс как тип
+//        Greetable someone = new Person();
+//        someone.greet(); // Ожидаемый вывод: Hello!
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Универсальный инструмент для рисования
+//        Drawable tool = new Circle();
+//
+//        // Полиморфный вызов
+//        tool.draw(); // Ожидаемый вывод: Drawing a circle
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Calculator calculator = new Calculator();
+//        calculator.printPi(); // Ожидаемый вывод: 3.14159
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // "Зоопарк" — массив объектов, реализующих Soundable
+//        Soundable[] zoo = new Soundable[2];
+//
+//        zoo[0] = new Dog();
+//        zoo[1] = new Cat();
+//
+//        // Полиморфизм: у каждого вызовется своя реализация
+//        for (Soundable animal : zoo) {
+//            animal.makeSound();
+//        }
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Полиморфизм: используем интерфейс как тип
+//        Movable car = new Car();
+//
+//        // Вызов метода через интерфейс
+//        car.move(); // Ожидаемый вывод: Машина едет
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Student student = new Student("Иван Петров");
+//        student.printInfo(); // Имя: Иван Петров, ID: 42
+//    }
+//}
+//
+//    public class Solution {
+//        public static void main(String[] args) {
+//            MultiFunctionDevice device = new MultiFunctionDevice();
+//
+//            device.print();
+//            device.scan();
+//        }
+//    }
 public class Solution {
     public static void main(String[] args) {
-        TaskRepository repository = new InMemoryTaskRepository();
+        SmartPhone phone = new SmartPhone();
 
-        // Добавляем задачи разных типов
-        repository.add(new WorkTask("Подготовить отчёт", "пятница 18:00"));
-        repository.add(new HomeTask("Помыть посуду", "кухня"));
-
-        TaskService service = new TaskService(repository);
-
-        // Вывод информации
-        service.printAllTasksInfo();
-
-        System.out.println();
-
-        // Выполнение задач
-        service.completeAllTasks();
+        phone.turnOn();
+        phone.work();
+        phone.charge();
     }
 }

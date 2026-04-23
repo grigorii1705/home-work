@@ -107,3 +107,59 @@
 //        Student elena = new Student("Елена");
 //    }
 //}
+// Интерфейс — "способность" приветствовать
+//interface Greetable {
+//    void greet();
+//}
+//
+//// Класс Person реализует эту способность
+//class Person implements Greetable {
+//
+//    @Override
+//    public void greet() {
+//        System.out.println("Hello!");
+//    }
+//}
+
+// MAIN
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Полиморфизм: используем интерфейс как тип
+//        Greetable someone = new Person();
+//        someone.greet(); // Ожидаемый вывод: Hello!
+//    }
+//}
+// Интерфейс — "контракт идентификации"
+//interface Identifiable {
+//    // В интерфейсе поле автоматически: public static final
+//    int ID = 42;
+//}
+//
+//// Абстрактный класс — общий шаблон человека
+//abstract class Person {
+//    protected String name;
+//
+//    public Person(String name) {
+//        this.name = name;
+//    }
+//}
+//
+//// Конкретный класс — студент
+//class Student extends Person implements Identifiable {
+//
+//    public Student(String name) {
+//        super(name);
+//    }
+//
+//    public void printInfo() {
+//        System.out.println("Имя: " + name + ", ID: " + ID);
+//    }
+//}
+
+// MAIN
+//public class Solution {
+//    public static void main(String[] args) {
+//        Student student = new Student("Иван Петров");
+//        student.printInfo(); // Имя: Иван Петров, ID: 42
+//    }
+//}
