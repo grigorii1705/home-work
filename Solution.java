@@ -763,12 +763,119 @@ import java.util.List;
 //            device.scan();
 //        }
 //    }
+//public class Solution {
+//    public static void main(String[] args) {
+//        SmartPhone phone = new SmartPhone();
+//
+//        phone.turnOn();
+//        phone.work();
+//        phone.charge();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        Sketch sketch = new Sketch();
+//
+//        sketch.draw();
+//        sketch.erase();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем пользователя
+//        User user = new User("Алиса");
+//
+//        // Получаем имя
+//        System.out.println(user.getName());
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем объект и вызываем метод
+//        MultiAction action = new MultiAction();
+//        action.doAction();
+//    }
+//}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем объект и вызываем метод
+//        MultiAction action = new MultiAction();
+//        action.doAction();
+//    }
+//}
+//public class Solution {
+//
+//    // Универсальный метод тестирования
+//    public static void testDevice(Player p, Recorder r) {
+//        p.play();
+//        r.record();
+//    }
+//
+//    public static void main(String[] args) {
+//        // Создаём одно устройство
+//        MediaDevice device = new MediaDevice();
+//
+//        // Один объект используется сразу как Player и как Recorder
+//        testDevice(device, device);
+//    }
+//}
+//@FunctionalInterface
+//interface MessagePrinter {
+//    void print(String message);
+//}
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Лямбда-выражение вместо класса
+//        MessagePrinter printer = message -> System.out.println(message);
+//
+//        // Проверка работы
+//        printer.print("Привет, Java!");
+//    }
+//}
+//@FunctionalInterface
+//interface NumberChecker {
+//    boolean check(int n);
+//}
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Лямбда: проверяет, больше ли число 100
+//        NumberChecker checker = n -> n > 100;
+//
+//        // Проверка значений
+//        System.out.println(checker.check(50));   // false
+//        System.out.println(checker.check(150));  // true
+//    }
+//}
+//import java.util.function.Predicate;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Предикат проверяет, что длина строки больше 5 символов
+//        Predicate<String> isLong = s -> s.length() > 5;
+//
+//        // Демонстрация работы на двух примерах
+//        System.out.println(isLong.test("Java"));                  // false
+//        System.out.println(isLong.test("FunctionalInterface"));   // true
+//    }
+//}
+@FunctionalInterface
+interface StringTransformer {
+    String transform(String s);
+
+    // default-метод, который использует функциональный метод transform
+    default void printTransformed(String s) {
+        System.out.println(transform(s));
+    }
+}
+
 public class Solution {
     public static void main(String[] args) {
-        SmartPhone phone = new SmartPhone();
+        // Лямбда-реализация: преобразует строку к нижнему регистру
+        StringTransformer transformer = s -> s.toLowerCase();
 
-        phone.turnOn();
-        phone.work();
-        phone.charge();
+        // Вызываем default-метод для строки "JAVA ROCKS"
+        transformer.printTransformed("JAVA ROCKS");
     }
 }

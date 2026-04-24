@@ -12,6 +12,7 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -3018,11 +3019,90 @@ public class Main {
 //        }
 //    }
 // zadacha 4
+//public static void main(String[] args) {
+//    SmartPhone phone = new SmartPhone();
+//
+//    phone.turnOn();
+//    phone.work();
+//    phone.charge();
+//}
+//}
+//Множественная реализация интерфейсов
+// zadacha 1
+//public static void main(String[] args) {
+//    Sketch sketch = new Sketch();
+//
+//    sketch.draw();
+//    sketch.erase();
+//}
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Создаем пользователя
+//    User user = new User("Алиса");
+//
+//    // Получаем имя
+//    System.out.println(user.getName());
+//}
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//    // Создаем объект и вызываем метод
+//    MultiAction action = new MultiAction();
+//    action.doAction();
+//}
+//}
+// zadacha 4
+// Универсальный метод тестирования
+//public static void testDevice(Player p, Recorder r) {
+//    p.play();
+//    r.record();
+//}
+//
+//    public static void main(String[] args) {
+//        // Создаём одно устройство
+//        MediaDevice device = new MediaDevice();
+//
+//        // Один объект используется сразу как Player и как Recorder
+//        testDevice(device, device);
+//    }
+//}
+// # **Функциональные интерфейсы: @FunctionalInterface**
+// zadacha 1
+//public static void main(String[] args) {
+//    // Лямбда-выражение вместо класса
+//    MessagePrinter printer = message -> System.out.println(message);
+//
+//    // Проверка работы
+//    printer.print("Привет, Java!");
+//}
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Лямбда: проверяет, больше ли число 100
+//    NumberChecker checker = n -> n > 100;
+//
+//    // Проверка значений
+//    System.out.println(checker.check(50));   // false
+//    System.out.println(checker.check(150));  // true
+//}
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//    // Предикат проверяет, что длина строки больше 5 символов
+//    Predicate<String> isLong = s -> s.length() > 5;
+//
+//    // Демонстрация работы на двух примерах
+//    System.out.println(isLong.test("Java"));                  // false
+//    System.out.println(isLong.test("FunctionalInterface"));   // true
+//}
+//}
+// zadacha 4
 public static void main(String[] args) {
-    SmartPhone phone = new SmartPhone();
+    // Лямбда-реализация: преобразует строку к нижнему регистру
+    StringTransformer transformer = s -> s.toLowerCase();
 
-    phone.turnOn();
-    phone.work();
-    phone.charge();
+    // Вызываем default-метод для строки "JAVA ROCKS"
+    transformer.printTransformed("JAVA ROCKS");
 }
 }
