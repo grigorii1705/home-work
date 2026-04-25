@@ -3011,7 +3011,7 @@ public class Main {
 //}
 // zadacha 3
 
-//        public static void main(String[] args) {
+    //        public static void main(String[] args) {
 //            MultiFunctionDevice device = new MultiFunctionDevice();
 //
 //            device.print();
@@ -3098,11 +3098,67 @@ public class Main {
 //}
 //}
 // zadacha 4
-public static void main(String[] args) {
-    // Лямбда-реализация: преобразует строку к нижнему регистру
-    StringTransformer transformer = s -> s.toLowerCase();
+//public static void main(String[] args) {
+//    // Лямбда-реализация: преобразует строку к нижнему регистру
+//    StringTransformer transformer = s -> s.toLowerCase();
+//
+//    // Вызываем default-метод для строки "JAVA ROCKS"
+//    transformer.printTransformed("JAVA ROCKS");
+//}
+//}
+//Интерфейсы в архитектуре Java, паттерны проектирования
+//zadacha 1
+//public static void main(String[] args) {
+//    // Демонстрация гибкости: две реализации одного интерфейса
+//    Logger consoleLogger = new ConsoleLogger();
+//    Logger fileLogger = new FileLogger();
+//
+//    String testMessage = "Тестовое сообщение";
+//
+//    // Один и тот же вызов — разное поведение
+//    consoleLogger.log(testMessage);
+//    fileLogger.log(testMessage);
+//}
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Внедряем реализацию EmailSender в Notification
+//    MessageSender emailSender = new EmailSender();
+//    Notification notification = new Notification(emailSender);
+//
+//    // Тестируем отправку уведомления
+//    notification.notifyUser("Привет!");
+//}
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//    Greeter greeter = new Greeter();
+//
+//    // Сначала используем дружелюбную стратегию
+//    greeter.setStrategy(new FriendlyGreeting());
+//    greeter.greet("Вася");
+//
+//    // Затем переключаемся на формальную стратегию
+//    greeter.setStrategy(new FormalGreeting());
+//    greeter.greet("Вася");
+//}
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//    // Создаем издателя
+//    NewsPublisher publisher = new NewsPublisher();
+//
+//    // Создаем подписчиков
+//    Person andrey = new Person("Андрей");
+//    Person boris = new Person("Борис");
+//
+//    // Подписываем их
+//    publisher.addSubscriber(andrey);
+//    publisher.addSubscriber(boris);
+//
+//    // Публикуем новость
+//    publisher.notifySubscribers("Обновление курса Java!");
+//}
+//}
 
-    // Вызываем default-метод для строки "JAVA ROCKS"
-    transformer.printTransformed("JAVA ROCKS");
-}
-}
+
