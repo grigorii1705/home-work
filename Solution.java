@@ -932,3 +932,8 @@ import java.util.List;
 //        publisher.notifySubscribers("Обновление курса Java!");
 //    }
 //}
+public class Solution {
+    public static void main(String[] args) {
+        System.out.println("Use Main class to run the game.");
+    }
+}

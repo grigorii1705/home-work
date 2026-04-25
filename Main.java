@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
 
-public class Main {
+
 
 
 // obertka
@@ -3160,5 +3160,138 @@ public class Main {
 //    publisher.notifySubscribers("Обновление курса Java!");
 //}
 //}
+// PROGECT
+import java.util.List;
 
+    public class Main {
+
+        public static void main(String[] args) {
+
+            Warrior w = new Warrior("Thor");
+            Mage m = new Mage("Merlin");
+            Robot r = new Robot("X-99");
+
+            Game game = new Game();
+            game.add(w);
+            game.add(m);
+            game.add(r);
+
+            System.out.println("=== START ===");
+            game.showAll();
+
+            System.out.println("\n=== BATTLE ===");
+            simulateFight(w, m);
+
+            System.out.println("\n=== HEAL MAGES ===");
+            healAllMages(game.getAll());
+
+            System.out.println("\n=== TOURNAMENT ===");
+            runTournament(game.getAll());
+
+            System.out.println("\n=== ATTACK WEAKEST ===");
+            attackWeakest(game, w);
+
+            System.out.println("\n=== REPORT ===");
+            printBattleReport(game);
+        }
+
+        // ===== TASKS =====
+
+        public static void simulateFight(GameCharacter a, GameCharacter b) {
+            if (!a.isAlive() || !b.isAlive()) {
+                System.out.println("Fight cancelled: dead fighter");
+                return;
+            }
+
+            System.out.println("Fight: " + a.getName() + " vs " + b.getName());
+
+            a.attack(b);
+            if (b.isAlive()) {
+                b.attack(a);
+            }
+
+            System.out.println("Result:");
+            a.showInfo();
+            b.showInfo();
+        }
+
+        public static void healAllMages(List<GameCharacter> list) {
+            for (GameCharacter c : list) {
+                if (c instanceof Mage) {
+                    ((Mage) c).heal(15);
+                }
+            }
+        }
+
+        public static void runTournament(List<GameCharacter> list) {
+            for (int i = 0; i < list.size(); i++) {
+                for (int j = i + 1; j < list.size(); j++) {
+
+                    GameCharacter a = list.get(i);
+                    GameCharacter b = list.get(j);
+
+                    if (!a.isAlive() || !b.isAlive()) continue;
+
+                    simulateFight(a, b);
+                }
+            }
+        }
+
+        public static void attackWeakest(Game game, GameCharacter attacker) {
+            GameCharacter weakest = null;
+
+            for (GameCharacter c : game.getAll()) {
+                if (c == attacker || !c.isAlive()) continue;
+
+                if (weakest == null || c.getHealth() < weakest.getHealth()) {
+                    weakest = c;
+                }
+            }
+
+            if (weakest == null) {
+                System.out.println("No targets available");
+                return;
+            }
+
+            System.out.println(attacker.getName() + " attacks weakest " + weakest.getName());
+            attacker.attack(weakest);
+        }
+
+        public static void printBattleReport(Game game) {
+            int alive = 0;
+            int dead = 0;
+
+            GameCharacter strongest = null;
+            GameCharacter weakestAlive = null;
+
+            for (GameCharacter c : game.getAll()) {
+
+                if (c.isAlive()) {
+                    alive++;
+
+                    if (weakestAlive == null || c.getHealth() < weakestAlive.getHealth()) {
+                        weakestAlive = c;
+                    }
+                } else {
+                    dead++;
+                }
+
+                if (strongest == null || c.getHealth() > strongest.getHealth()) {
+                    strongest = c;
+                }
+            }
+
+            System.out.println("\n=== BATTLE REPORT ===");
+            System.out.println("Alive: " + alive);
+            System.out.println("Dead: " + dead);
+
+            if (strongest != null) {
+                System.out.println("Strongest: " + strongest.getName() + " | HP: " + strongest.getHealth());
+            }
+
+            if (weakestAlive != null) {
+                System.out.println("Weakest: " + weakestAlive.getName() + " | HP: " + weakestAlive.getHealth());
+            }
+        }
+    }
 
