@@ -1,3 +1,3 @@
-public interface Attackable {
-    void attack(GameCharacter target);
-}
+//public interface Attackable {
+//    void attack(GameCharacter target);
+//}

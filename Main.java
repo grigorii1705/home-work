@@ -3161,137 +3161,258 @@ import java.util.regex.Pattern;
 //}
 //}
 // PROGECT
-import java.util.List;
-
-    public class Main {
-
-        public static void main(String[] args) {
-
-            Warrior w = new Warrior("Thor");
-            Mage m = new Mage("Merlin");
-            Robot r = new Robot("X-99");
-
-            Game game = new Game();
-            game.add(w);
-            game.add(m);
-            game.add(r);
-
-            System.out.println("=== START ===");
-            game.showAll();
-
-            System.out.println("\n=== BATTLE ===");
-            simulateFight(w, m);
-
-            System.out.println("\n=== HEAL MAGES ===");
-            healAllMages(game.getAll());
-
-            System.out.println("\n=== TOURNAMENT ===");
-            runTournament(game.getAll());
-
-            System.out.println("\n=== ATTACK WEAKEST ===");
-            attackWeakest(game, w);
-
-            System.out.println("\n=== REPORT ===");
-            printBattleReport(game);
-        }
-
-        // ===== TASKS =====
-
-        public static void simulateFight(GameCharacter a, GameCharacter b) {
-            if (!a.isAlive() || !b.isAlive()) {
-                System.out.println("Fight cancelled: dead fighter");
-                return;
-            }
-
-            System.out.println("Fight: " + a.getName() + " vs " + b.getName());
-
-            a.attack(b);
-            if (b.isAlive()) {
-                b.attack(a);
-            }
-
-            System.out.println("Result:");
-            a.showInfo();
-            b.showInfo();
-        }
-
-        public static void healAllMages(List<GameCharacter> list) {
-            for (GameCharacter c : list) {
-                if (c instanceof Mage) {
-                    ((Mage) c).heal(15);
-                }
-            }
-        }
-
-        public static void runTournament(List<GameCharacter> list) {
-            for (int i = 0; i < list.size(); i++) {
-                for (int j = i + 1; j < list.size(); j++) {
-
-                    GameCharacter a = list.get(i);
-                    GameCharacter b = list.get(j);
-
-                    if (!a.isAlive() || !b.isAlive()) continue;
-
-                    simulateFight(a, b);
-                }
-            }
-        }
-
-        public static void attackWeakest(Game game, GameCharacter attacker) {
-            GameCharacter weakest = null;
-
-            for (GameCharacter c : game.getAll()) {
-                if (c == attacker || !c.isAlive()) continue;
-
-                if (weakest == null || c.getHealth() < weakest.getHealth()) {
-                    weakest = c;
-                }
-            }
-
-            if (weakest == null) {
-                System.out.println("No targets available");
-                return;
-            }
-
-            System.out.println(attacker.getName() + " attacks weakest " + weakest.getName());
-            attacker.attack(weakest);
-        }
-
-        public static void printBattleReport(Game game) {
-            int alive = 0;
-            int dead = 0;
-
-            GameCharacter strongest = null;
-            GameCharacter weakestAlive = null;
-
-            for (GameCharacter c : game.getAll()) {
-
-                if (c.isAlive()) {
-                    alive++;
-
-                    if (weakestAlive == null || c.getHealth() < weakestAlive.getHealth()) {
-                        weakestAlive = c;
-                    }
-                } else {
-                    dead++;
-                }
-
-                if (strongest == null || c.getHealth() > strongest.getHealth()) {
-                    strongest = c;
-                }
-            }
-
-            System.out.println("\n=== BATTLE REPORT ===");
-            System.out.println("Alive: " + alive);
-            System.out.println("Dead: " + dead);
-
-            if (strongest != null) {
-                System.out.println("Strongest: " + strongest.getName() + " | HP: " + strongest.getHealth());
-            }
-
-            if (weakestAlive != null) {
-                System.out.println("Weakest: " + weakestAlive.getName() + " | HP: " + weakestAlive.getHealth());
-            }
-        }
-    }
-
+//import java.util.List;
+//
+//    public class Main {
+//
+//        public static void main(String[] args) {
+//
+//            Warrior w = new Warrior("Thor");
+//            Mage m = new Mage("Merlin");
+//            Robot r = new Robot("X-99");
+//
+//            Game game = new Game();
+//            game.add(w);
+//            game.add(m);
+//            game.add(r);
+//
+//            System.out.println("=== START ===");
+//            game.showAll();
+//
+//            System.out.println("\n=== BATTLE ===");
+//            simulateFight(w, m);
+//
+//            System.out.println("\n=== HEAL MAGES ===");
+//            healAllMages(game.getAll());
+//
+//            System.out.println("\n=== TOURNAMENT ===");
+//            runTournament(game.getAll());
+//
+//            System.out.println("\n=== ATTACK WEAKEST ===");
+//            attackWeakest(game, w);
+//
+//            System.out.println("\n=== REPORT ===");
+//            printBattleReport(game);
+//        }
+//
+//        // ===== TASKS =====
+//
+//        public static void simulateFight(GameCharacter a, GameCharacter b) {
+//            if (!a.isAlive() || !b.isAlive()) {
+//                System.out.println("Fight cancelled: dead fighter");
+//                return;
+//            }
+//
+//            System.out.println("Fight: " + a.getName() + " vs " + b.getName());
+//
+//            a.attack(b);
+//            if (b.isAlive()) {
+//                b.attack(a);
+//            }
+//
+//            System.out.println("Result:");
+//            a.showInfo();
+//            b.showInfo();
+//        }
+//
+//        public static void healAllMages(List<GameCharacter> list) {
+//            for (GameCharacter c : list) {
+//                if (c instanceof Mage) {
+//                    ((Mage) c).heal(15);
+//                }
+//            }
+//        }
+//
+//        public static void runTournament(List<GameCharacter> list) {
+//            for (int i = 0; i < list.size(); i++) {
+//                for (int j = i + 1; j < list.size(); j++) {
+//
+//                    GameCharacter a = list.get(i);
+//                    GameCharacter b = list.get(j);
+//
+//                    if (!a.isAlive() || !b.isAlive()) continue;
+//
+//                    simulateFight(a, b);
+//                }
+//            }
+//        }
+//
+//        public static void attackWeakest(Game game, GameCharacter attacker) {
+//            GameCharacter weakest = null;
+//
+//            for (GameCharacter c : game.getAll()) {
+//                if (c == attacker || !c.isAlive()) continue;
+//
+//                if (weakest == null || c.getHealth() < weakest.getHealth()) {
+//                    weakest = c;
+//                }
+//            }
+//
+//            if (weakest == null) {
+//                System.out.println("No targets available");
+//                return;
+//            }
+//
+//            System.out.println(attacker.getName() + " attacks weakest " + weakest.getName());
+//            attacker.attack(weakest);
+//        }
+//
+//        public static void printBattleReport(Game game) {
+//            int alive = 0;
+//            int dead = 0;
+//
+//            GameCharacter strongest = null;
+//            GameCharacter weakestAlive = null;
+//
+//            for (GameCharacter c : game.getAll()) {
+//
+//                if (c.isAlive()) {
+//                    alive++;
+//
+//                    if (weakestAlive == null || c.getHealth() < weakestAlive.getHealth()) {
+//                        weakestAlive = c;
+//                    }
+//                } else {
+//                    dead++;
+//                }
+//
+//                if (strongest == null || c.getHealth() > strongest.getHealth()) {
+//                    strongest = c;
+//                }
+//            }
+//
+//            System.out.println("\n=== BATTLE REPORT ===");
+//            System.out.println("Alive: " + alive);
+//            System.out.println("Dead: " + dead);
+//
+//            if (strongest != null) {
+//                System.out.println("Strongest: " + strongest.getName() + " | HP: " + strongest.getHealth());
+//            }
+//
+//            if (weakestAlive != null) {
+//                System.out.println("Weakest: " + weakestAlive.getName() + " | HP: " + weakestAlive.getHealth());
+//            }
+//        }
+//    }
+//
+// Введение в лямбда-выражения
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    // Лямбда без параметров
+//    Runnable action = () -> System.out.println("Лямбда без параметров!");
+//
+//    // Вызов действия
+//    action.run();
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    // Обработчик текста: переводит строку в верхний регистр и печатает
+//    Consumer<String> textProcessor = text -> System.out.println(text.toUpperCase());
+//
+//    // Проверка
+//    textProcessor.accept("java"); // вывод: JAVA
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    // Исходный список результатов спортсменов
+//    List<Integer> scores = Arrays.asList(-5, 3, -2, 7, 0);
+//
+//    // Компаратор: сравниваем по абсолютному значению
+//    Comparator<Integer> absComparator = (a, b) -> Integer.compare(Math.abs(a), Math.abs(b));
+//
+//    // Сортируем список
+//    scores.sort(absComparator);
+//
+//    // Вывод результата
+//    System.out.println(scores); // ожидаем: [0, -2, 3, -5, 7]
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    // Фиксированный префикс
+//    String prefix = "Результат: ";
+//
+//    // Лямбда-функция: удваивает число и добавляет префикс
+//    Function<Integer, String> formatter =
+//            n -> prefix + (n * 2);
+//
+//    // Проверка
+//    System.out.println(formatter.apply(7)); // Результат: 14
+//}
+// Method References (::): ссылки на методы
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    Function<Integer, String> converter = Integer::toHexString;
+//
+//    String result = converter.apply(255);
+//
+//    System.out.println(result);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    // Ссылка на нестатический метод объекта System.out
+//    Consumer<String> sender = System.out::println;
+//
+//    // Используем "отправителя"
+//    sender.accept("Hello, method reference!");
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    List<String> fruits = Arrays.asList("яблоко", "банан", "груша");
+//
+//    // Сортировка с использованием ссылки на метод сравнения строк
+//    fruits.sort(String::compareTo);
+//
+//    // Вывод результата
+//    for (String fruit : fruits) {
+//        System.out.println(fruit);
+//    }
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    // Фабрика: создаёт Animal по имени
+//    Function<String, Animal> factory = Animal::new;
+//
+//    // Создаём питомца
+//    Animal pet = factory.apply("Барсик");
+//
+//    // Выводим имя
+//    System.out.println(pet.name);
+//}
+// Default-методы в интерфейсах
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    MyCounter device = new MyCounter();
+//
+//    device.increment(); // Counter incremented
+//    device.reset();     // Counter reset
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    Dog dog = new Dog();
+//
+//    dog.voice(); // Woof
+//    dog.sleep(); // Dog is sleeping
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    ConsolePrinter printer = new ConsolePrinter();
+//
+//    printer.printTwice("Java");
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    C c = new C();
+//    c.show();
+//}

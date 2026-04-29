@@ -445,3 +445,11 @@
 //        dog.makeSound();
 //    }
 //}
+//interface Animal {
+//
+//    void voice();
+//
+//    default void sleep() {
+//        System.out.println("Animal is sleeping");
+//    }
+//}

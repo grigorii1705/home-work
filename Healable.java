@@ -1,3 +1,3 @@
-public interface Healable {
-    void heal(int amount);
-}
+//public interface Healable {
+//    void heal(int amount);
+//}
