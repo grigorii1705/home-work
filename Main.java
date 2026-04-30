@@ -3416,3 +3416,93 @@ import java.util.regex.Pattern;
 //    C c = new C();
 //    c.show();
 //}
+// Static-методы в интерфейсах
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    System.out.println(StringChecker.isEmpty(""));     // true
+//    System.out.println(StringChecker.isEmpty("Java")); // false
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    Printer printer = new ConsolePrinter();
+//
+//    Printer.printHello(printer);
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    NumberPrinter printer = new NumberPrinter();
+//
+//    printer.printSquare(5);   // 25
+//    MathHelper.printCube(3);  // 27
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    Logger.info("Start");
+//    Logger.error("Failure");
+//}
+//Интерфейсы из стандартной библиотеки: Comparable, Serializable и др.
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    NumberBox boxA = new NumberBox(10);
+//    NumberBox boxB = new NumberBox(5);
+//
+//    int result = boxA.compareTo(boxB);
+//
+//    System.out.println(result);
+//}
+// zadacha 2
+//import java.util.*;
+//
+//
+//    public static void main(String[] args) {
+//
+//        List<City> cities = new ArrayList<>();
+//        cities.add(new City("Нью-Йорк", 8400000));
+//        cities.add(new City("Лондон", 8900000));
+//        cities.add(new City("Париж", 2100000));
+//
+//        Collections.sort(cities);
+//
+//        for (City city : cities) {
+//            System.out.println(city);
+//        }
+//    }
+// zadacha 3
+//import java.util.*;
+//
+//
+//    public static void main(String[] args) {
+//
+//        List<Product> products = new ArrayList<>();
+//        products.add(new Product("Телевизор", 55000));
+//        products.add(new Product("Телефон", 35000));
+//        products.add(new Product("Ноутбук", 80000));
+//
+//        // Сортировка по названию через анонимный класс
+//        Collections.sort(products, new Comparator<Product>() {
+//            @Override
+//            public int compare(Product p1, Product p2) {
+//                return p1.name.compareTo(p2.name);
+//            }
+//        });
+//
+//        // Вывод результата
+//        for (Product p : products) {
+//            System.out.println(p);
+//        }
+//    }
+// zadacha 4
+public static void main(String[] args) {
+
+    try (DemoResource resource = new DemoResource()) {
+        System.out.println("Работа с ресурсом");
+    }
+
+}
+
+

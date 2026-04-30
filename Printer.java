@@ -43,3 +43,11 @@
 //        print(message);
 //    }
 //}
+//interface Printer {
+//
+//    void print(String text);
+//
+//    static void printHello(Printer printer) {
+//        printer.print("Hello, world!");
+//    }
+//}

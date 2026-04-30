@@ -1081,10 +1081,10 @@
 //
 //        printer.printTwice("Java");
 //    }
-public class Solution {
-    public static void main(String[] args) {
-
-        C c = new C();
-        c.show();
-    }
-}
+//public class Solution {
+//    public static void main(String[] args) {
+//
+//        C c = new C();
+//        c.show();
+//    }
+//}

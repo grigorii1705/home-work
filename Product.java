@@ -18,21 +18,36 @@
 //        return productName;
 //    }
 //}
-class Product {
-    private String productName;
-
-    // Конструктор
-    public Product(String productName) {
-        this.productName = productName;
-    }
-
-    // Геттер для productName
-    public String getProductName() {
-        return productName;
-    }
-
-    // Сеттер для productName
-    public void setProductName(String newProductName) {
-        this.productName = newProductName;
-    }
-}
+//class Product {
+//    private String productName;
+//
+//    // Конструктор
+//    public Product(String productName) {
+//        this.productName = productName;
+//    }
+//
+//    // Геттер для productName
+//    public String getProductName() {
+//        return productName;
+//    }
+//
+//    // Сеттер для productName
+//    public void setProductName(String newProductName) {
+//        this.productName = newProductName;
+//    }
+//}
+//class Product {
+//
+//    String name;
+//    int price;
+//
+//    public Product(String name, int price) {
+//        this.name = name;
+//        this.price = price;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return name + " | price: " + price;
+//    }
+//}

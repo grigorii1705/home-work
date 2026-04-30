@@ -1,6 +1,6 @@
-interface B {
-
-    default void show() {
-        System.out.println("B");
-    }
-}
+//interface B {
+//
+//    default void show() {
+//        System.out.println("B");
+//    }
+//}
