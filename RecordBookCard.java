@@ -1,0 +1,1 @@
+//record BookCard(String title, String author) {}

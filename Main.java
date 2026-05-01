@@ -3497,12 +3497,106 @@ import java.util.regex.Pattern;
 //        }
 //    }
 // zadacha 4
+//public static void main(String[] args) {
+//
+//    try (DemoResource resource = new DemoResource()) {
+//        System.out.println("Работа с ресурсом");
+//    }
+//
+//}
+// Record: синтаксис, преимущества
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    BookCard favorite = new BookCard("Мастер и Маргарита", "Михаил Булгаков");
+//
+//    System.out.println("Название: " + favorite.title());
+//    System.out.println("Автор: " + favorite.author());
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    Student student = new Student("Иван Петров", 20);
+//
+//    System.out.println(student.name());
+//    System.out.println(student.age());
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    City city1 = new City("Paris", 2148327);
+//    City city2 = new City("Paris", 2148327);
+//
+//    boolean areEqual = city1.equals(city2);
+//
+//    System.out.println(areEqual);
+//}
+// zadacha 4
+//import java.util.*;
+//
+//
+//    public static void main(String[] args) {
+//
+//        Map<User, String> roles = new HashMap<>();
+//
+//        roles.put(new User("Алиса", 1L), "администратор");
+//        roles.put(new User("Боб", 2L), "модератор");
+//        roles.put(new User("Ева", 3L), "гость");
+//
+//        User lookup = new User("Боб", 2L);
+//
+//        String role = roles.get(lookup);
+//
+//        System.out.println(role);
+//    }
+// Immutability — неизменяемость record-классов
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    Book favoriteBook = new Book("Effective Java", "Joshua Bloch");
+//
+//    System.out.println("Название: " + favoriteBook.title());
+//    System.out.println("Автор: " + favoriteBook.author());
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    HistoricalFigure figure = new HistoricalFigure("Леонардо да Винчи", 67);
+//
+//    System.out.println("Исходные данные: " + figure);
+//    System.out.println("Имя: " + figure.name() + ", возраст: " + figure.age());
+//
+//    // ❌ Попытка изменить (раскомментируй — будет ошибка компиляции)
+//    // figure.name = "Микеланджело";
+//    // figure.setName("Микеланджело");
+//
+//    System.out.println("После попыток изменения объект не изменился: " + figure);
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    // Начальная точка
+//    Point start = new Point(3, 7);
+//
+//    // "Перемещение" — создаём НОВЫЙ объект
+//    Point moved = new Point(start.horizontal() + 2, start.vertical());
+//
+//    // Вывод
+//    System.out.println(start);
+//    System.out.println(moved);
+//}
+// zadacha 4
 public static void main(String[] args) {
 
-    try (DemoResource resource = new DemoResource()) {
-        System.out.println("Работа с ресурсом");
-    }
+    int[] readings = {10, 20, 30};
 
+    IntArrayRecord container = new IntArrayRecord(readings);
+
+    // Меняем исходный массив
+    readings[0] = 99;
+
+    // Смотрим, что внутри record
+    System.out.println(container.values()[0]);
 }
 
 
