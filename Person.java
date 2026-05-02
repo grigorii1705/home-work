@@ -163,3 +163,15 @@
 //        student.printInfo(); // Имя: Иван Петров, ID: 42
 //    }
 //}
+//record Person(String name, int age) {
+//
+//    // Общая для всех константа
+//    public static final String SPECIES = "Homo sapiens";
+//
+//    // Метод приветствия
+//    public String greeting() {
+//        return "Привет, меня зовут " + name +
+//                ", мне " + age +
+//                " лет. Я — " + SPECIES;
+//    }
+//}

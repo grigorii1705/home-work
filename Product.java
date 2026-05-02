@@ -51,3 +51,17 @@
 //        return name + " | price: " + price;
 //    }
 //}
+//record Product(String name, double price) {
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof Product other)) return false;
+//        return name.equals(other.name); // сравниваем ТОЛЬКО название
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return name.hashCode(); // хеш только по названию
+//    }
+//}
