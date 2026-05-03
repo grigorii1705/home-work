@@ -13,4 +13,9 @@
 //    }
 //}
 //record Student(String name, int age) {}
+//public class Student {
+//
+//    String studentName;
+//
+//}
 

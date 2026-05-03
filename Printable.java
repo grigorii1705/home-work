@@ -1,3 +1,3 @@
-interface Printable {
-    void print();
-}
+//interface Printable {
+//    void print();
+//}

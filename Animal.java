@@ -453,3 +453,24 @@
 //        System.out.println("Animal is sleeping");
 //    }
 //}
+//final class Animal {
+//    public void live() {
+//        System.out.println("Animal lives");
+//    }
+//}
+//class Animal {
+//    public void makeSound() {
+//        System.out.println("Some sound");
+//    }
+//}
+//public class Animal {
+//    private final String name;
+//
+//    public Animal(String petName) {
+//        this.name = petName;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//}

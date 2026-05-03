@@ -20,3 +20,15 @@
 //        System.out.println("Dog is sleeping");
 //    }
 //}
+//class Dog extends Animal { // 💥 ОШИБКА
+//    public void bark() {
+//        System.out.println("Woof");
+//    }
+//}
+//class Dog extends Animal {
+//
+//    // ❗ Это НЕ override — это новый метод (другие параметры)
+//    public void makeSound(String intensity) {
+//        System.out.println("Bark! " + intensity);
+//    }
+//}
