@@ -38,3 +38,8 @@
 //        phone.charge();
 //    }
 //}
+//abstract class Appliance {
+//
+//    // Общая команда для всех приборов
+//    public abstract void turnOn();
+//}

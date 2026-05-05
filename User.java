@@ -48,3 +48,8 @@
 //        System.out.println(user.getName());
 //    }
 //}
+//record User(String name, long id) {}
+//class User {
+//    // 🔒 Приватное поле — доступ только внутри класса
+//    private String userPassword;
+//}

@@ -32,3 +32,18 @@
 //        System.out.println("Bark! " + intensity);
 //    }
 //}
+//class Dog extends Animal {
+//
+//    public void bark() {
+//        // ✔ доступ есть — мы наследники
+//        makeSound();
+//    }
+//}
+//class Dog extends Animal {
+//
+//    // ✔ обязаны реализовать метод
+//    @Override
+//    public void makeSound() {
+//        System.out.println("Гав!");
+//    }
+//}

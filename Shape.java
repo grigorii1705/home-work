@@ -117,3 +117,8 @@
 //        System.out.println(circle.area()); // 12.56
 //    }
 //}
+//abstract class Shape {
+//
+//    // Абстрактный метод — каждая фигура обязана реализовать
+//    public abstract void printType();
+//}

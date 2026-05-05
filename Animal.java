@@ -474,3 +474,14 @@
 //        return name;
 //    }
 //}
+//public class Animal {
+//    // доступен наследникам и в том же пакете
+//    protected void makeSound() {
+//        System.out.println("Some sound");
+//    }
+//}
+//abstract class Animal {
+//
+//    // ❗ Абстрактный метод — без реализации
+//    public abstract void makeSound();
+//}

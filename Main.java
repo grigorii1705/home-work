@@ -18,6 +18,7 @@ import java.util.regex.Pattern;
 
 
 
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
@@ -3586,17 +3587,285 @@ import java.util.regex.Pattern;
 //    System.out.println(moved);
 //}
 // zadacha 4
-public static void main(String[] args) {
-
-    int[] readings = {10, 20, 30};
-
-    IntArrayRecord container = new IntArrayRecord(readings);
-
-    // Меняем исходный массив
-    readings[0] = 99;
-
-    // Смотрим, что внутри record
-    System.out.println(container.values()[0]);
-}
-
-
+//public static void main(String[] args) {
+//
+//    int[] readings = {10, 20, 30};
+//
+//    IntArrayRecord container = new IntArrayRecord(readings);
+//
+//    // Меняем исходный массив
+//    readings[0] = 99;
+//
+//    // Смотрим, что внутри record
+//    System.out.println(container.values()[0]);
+//}
+//# **equals, hashCode, toString: автогенерация**
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    Book book = new Book("Чистый код", "Роберт Мартин");
+//
+//    // Автоматически вызывается toString()
+//    System.out.println(book);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    Point point1 = new Point(40.7128, -74.0060);
+//    Point point2 = new Point(40.7128, -74.0060);
+//
+//    boolean equalsResult = point1.equals(point2);
+//    boolean sameHash = point1.hashCode() == point2.hashCode();
+//
+//    System.out.println(equalsResult);
+//    System.out.println(sameHash);
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    UserProfile user = new UserProfile("Алиса", 25);
+//
+//    System.out.println(user);
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    Product p1 = new Product("Кружка", 199.99);
+//    Product p2 = new Product("Кружка", 149.49);
+//
+//    System.out.println(p1.equals(p2));
+//    System.out.println(p1.hashCode() == p2.hashCode());
+//}
+//# **Record с методами**
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    Temperature boiling = Temperature.fromFahrenheit(212);
+//
+//    System.out.println(boiling.celsius());
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    // ✅ Корректный email
+//    Email good = new Email("student@example.com");
+//    System.out.println("Создан корректный адрес: " + good.address());
+//
+//    // ❌ Некорректный email
+//    Email bad = new Email("student.example.com");
+//
+//    // Эта строка не выполнится
+//    System.out.println(bad.address());
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    Person ivan = new Person("Иван", 25);
+//
+//    System.out.println(ivan.greeting());
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    Transaction ok = new Transaction("Иван Петров", "Мария Смирнова", 12500.75);
+//    System.out.println(ok.describe());
+//
+//    // Ошибка — отрицательная сумма
+//    Transaction bad = new Transaction("Иван Петров", "Мария Смирнова", -100.0);
+//
+//    System.out.println(bad.describe()); // не выполнится
+//}
+// Отличия record и class, ограничения record
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    Book favorite = new Book("Мастер и Маргарита", "Михаил Булгаков");
+//
+//    System.out.println("Книга: " + favorite.title());
+//    System.out.println("Автор: " + favorite.author());
+//
+//    // Можно так:
+//    // System.out.println(favorite);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    Point p1 = new Point(10, 20);
+//    Point p2 = new Point(10, 20);
+//
+//    boolean same = p1.equals(p2);
+//
+//    System.out.println(same);
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    Printable doc = new Document("Привет из record-класса!");
+//
+//    doc.print();
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    // 🔄 Mutable object
+//    FlexibleUser flexible = new FlexibleUser("Иван", 30);
+//    System.out.println("Гибкий профиль (до изменений): " + flexible);
+//
+//    flexible.setName("Пётр");
+//    flexible.setAge(25);
+//
+//    System.out.println("Гибкий профиль (после изменений): " + flexible);
+//
+//    // ❄️ Immutable record
+//    FixedUser fixed = new FixedUser("Анна", 28);
+//    System.out.println("Фиксированный профиль (record): " + fixed);
+//
+//    // ❌ Попытки изменения невозможны:
+//    // fixed.setName("Мария"); // нет сеттера
+//    // fixed.name = "Мария";   // поле final
+//}
+//    ООП -типичные ошибки и best practices
+// Ошибки при объявлении классов и объектов
+// zadacha 1
+// public class Student {
+//
+//    String studentName;
+//
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    // Объявляем переменную, но НЕ создаем объект
+//    Book libraryBook = null;
+//
+//    // Пытаемся использовать "несуществующий" объект
+//    System.out.println(libraryBook.getTitle()); // 💥 ошибка
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//    new Calculator().calculate();
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    // ✅ Создаём товар с именем
+//    Product milk = new Product("Молоко");
+//
+//    // Выводим имя товара
+//    System.out.println("Товар: " + milk.getProductName());
+//
+//    // ❌ Так нельзя — будет ошибка компиляции:
+//    // Product p = new Product();
+//}
+// Ошибки с наследованием и перегрузкой методов
+// zadacha 1
+//    class Dog extends Animal { // 💥 ОШИБКА
+//        public void bark() {
+//            System.out.println("Woof");
+//        }
+//
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    Dog dog = new Dog();
+//
+//    dog.makeSound();           // метод из Animal
+//    dog.makeSound("громко");   // метод из Dog
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    Cat cat = new Cat("Барсик");
+//
+//    System.out.println(cat.getName());
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    OverloadDemo demo = new OverloadDemo();
+//
+//    long value = 5L;
+//
+//    demo.print(value); // 👈 интересный момент
+//}
+//Ошибки с модификаторами доступа
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    // Создаем новый автомобиль
+//    Car newCar = new Car();
+//
+//    // Заполняем данные
+//    newCar.carBrand = "Toyota";
+//    newCar.productionYear = 2022;
+//
+//    // Выводим информацию
+//    System.out.println("Марка: " + newCar.carBrand);
+//    System.out.println("Год выпуска: " + newCar.productionYear);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    Product product = new Product();
+//
+//    // Устанавливаем цену
+//    product.setPrice(49.99);
+//
+//    // Получаем цену
+//    double currentPrice = product.getPrice();
+//
+//    System.out.println(currentPrice);
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    User user = new User();
+//
+//    // ❌ Ошибка компиляции
+//    user.userPassword = "12345";
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    Animal animal = new Animal();
+//
+//    // ❌ Ошибка доступа
+//    animal.makeSound();
+//}
+// Проблемы полиморфизма и абстракций
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    Dog dog = new Dog();
+//    dog.makeSound();
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    Shape[] canvas = new Shape[2];
+//
+//    canvas[0] = new Circle();
+//    canvas[1] = new Square();
+//
+//    for (Shape shape : canvas) {
+//        shape.printType();
+//    }
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    Appliance homeAppliance = new Kettle();
+//
+//    if (homeAppliance instanceof Kettle) {
+//        Kettle kettle = (Kettle) homeAppliance;
+//        kettle.boil();
+//    }
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    Programmer programmer = new Programmer("Алиса");
+//
+//    programmer.work();
+//    programmer.report();
+//}
