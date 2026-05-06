@@ -76,3 +76,37 @@
 //        return productName;
 //    }
 //}
+//public class Product {
+//
+//    // 🔒 Скрытое поле — напрямую извне недоступно
+//    private double productPrice;
+//
+//    // 📖 Геттер (получить цену)
+//    public double getPrice() {
+//        return productPrice;
+//    }
+//
+//    // ✏️ Сеттер (установить цену)
+//    public void setPrice(double productPrice) {
+//        this.productPrice = productPrice;
+//    }
+//}
+//class Product {
+//
+//    // 1️⃣ Статические поля
+//    static int totalProductCount = 0;
+//
+//    // 2️⃣ Обычные поля
+//    private String productName;
+//
+//    // 3️⃣ Конструктор
+//    public Product(String productName) {
+//        this.productName = productName;
+//        totalProductCount++;
+//    }
+//
+//    // 4️⃣ Методы
+//    public String getProductName() {
+//        return productName;
+//    }
+//}

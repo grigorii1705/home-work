@@ -16,16 +16,6 @@ import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-
-
-
-
-
 // obertka
     // zadacha 1
     // 1. Создаем строковую переменную
@@ -3869,3 +3859,455 @@ import java.util.regex.Pattern;
 //    programmer.work();
 //    programmer.report();
 //}
+// Стиль и читаемость кода, code conventions
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    // Объявляем переменную
+//    int inputNumber = 10;
+//
+//    // Проверяем, положительное ли число
+//    if (inputNumber > 0) {
+//        System.out.println("Положительное");
+//    } else {
+//        System.out.println("Не положительное");
+//    }
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Демонстрация
+//    Solution app = new Solution();
+//    app.printMessage();
+//}
+// zadacha 3
+//    public class Main {
+//
+//        static final double INCOME_TAX_RATE = 0.13;
+//
+//        public static void main(String[] args) {
+//
+//            double employeeSalary = 5000.0;
+//
+//            double calculatedTax = employeeSalary * INCOME_TAX_RATE;
+//
+//            System.out.println(calculatedTax);
+//        }
+//    }
+// zadacha 4
+//public static void main(String[] args) {
+//
+//    Product banana = new Product("Банан");
+//    System.out.println(banana.getProductName());
+//}
+// Продвинутая работа с исключениями
+// Иерархия исключений в Java
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    // Создаем две "проблемы"
+//    IOException networkProblem = new IOException();
+//    NullPointerException missingDataError = new NullPointerException();
+//
+//    // Получаем родительские классы
+//    Class<?> parent1 = networkProblem.getClass().getSuperclass();
+//    Class<?> parent2 = missingDataError.getClass().getSuperclass();
+//
+//    // Выводим имена родительских классов
+//    System.out.println(parent1.getName());
+//    System.out.println(parent2.getName());
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    // Общее исключение (обрабатываемое)
+//    Exception generalSystemIssue = new Exception();
+//
+//    // Фатальная ошибка (уровень JVM)
+//    Error catastrophicFailure = new Error();
+//
+//    // Проверяем, являются ли они наследниками Throwable
+//    boolean isGeneralThrowable =
+//            Throwable.class.isAssignableFrom(generalSystemIssue.getClass());
+//
+//    boolean isCatastrophicThrowable =
+//            Throwable.class.isAssignableFrom(catastrophicFailure.getClass());
+//
+//    // Выводим результат
+//    System.out.println(isGeneralThrowable);
+//    System.out.println(isCatastrophicThrowable);
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    // "Неожиданный сбой": RuntimeException — непроверяемое (unchecked) исключение
+//    RuntimeException unexpectedGlitch = new RuntimeException();
+//
+//    // "Потерянный файл конфигурации": FileNotFoundException — проверяемое (checked) исключение
+//    FileNotFoundException missingConfigurationFile = new FileNotFoundException();
+//
+//    // Выводим классификацию
+//    System.out.println("RuntimeException — unchecked");
+//    System.out.println("FileNotFoundException — checked");
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//    try {
+//        // Имитация поиска отчёта
+//        throw new FileNotFoundException("Отчёт не найден!");
+//
+//    } catch (FileNotFoundException e) {
+//        // Самый специфичный план
+//        System.out.println("План 1: Отчёт не найден");
+//
+//    } catch (IOException e) {
+//        // Более общий план
+//        System.out.println("План 2: Проблемы с доступом к данным");
+//
+//    } catch (Exception e) {
+//        // Самый общий план
+//        System.out.println("План 3: Непредвиденная ситуация");
+//    }
+//}
+// # **Создание собственных исключений**
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    try {
+//        // Пробуем проверить счёт
+//        Solution.checkPlayerScore(5);
+//
+//        // Если всё ок
+//        System.out.println("Счёт принят");
+//
+//    } catch (ScoreTooLowException e) {
+//        // Обрабатываем нашу ошибку
+//        System.out.println(e.getMessage());
+//    }
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//
+//    PasswordGuard guard = new PasswordGuard();
+//
+//    try {
+//        // Симуляция слабого пароля
+//        guard.enforcePasswordStrength("123");
+//
+//    } catch (WeakPasswordException e) {
+//        // Вывод предупреждения пользователю
+//        System.out.println(e.getMessage());
+//    }
+//}
+// zadacha 3
+//    public class Solution {
+//        public static void main(String[] args) {
+//            int userAge = 14;
+//            int requiredAge = 16;
+//
+//            try {
+//                // Пытаемся пройти возрастной контроль
+//                checkRideAge(userAge, requiredAge);
+//                System.out.println("Добро пожаловать на аттракцион!");
+//            } catch (InvalidAgeException e) {
+//                // Показываем осмысленное сообщение
+//                System.out.println("Отказ: " + e.getMessage());
+//            }
+//        }
+//
+//        // Метод проверки возраста
+//        static void checkRideAge(int age, int minAge) throws InvalidAgeException {
+//            if (age < minAge) {
+//                throw new InvalidAgeException(
+//                        "Вам должно быть не менее " + minAge +
+//                                " лет для этого аттракциона (сейчас " + age + ")."
+//                );
+//            }
+//        }
+//    }
+//
+// Пользовательское исключение
+//class InvalidAgeException extends Exception {
+//
+//    // "безмолвный" конструктор
+//    public InvalidAgeException() {
+//        super("Проблема с возрастом");
+//    }
+//
+//    // конструктор с подробным сообщением
+//    public InvalidAgeException(String message) {
+//        super(message);
+//    }
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//    try {
+//        Solution.tryAddItem(150, 100);
+//
+//    } catch (StorageCapacityExceededException e) {
+//
+//        System.out.println("Ошибка: " + e.getMessage());
+//        System.out.println("Текущее значение: " + e.getCurrentItemCount());
+//        System.out.println("Лимит: " + e.getMaximumCapacity());
+//    }
+//}
+// Цепочки исключений (Exception Chaining)
+// zadacha 1
+//public static void main(String[] args) {
+//    // Создаем "первопричину" — уже существующее исключение
+//    Throwable rootCause = new NullPointerException("данные отсутствуют!");
+//
+//    // Создаем наше исключение и "прикрепляем" к нему первопричину
+//    DataProcessingFailure failure =
+//            new DataProcessingFailure("Ошибка генерации отчёта", rootCause);
+//
+//    // Выводим на экран первопричину через getCause()
+//    System.out.println(failure.getCause());
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    try {
+//        Solution.generateFinalReport();
+//    } catch (DataLoadingError e) {
+//        // Сообщение верхнего уровня
+//        System.out.println(e.getMessage());
+//
+//        // Первопричина
+//        Throwable cause = e.getCause();
+//        if (cause != null) {
+//            System.out.println(cause.getMessage());
+//        }
+//    }
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//    try {
+//        // Симулируем "внешнюю ошибку" с причиной
+//        throw new InputValidationException(
+//                "Внешняя ошибка обработки ввода",
+//                new IllegalArgumentException("Передан некорректный формат данных")
+//        );
+//
+//    } catch (InputValidationException e) {
+//        // 1) сообщение внешнего исключения
+//        System.out.println(e.getMessage());
+//
+//        // 2) сообщение исключения-источника (корня)
+//        System.out.println(e.getCause().getMessage());
+//
+//        // 3) имя класса исключения-источника
+//        System.out.println(e.getCause().getClass().getName());
+//    }
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//    try {
+//        provokeLifeSupportCrisis();
+//    } catch (ThirdSystemFailure e) {
+//        e.printStackTrace();
+//    }
+//}
+//
+//            // 1 уровень
+//            public static void initiateSystemFailure() throws FirstSystemFailure {
+//                throw new FirstSystemFailure("Проблема в ядре системы", null);
+//            }
+//
+//            // 2 уровень
+//            public static void triggerNavigationMalfunction() throws SecondSystemFailure {
+//                try {
+//                    initiateSystemFailure();
+//                } catch (FirstSystemFailure e) {
+//                    throw new SecondSystemFailure("Навигационная система отказала", e);
+//                }
+//            }
+//
+//            // 3 уровень
+//            public static void provokeLifeSupportCrisis() throws ThirdSystemFailure {
+//                try {
+//                    triggerNavigationMalfunction();
+//                } catch (SecondSystemFailure e) {
+//                    throw new ThirdSystemFailure("Критический отказ системы жизнеобеспечения", e);
+//                }
+//            }
+// Сложная обработка исключений и лучшие практики
+// zadacha 1
+//public static void main(String[] args) {
+//    try {
+//        // Пытаемся открыть файл и прочитать первую строку
+//        BufferedReader reader = new BufferedReader(new FileReader("daily_transactions.txt"));
+//        String line = reader.readLine();
+//
+//        // Пробуем преобразовать строку в число
+//        int total = Integer.parseInt(line);
+//
+//        // Если всё успешно
+//        System.out.println("Сумма транзакций: " + total);
+//
+//        reader.close();
+//
+//    } catch (FileNotFoundException e) {
+//        // Файл не найден
+//        System.out.println("Файл транзакций не найден!");
+//
+//    } catch (IOException e) {
+//        // Ошибка чтения файла
+//        System.out.println("Ошибка чтения данных из файла!");
+//
+//    } catch (NumberFormatException e) {
+//        // Некорректный формат данных
+//        System.out.println("В файле обнаружены некорректные финансовые данные!");
+//    }
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    try {
+//        // Открываем файл и читаем первую строку
+//        BufferedReader reader = new BufferedReader(new FileReader("game_config.txt"));
+//        String line = reader.readLine();
+//
+//        // Пытаемся преобразовать строку в число (например, уровень сложности)
+//        int difficulty = Integer.parseInt(line);
+//
+//        System.out.println("Уровень сложности: " + difficulty);
+//
+//        reader.close();
+//
+//    } catch (IOException | NumberFormatException e) {
+//        // Один catch для нескольких типов ошибок
+//        System.out.println("Ошибка: " + e.getMessage());
+//    }
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//
+//    try {
+//        // Пытаемся открыть файл — может возникнуть FileNotFoundException
+//        FileInputStream fis = new FileInputStream("secret_document.txt");
+//
+//        // Читаем первый байт (простая проверка доступа)
+//        int data = fis.read();
+//
+//        // Намеренно провоцируем общую IOException
+//        if (data == -1) {
+//            throw new IOException("Файл пуст или произошла ошибка чтения");
+//        }
+//
+//        fis.close();
+//
+//    } catch (FileNotFoundException e) {
+//        // Более специфичная ошибка
+//        System.out.println("Секретный документ не найден!");
+//
+//    } catch (IOException e) {
+//        // Более общая ошибка
+//        System.out.println("Ошибка доступа к архиву!");
+//    }
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//    System.out.println("Фоновая служба логирования запущена.");
+//
+//    try {
+//        // Создаём временную директорию и используем её как "файл"
+//        Path tempDir = Files.createTempDirectory("logs");
+//
+//        // Пытаемся записать в директорию как в файл → будет IOException
+//        saveEvent("Важное событие", tempDir);
+//
+//        // До этой строки выполнение не дойдёт
+//        System.out.println("Запись успешно выполнена.");
+//
+//    } catch (IOException e) {
+//        // ВАЖНО: не игнорируем ошибку — выводим полный стек
+//        e.printStackTrace();
+//    }
+//
+//    System.out.println("Демонстрация завершена.");
+//}
+//
+//            // Бизнес-уровень
+//            private static void saveEvent(String message, Path logFile) throws IOException {
+//                writeLog(logFile, message);
+//            }
+//
+//            // Низкоуровневая запись
+//            private static void writeLog(Path logFile, String text) throws IOException {
+//                Files.writeString(
+//                        logFile,
+//                        text + System.lineSeparator(),
+//                        StandardOpenOption.CREATE,
+//                        StandardOpenOption.APPEND
+//                );
+//            }
+// Исключения как часть API и try-with-resources
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    try (BufferedReader reader = new BufferedReader(new FileReader("article_text.txt"))) {
+//        // Читаем первую строку
+//        String headline = reader.readLine();
+//
+//        // Выводим заголовок
+//        System.out.println(headline);
+//
+//    } catch (IOException e) {
+//        // Обработка любой ошибки чтения файла
+//        System.out.println("Ошибка чтения статьи!");
+//    }
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // try-with-resources гарантирует автоматический вызов close()
+//    try (MagicArtifact artifact = new MagicArtifact()) {
+//
+//        System.out.println("Идёт работа с магическим артефактом");
+//        // Здесь могла бы быть любая логика работы с артефактом
+//
+//    } // <-- здесь автоматически вызовется close()
+//}
+// zadacha 3
+//public static void main(String[] args) {
+//    try {
+//        // Передаём заведомо некорректную строку
+//        int value = parseMeasurementValue("123abc");
+//
+//        // До этой строки выполнение не дойдёт
+//        System.out.println("Значение: " + value);
+//
+//    } catch (NumberFormatException e) {
+//        // Понятное сообщение для пользователя
+//        System.out.println("Ошибка преобразования числа: введены некорректные данные");
+//    }
+//}
+//
+//            /**
+//             * Преобразует строковое значение измерения в целое число.
+//             *
+//             * @param measurement строка с данными измерения
+//             * @return целочисленное значение измерения
+//             * @throws NumberFormatException если строка не является корректным числом
+//             */
+//            public static int parseMeasurementValue(String measurement) {
+//                // Может выбросить NumberFormatException
+//                return Integer.parseInt(measurement);
+//            }
+// zadacha 4
+public static void main(String[] args) {
+
+    try (
+            BufferedReader reader = new BufferedReader(new FileReader("ancient_manuscript.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("digital_archive.txt"))
+    ) {
+        String line;
+
+        // Читаем построчно и сразу записываем
+        while ((line = reader.readLine()) != null) {
+            writer.write(line);
+            writer.newLine(); // сохраняем перенос строки
+        }
+
+    } catch (IOException e) {
+        // Любая ошибка при работе с файлами
+        System.out.println("Ошибка копирования рукописи!");
+    }
+}
