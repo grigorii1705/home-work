@@ -4292,22 +4292,202 @@ import java.util.regex.Pattern;
 //                return Integer.parseInt(measurement);
 //            }
 // zadacha 4
+//public static void main(String[] args) {
+//
+//    try (
+//            BufferedReader reader = new BufferedReader(new FileReader("ancient_manuscript.txt"));
+//            BufferedWriter writer = new BufferedWriter(new FileWriter("digital_archive.txt"))
+//    ) {
+//        String line;
+//
+//        // Читаем построчно и сразу записываем
+//        while ((line = reader.readLine()) != null) {
+//            writer.write(line);
+//            writer.newLine(); // сохраняем перенос строки
+//        }
+//
+//    } catch (IOException e) {
+//        // Любая ошибка при работе с файлами
+//        System.out.println("Ошибка копирования рукописи!");
+//    }
+//}
+// Обзор коллекций Java — зачем нужны коллекции
+// zadacha1
+//public static void main(String[] args) {
+//    // Создаем динамический список для хранения фруктов
+//    ArrayList<String> fruits = new ArrayList<>();
+//
+//    // Добавляем фрукты в заданном порядке
+//    fruits.add("Яблоко");
+//    fruits.add("Банан");
+//    fruits.add("Груша");
+//
+//    // Выводим весь список
+//    System.out.println(fruits);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Создаем "картотеку" студентов
+//    HashMap<String, Integer> students = new HashMap<>();
+//
+//    // Добавляем данные о студентах
+//    students.put("Иван", 20);
+//    students.put("Мария", 21);
+//    students.put("Алексей", 19);
+//
+//    // Выводим полный список студентов и их возрастов
+//    System.out.println(students);
+//}
+// List: ArrayList и LinkedList, основные операции
+// zadacha 1
+//public static void main(String[] args) {
+//    // Используем интерфейс List для хранения предметов
+//    List<String> subjects = new ArrayList<>();
+//
+//    // Добавляем три основных предмета
+//    subjects.add("Математика");
+//    subjects.add("Физика");
+//    subjects.add("Информатика");
+//
+//    // Вставляем "Английский" в начало списка
+//    subjects.add(0, "Английский");
+//
+//    // Удаляем "Физика"
+//    subjects.remove("Физика");
+//
+//    // Выводим итоговое расписание
+//    for (String subject : subjects) {
+//        System.out.println(subject);
+//    }
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Создаем список фильмов
+//    ArrayList<String> movies = new ArrayList<>();
+//
+//    // Добавляем фильмы
+//    movies.add("Титаник");
+//    movies.add("Матрица");
+//    movies.add("Интерстеллар");
+//
+//    // По ошибке добавили "Матрица" снова
+//    movies.add("Матрица");
+//
+//    // Ищем первое вхождение "Матрица"
+//    int index = movies.indexOf("Матрица");
+//    System.out.println("Первое вхождение 'Матрица': " + index);
+//
+//    // Проверяем наличие "Аватар"
+//    boolean hasAvatar = movies.contains("Аватар");
+//    System.out.println("Есть ли 'Аватар' в списке: " + hasAvatar);
+//
+//    // Очищаем список
+//    movies.clear();
+//
+//    // Выводим список после очистки
+//    System.out.println(movies);
+//}
+// Map: HashMap и TreeMap, ключи и значения
+// zadacha 1
+//public static void main(String[] args) {
+//    // Создаём Map: день недели -> номер
+//    Map<String, Integer> daysOfWeek = new HashMap<>();
+//
+//    // Добавляем элементы
+//    daysOfWeek.put("Monday", 1);
+//    daysOfWeek.put("Tuesday", 2);
+//    daysOfWeek.put("Wednesday", 3);
+//
+//    // Выводим все пары ключ-значение
+//    for (Map.Entry<String, Integer> entry : daysOfWeek.entrySet()) {
+//        System.out.println(
+//                "День: " + entry.getKey() +
+//                        ", Номер: " + entry.getValue()
+//        );
+//    }
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // TreeMap автоматически сортирует ключи по алфавиту
+//    TreeMap<String, Integer> fruits = new TreeMap<>();
+//
+//    // Добавляем данные о фруктах
+//    fruits.put("pear", 6);
+//    fruits.put("apple", 2);
+//    fruits.put("banana", 4);
+//
+//    // Выводим ассортимент в алфавитном порядке
+//    for (Map.Entry<String, Integer> entry : fruits.entrySet()) {
+//        System.out.println(
+//                "Фрукт: " + entry.getKey() +
+//                        ", Количество: " + entry.getValue()
+//        );
+//    }
+//}
+//Set: HashSet и TreeSet, уникальность элементов
+// zadacha 1
+//public static void main(String[] args) {
+//    // TreeSet автоматически сортирует элементы и убирает дубликаты
+//    TreeSet<String> participants = new TreeSet<>();
+//
+//    // Добавляем участников
+//    participants.add("Борис");
+//    participants.add("Алексей");
+//    participants.add("Виктор");
+//
+//    // Выводим список участников
+//    System.out.println(participants);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Исходный список с повторяющимися товарами
+//    List<String> shoppingList = new ArrayList<>();
+//
+//    shoppingList.add("яблоко");
+//    shoppingList.add("груша");
+//    shoppingList.add("яблоко");
+//    shoppingList.add("слива");
+//    shoppingList.add("груша");
+//
+//    // Set автоматически удаляет дубликаты
+//    Set<String> uniqueProducts = new HashSet<>(shoppingList);
+//
+//    // Выводим уникальные товары
+//    System.out.println(uniqueProducts);
+//}
+// Generics: зачем нужны, базовый синтаксис
+// zadacha 1
+//public static void main(String[] args) {
+//    // Создаем каталог книг
+//    List<Book> libraryCatalog = new ArrayList<>();
+//
+//    // Добавляем книги в каталог
+//    libraryCatalog.add(new Book("1984", "Джордж Оруэлл"));
+//    libraryCatalog.add(new Book("Мастер и Маргарита", "Михаил Булгаков"));
+//
+//    // Выводим информацию о каждой книге
+//    for (Book book : libraryCatalog) {
+//        System.out.println(
+//                "Название: " + book.getTitle() +
+//                        ", Автор: " + book.getAuthor()
+//        );
+//    }
+//}
+// zadacha 2
 public static void main(String[] args) {
+    // Создаем "универсальный сундук" для строк
+    UniversalChest<String> messageChest = new UniversalChest<>();
+    messageChest.put("Тайное послание: «Да пребудет с тобой Java!»");
 
-    try (
-            BufferedReader reader = new BufferedReader(new FileReader("ancient_manuscript.txt"));
-            BufferedWriter writer = new BufferedWriter(new FileWriter("digital_archive.txt"))
-    ) {
-        String line;
+    // Создаем "универсальный сундук" для целых чисел
+    UniversalChest<Integer> numberChest = new UniversalChest<>();
+    numberChest.put(777);
 
-        // Читаем построчно и сразу записываем
-        while ((line = reader.readLine()) != null) {
-            writer.write(line);
-            writer.newLine(); // сохраняем перенос строки
-        }
+    // Извлекаем содержимое сундуков
+    String secretMessage = messageChest.take();
+    Integer magicNumber = numberChest.take();
 
-    } catch (IOException e) {
-        // Любая ошибка при работе с файлами
-        System.out.println("Ошибка копирования рукописи!");
-    }
+    // Выводим содержимое
+    System.out.println(secretMessage);
+    System.out.println(magicNumber);
 }
