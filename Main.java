@@ -4474,20 +4474,202 @@ import java.util.regex.Pattern;
 //    }
 //}
 // zadacha 2
-public static void main(String[] args) {
-    // Создаем "универсальный сундук" для строк
-    UniversalChest<String> messageChest = new UniversalChest<>();
-    messageChest.put("Тайное послание: «Да пребудет с тобой Java!»");
-
-    // Создаем "универсальный сундук" для целых чисел
-    UniversalChest<Integer> numberChest = new UniversalChest<>();
-    numberChest.put(777);
-
-    // Извлекаем содержимое сундуков
-    String secretMessage = messageChest.take();
-    Integer magicNumber = numberChest.take();
-
-    // Выводим содержимое
-    System.out.println(secretMessage);
-    System.out.println(magicNumber);
-}
+//public static void main(String[] args) {
+//    // Создаем "универсальный сундук" для строк
+//    UniversalChest<String> messageChest = new UniversalChest<>();
+//    messageChest.put("Тайное послание: «Да пребудет с тобой Java!»");
+//
+//    // Создаем "универсальный сундук" для целых чисел
+//    UniversalChest<Integer> numberChest = new UniversalChest<>();
+//    numberChest.put(777);
+//
+//    // Извлекаем содержимое сундуков
+//    String secretMessage = messageChest.take();
+//    Integer magicNumber = numberChest.take();
+//
+//    // Выводим содержимое
+//    System.out.println(secretMessage);
+//    System.out.println(magicNumber);
+//}
+//Интерфейсы Collection, List, Set, Map: иерархия
+// zadacha 1
+//public static void main(String[] args) {
+//    // Создаем палитру цветов
+//    List<String> palette = new LinkedList<>();
+//
+//    // Добавляем цвета
+//    palette.add("красный");
+//    palette.add("зелёный");
+//    palette.add("синий");
+//
+//    // Получаем второй элемент (индекс 1)
+//    String selectedColor = palette.get(1);
+//
+//    // Выводим выбранный цвет
+//    System.out.println(selectedColor);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // List хранит все предметы, включая повторы
+//    List<Integer> allItems = new ArrayList<>();
+//
+//    // Set хранит только уникальные предметы
+//    Set<Integer> uniqueItems = new HashSet<>();
+//
+//    // Добавляем идентификаторы 3, 7, 3, 9 в обе коллекции
+//    allItems.add(3);
+//    allItems.add(7);
+//    allItems.add(3);
+//    allItems.add(9);
+//
+//    uniqueItems.add(3);
+//    uniqueItems.add(7);
+//    uniqueItems.add(3);
+//    uniqueItems.add(9);
+//
+//    // Выводим количество: сначала общее, затем уникальное
+//    System.out.println(allItems.size());
+//    System.out.println(uniqueItems.size());
+//}
+//Iterable и Iterator: перебор коллекций
+// zadacha 1
+//public static void main(String[] args) {
+//    // Создаём словарь переводов: английское слово -> русский перевод
+//    HashMap<String, String> dictionary = new HashMap<>();
+//
+//    // Заполняем словарь тремя парами
+//    dictionary.put("dog", "собака");
+//    dictionary.put("cat", "кошка");
+//    dictionary.put("bird", "птица");
+//
+//    // Перебираем пары через for-each по entrySet()
+//    for (Map.Entry<String, String> entry : dictionary.entrySet()) {
+//        // Форматированный вывод в виде "ключ = значение"
+//        System.out.println(entry.getKey() + " = " + entry.getValue());
+//    }
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Создаем множество HashSet<String> для хранения технологий
+//    Set<String> technologies = new HashSet<>();
+//
+//    // Добавляем названия технологий
+//    technologies.add("java");
+//    technologies.add("python");
+//    technologies.add("c++");
+//    technologies.add("javascript");
+//
+//    // Удаляем элементы, содержащие символ '+', используя итератор
+//    Iterator<String> iterator = technologies.iterator();
+//
+//    while (iterator.hasNext()) {
+//        String technology = iterator.next();
+//
+//        if (technology.contains("+")) {
+//            iterator.remove();
+//        }
+//    }
+//
+//    // Выводим оставшиеся элементы множества, каждый на новой строке
+//    for (String technology : technologies) {
+//        System.out.println(technology);
+//    }
+//}
+// Queue, Deque, Stack: работа с очередями и стеками
+// zadacha 1
+//public static void main(String[] args) {
+//    // Создаем очередь задач на основе LinkedList
+//    Queue<Integer> tasks = new LinkedList<>();
+//
+//    // Добавляем идентификаторы задач в указанном порядке
+//    tasks.add(5);
+//    tasks.add(15);
+//    tasks.add(25);
+//
+//    // Получаем первый элемент без удаления из очереди
+//    Integer nextTask = tasks.peek();
+//
+//    // Выводим идентификатор следующей задачи
+//    System.out.println(nextTask);
+//
+//    // Выводим текущий размер очереди
+//    System.out.println(tasks.size());
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Очередь печати на базе ArrayDeque (FIFO)
+//    Queue<String> queue = new ArrayDeque<>();
+//
+//    queue.add("Кот");
+//    queue.add("Пёс");
+//    queue.add("Мышь");
+//
+//    // Стек истории действий на базе ArrayDeque (LIFO)
+//    Deque<Character> stack = new ArrayDeque<>();
+//
+//    // Используем push для добавления на вершину стека
+//    stack.push('X');
+//    stack.push('Y');
+//    stack.push('Z');
+//
+//    // Вывод очереди
+//    System.out.println("Очередь:");
+//    while (!queue.isEmpty()) {
+//        System.out.println(queue.poll());
+//    }
+//
+//    // Вывод стека
+//    System.out.println("Стек:");
+//    while (!stack.isEmpty()) {
+//        System.out.println(stack.pop());
+//    }
+//}
+//NavigableSet/NavigableMap
+// zadacha 1
+//public static void main(String[] args) {
+//    // Создаем NavigableMap, чтобы быстро находить порог по баллам
+//    NavigableMap<Integer, String> levels = new TreeMap<>();
+//
+//    // Заполняем карту: ключ — минимальные баллы, значение — название уровня
+//    levels.put(1, "бронзовый");
+//    levels.put(3, "серебряный");
+//    levels.put(5, "золотой");
+//    levels.put(7, "платиновый");
+//
+//    // Количество баллов клиента
+//    int points = 4;
+//
+//    // Находим наибольший ключ, не превышающий количество баллов
+//    Integer key = levels.floorKey(points);
+//
+//    // Получаем и выводим название уровня
+//    if (key != null) {
+//        System.out.println(levels.get(key));
+//    } else {
+//        System.out.println("Уровень не найден");
+//    }
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Основной складской реестр
+//    NavigableSet<Integer> warehouse = new TreeSet<>();
+//
+//    // Добавляем идентификаторы товаров
+//    warehouse.add(10);
+//    warehouse.add(20);
+//    warehouse.add(30);
+//    warehouse.add(40);
+//    warehouse.add(50);
+//
+//    // Формируем "вид" на часть реестра: от 20 включительно до 50 исключительно
+//    NavigableSet<Integer> shipment = warehouse.subSet(20, true, 50, false);
+//
+//    // Удаляем поврежденный товар 30 из временного списка
+//    shipment.remove(30);
+//
+//    // Сначала выводим временный список отгрузки, затем основной реестр
+//    System.out.println(shipment);
+//    System.out.println(warehouse);
+//}
+// Generics wildcards
+// zadacha 1
