@@ -18,4 +18,15 @@
 //    String studentName;
 //
 //}
-
+//class Student {
+//    private String studentName;
+//
+//    public Student(String studentName) {
+//        this.studentName = studentName;
+//    }
+//
+//    // Геттер для получения имени студента
+//    public String getStudentName() {
+//        return studentName;
+//    }
+//}

@@ -4671,5 +4671,230 @@ import java.util.regex.Pattern;
 //    System.out.println(shipment);
 //    System.out.println(warehouse);
 //}
-// Generics wildcards
+// Фильтрация элементов коллекций
 // zadacha 1
+//public static void main(String[] args) {
+//    // Создаем изменяемый список с начальными значениями
+//    List<Integer> numbers = new ArrayList<>(Arrays.asList(5, -3, 8, -1, 0, 4, -7));
+//
+//    // Обходим список с помощью Iterator, чтобы безопасно удалять элементы во время обхода
+//    Iterator<Integer> iterator = numbers.iterator();
+//
+//    while (iterator.hasNext()) {
+//        Integer number = iterator.next();
+//
+//        if (number < 0) {
+//            iterator.remove();
+//        }
+//    }
+//
+//    // Выводим обновленный список без отрицательных чисел
+//    System.out.println(numbers);
+//}
+//zadacha 2
+//public static void main(String[] args) {
+//    // Создаем изменяемый список с исходными названиями животных
+//    List<String> animals = new ArrayList<>();
+//
+//    animals.add("cat");
+//    animals.add("elephant");
+//    animals.add("dog");
+//    animals.add("tiger");
+//    animals.add("rat");
+//    animals.add("lion");
+//
+//    // Удаляем все строки, длина которых меньше 4 символов
+//    animals.removeIf(animal -> animal.length() < 4);
+//
+//    // Выводим обновленный список после фильтрации
+//    System.out.println(animals);
+//}
+//Преобразование коллекций
+// zadacha 1
+//public static void main(String[] args) {
+//    // Создаем список студентов и наполняем его объектами Student с именами
+//    List<Student> students = new ArrayList<>();
+//    students.add(new Student("Иван"));
+//    students.add(new Student("Мария"));
+//    students.add(new Student("Петр"));
+//
+//    // Создаем новый список для хранения только имён студентов
+//    List<String> names = new ArrayList<>();
+//
+//    // Преобразуем каждый объект Student в строку с именем и добавляем в список names
+//    for (Student student : students) {
+//        names.add(student.getStudentName());
+//    }
+//
+//    // Выводим на экран список имён
+//    System.out.println(names);
+//}
+//zadacha 2
+//public static void main(String[] args) {
+//    // Создаём вложенный список сундуков с камнями
+//    List<List<Integer>> treasureChests = List.of(
+//            List.of(1, 2),
+//            List.of(3, 4, 5),
+//            List.of(6)
+//    );
+//
+//    // Новый список, куда соберём все камни в исходном порядке
+//    List<Integer> allGems = new ArrayList<>();
+//
+//    // Проходим по каждому "сундуку" и добавляем его содержимое
+//    for (List<Integer> chest : treasureChests) {
+//        allGems.addAll(chest);
+//    }
+//
+//    // Выводим объединённый список
+//    System.out.println(allGems);
+//}
+//Безопасное удаление элементов
+//zadacha 1
+//public static void main(String[] args) {
+//    // Формируем исходный список животных
+//    List<String> animals = new ArrayList<>();
+//    animals.add("cat");
+//    animals.add("dog");
+//    animals.add("bird");
+//    animals.add("fish");
+//
+//    // Получаем ListIterator для безопасного прохода и модификации списка
+//    ListIterator<String> iterator = animals.listIterator();
+//
+//    // Итерируемся по списку
+//    while (iterator.hasNext()) {
+//        String animal = iterator.next();
+//
+//        if (animal.length() == 3) {
+//            iterator.remove();
+//            iterator.add("pet");
+//        }
+//    }
+//
+//    // После обработки выводим итоговый список на экран
+//    System.out.println(animals);
+//}
+//zadacha 2
+//public static void main(String[] args) {
+//    // Создаем и заполняем HashMap результатами участников
+//    HashMap<String, Integer> results = new HashMap<>();
+//    results.put("A", 1);
+//    results.put("B", 2);
+//    results.put("C", 3);
+//    results.put("D", 4);
+//
+//    // Получаем итератор по набору записей (entrySet)
+//    Iterator<Map.Entry<String, Integer>> iterator = results.entrySet().iterator();
+//
+//    // Идем по каждой паре "участник-балл"
+//    while (iterator.hasNext()) {
+//        Map.Entry<String, Integer> entry = iterator.next();
+//
+//        // Если балл четный — безопасно удаляем через итератор
+//        if (entry.getValue() % 2 == 0) {
+//            iterator.remove();
+//        }
+//    }
+//
+//    // Выводим очищенную карту на экран
+//    System.out.println(results);
+//}
+//EnumSet/EnumMap
+//zadacha 1
+//public static void main(String[] args) {
+//    // Создаем EnumSet только с выходными днями
+//    EnumSet<Day> weekendDays = EnumSet.of(Day.SAT, Day.SUN);
+//
+//    // Выводим содержимое EnumSet на экран
+//    System.out.println(weekendDays);
+//}
+//
+//
+//            // Перечисление с полным набором дней недели
+//            enum Day {
+//                MON, TUE, WED, THU, FRI, SAT, SUN
+//            }
+//zadacha 2
+//public static void main(String[] args) {
+//    // Специализированная карта для enum-ключей
+//    EnumMap<Day, Integer> prices = new EnumMap<>(Day.class);
+//
+//    // Заполняем цены согласно условию
+//    prices.put(Day.MON, 100);
+//    prices.put(Day.TUE, 120);
+//    prices.put(Day.SAT, 200);
+//
+//    // Получаем цену на субботу и выводим на экран
+//    System.out.println(prices.get(Day.SAT));
+//}
+//LinkedHashSet/LinkedHashMap
+//zadacha 1
+//public static void main(String[] args) {
+//    // Создаем LinkedHashMap с "порядком по обращению" (accessOrder = true)
+//    LinkedHashMap<String, Integer> products = new LinkedHashMap<>(16, 0.75f, true);
+//
+//    // Добавляем товары: ключ — код товара, значение — его id
+//    products.put("a", 1);
+//    products.put("b", 2);
+//    products.put("c", 3);
+//
+//    // Имитация просмотра товара "b": доступ через get переносит "b" в конец
+//    products.get("b");
+//
+//    // Выводим ключи в текущем порядке обхода: ожидается a, c, b
+//    for (String key : products.keySet()) {
+//        System.out.println(key);
+//    }
+//}
+//zadacha 2
+//public static void main(String[] args) {
+//    // Создаем кэш с порядком по доступу (LRU)
+//    GameAssetCache cache = new GameAssetCache();
+//
+//    // Добавляем ассеты
+//    cache.put(1, "one");
+//    cache.put(2, "two");
+//
+//    // "Используем" ассет с ключом 1 — он становится самым недавно использованным
+//    cache.get(1);
+//
+//    // Добавляем ассет 3 — удалится наименее недавно использованный ключ 2
+//    cache.put(3, "three");
+//
+//    // Выводим ключи оставшихся ассетов
+//    for (Integer id : cache.keySet()) {
+//        System.out.println(id);
+//    }
+//}
+//Контракты equals и hashCode
+//zadacha 1
+//public static void main(String[] args) {
+//    // HashSet хранит только уникальные элементы по equals/hashCode
+//    HashSet<City> cities = new HashSet<>();
+//
+//    // Добавляем два разных объекта с одинаковыми значениями полей
+//    cities.add(new City("Метрополис", 1_000_000));
+//    cities.add(new City("Метрополис", 1_000_000));
+//
+//    // Если equals/hashCode реализованы корректно, размер будет 1
+//    System.out.println(cities.size());
+//}
+//zadacha 2
+public static void main(String[] args) {
+    // Создаём два независимых объекта с одинаковыми значениями полей
+    Employee first = new Employee("Алиса", 123);
+    Employee second = new Employee("Алиса", 123);
+
+    // HashMap, где ключом выступает Employee, а значением — роль
+    Map<Employee, String> roles = new HashMap<>();
+
+    // Кладём в карту пару
+    roles.put(first, "Работник");
+
+    // Получаем значение по логически равному ключу
+    String role = roles.get(second);
+
+    // Ожидаемый вывод: "Работник"
+    System.out.println(role);
+}

@@ -1,3 +1,5 @@
+//import java.util.Objects;
+
 //class City implements Comparable<City> {
 //
 //    private String name;
@@ -20,3 +22,28 @@
 //    }
 //}
 //record City(String name, int population) {}
+//class City {
+//    private String cityName;
+//    private int cityPopulation;
+//
+//    public City(String cityName, int cityPopulation) {
+//        this.cityName = cityName;
+//        this.cityPopulation = cityPopulation;
+//    }
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof City)) return false;
+//
+//        City city = (City) o;
+//
+//        return cityPopulation == city.cityPopulation
+//                && Objects.equals(cityName, city.cityName);
+//    }
+
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(cityName, cityPopulation);
+//    }
+//}

@@ -260,6 +260,9 @@
 //    public abstract double getSalary();
 //}
 //
+
+import java.util.Objects;
+
 //// Класс Manager
 //class Manager extends Employee {
 //    double salary;
@@ -286,3 +289,28 @@
 //        System.out.println(manager.getSalary());
 //    }
 //}
+class Employee {
+    private String employeeName;
+    private int employeeId;
+
+    public Employee(String employeeName, int employeeId) {
+        this.employeeName = employeeName;
+        this.employeeId = employeeId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee)) return false;
+
+        Employee employee = (Employee) o;
+
+        return employeeId == employee.employeeId
+                && Objects.equals(employeeName, employee.employeeName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeName, employeeId);
+    }
+}
