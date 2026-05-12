@@ -2320,31 +2320,203 @@ import java.util.Map;
 //        System.out.println(cities.size());
 //    }
 //}
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+//import java.util.HashMap;
+//import java.util.Map;
+//import java.util.Objects;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаём два независимых объекта с одинаковыми значениями полей
+//        Employee first = new Employee("Алиса", 123);
+//        Employee second = new Employee("Алиса", 123);
+//
+//        // HashMap, где ключом выступает Employee, а значением — роль
+//        Map<Employee, String> roles = new HashMap<>();
+//
+//        // Кладём в карту пару
+//        roles.put(first, "Работник");
+//
+//        // Получаем значение по логически равному ключу
+//        String role = roles.get(second);
+//
+//        // Ожидаемый вывод: "Работник"
+//        System.out.println(role);
+//    }
+//}
+//import java.util.Objects;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем книгу с конкретными названием и автором
+//        Book book = new Book("Clean Code", "Robert C. Martin");
+//
+//        // Выводим вычисленный хеш-код объекта Book
+//        System.out.println(book.hashCode());
+//    }
+//}
+//import java.util.Comparator;
+//import java.util.Objects;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем двух участников
+//        Person anna = new Person("Анна");
+//        Person boris = new Person("Борис");
+//
+//        // Создаем компаратор по имени
+//        PersonByNameComparator comparator = new PersonByNameComparator();
+//
+//        // Сравниваем через Objects.compare, передавая компаратор
+//        int result = Objects.compare(anna, boris, comparator);
+//
+//        // Выводим вердикт по результату сравнения
+//        if (result < 0) {
+//            System.out.println("Анна идет раньше Бориса");
+//        } else if (result > 0) {
+//            System.out.println("Борис идет раньше Анны");
+//        } else {
+//            System.out.println("Имена совпадают");
+//        }
+//    }
+//}
+//import java.util.ArrayList;
+//import java.util.Collections;
+//import java.util.List;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем динамический список для хранения книг
+//        List<Book> catalog = new ArrayList<>();
+//
+//        // Добавляем три книги; у двух — одинаковый год издания, но разные названия
+//        catalog.add(new Book("Компиляторы", 1990));
+//        catalog.add(new Book("Алгоритмы", 2000));
+//        catalog.add(new Book("Структуры данных", 2000));
+//
+//        // Сортируем список согласно логике compareTo в классе Book
+//        Collections.sort(catalog);
+//
+//        // Выводим названия книг по порядку после сортировки
+//        for (Book book : catalog) {
+//            System.out.println(book.getBookTitle());
+//        }
+//    }
+//}
+//import java.util.Objects;
+//import java.util.TreeSet;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем два разных объекта City с одинаковыми значениями полей
+//        City city1 = new City("Springfield", 100_000);
+//        City city2 = new City("Springfield", 100_000);
+//
+//        // TreeSet автоматически сортирует элементы и не добавляет дубликаты
+//        TreeSet<City> cities = new TreeSet<>();
+//        cities.add(city1);
+//        cities.add(city2);
+//
+//        // Ожидаем размер 1
+//        System.out.println(cities.size());
+//    }
+//}
+//import java.util.ArrayList;
+//import java.util.Comparator;
+//import java.util.List;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем динамический список для хранения участников
+//        List<Person> attendees = new ArrayList<>();
+//
+//        // Заполняем список объектами Person с разными возрастами
+//        attendees.add(new Person("Иван", 21));
+//        attendees.add(new Person("Анна", 19));
+//        attendees.add(new Person("Сергей", 30));
+//        attendees.add(new Person("Мария", 25));
+//        attendees.add(new Person("Дмитрий", 22));
+//
+//        // Сортируем список по возрасту с помощью анонимного класса Comparator
+//        attendees.sort(new Comparator<Person>() {
+//            @Override
+//            public int compare(Person first, Person second) {
+//                return Integer.compare(first.personAge, second.personAge);
+//            }
+//        });
+//
+//        // Выводим результат
+//        for (Person p : attendees) {
+//            System.out.println(p.personName + ", " + p.personAge);
+//        }
+//    }
+//}
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем динамический список участников
+//        List<Person> participants = new ArrayList<>();
+//
+//        // Заполняем список объектами Person с именами разной длины
+//        participants.add(new Person("Ева"));
+//        participants.add(new Person("Анна"));
+//        participants.add(new Person("Александр"));
+//        participants.add(new Person("Илья"));
+//        participants.add(new Person("Максим"));
+//
+//        // Сортируем по возрастанию длины personName с помощью лямбда-выражения
+//        participants.sort((p1, p2) ->
+//                Integer.compare(p1.getPersonName().length(), p2.getPersonName().length())
+//        );
+//
+//        // Выводим только имена участников, по одному на строке
+//        for (Person p : participants) {
+//            System.out.println(p.getPersonName());
+//        }
+//    }
+//}
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем список наблюдений животных
+//        List<String> animalSightings = new ArrayList<>();
+//
+//        // Заполняем список в нужном порядке
+//        animalSightings.add("кот");
+//        animalSightings.add("пёс");
+//        animalSightings.add("кот");
+//        animalSightings.add("мышь");
+//
+//        // Находим индекс первого появления "кот"
+//        int firstIndex = animalSightings.indexOf("кот");
+//
+//        // Находим индекс последнего появления "кот"
+//        int lastIndex = animalSightings.lastIndexOf("кот");
+//
+//        // Выводим оба индекса через пробел
+//        System.out.println(firstIndex + " " + lastIndex);
+//    }
+//}
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Solution {
     public static void main(String[] args) {
-        // Создаём два независимых объекта с одинаковыми значениями полей
-        Employee first = new Employee("Алиса", 123);
-        Employee second = new Employee("Алиса", 123);
+        // Создаем список playerScores и заполняем его в указанном порядке
+        List<Integer> playerScores = Arrays.asList(7, 2, 10, 4, 10, 1);
 
-        // HashMap, где ключом выступает Employee, а значением — роль
-        Map<Employee, String> roles = new HashMap<>();
+        // Используем Collections.max и Collections.min для поиска экстремумов
+        int highestScore = Collections.max(playerScores);
+        int lowestScore = Collections.min(playerScores);
 
-        // Кладём в карту пару
-        roles.put(first, "Работник");
-
-        // Получаем значение по логически равному ключу
-        String role = roles.get(second);
-
-        // Ожидаемый вывод: "Работник"
-        System.out.println(role);
+        // Выводим максимум и минимум через пробел
+        System.out.println(highestScore + " " + lowestScore);
     }
 }
-
-
 
 
 

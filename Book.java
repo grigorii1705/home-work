@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 //class Book {
 //    String bookTitle = "Без названия";  // стандартное название
 //    int pageCount = 100;                // стандартное количество страниц
@@ -77,5 +79,43 @@
 //
 //    public String getAuthor() {
 //        return author;
+//    }
+//}
+//class Book {
+//    private String bookTitle;
+//    private String bookAuthor;
+//
+//    public Book(String bookTitle, String bookAuthor) {
+//        this.bookTitle = bookTitle;
+//        this.bookAuthor = bookAuthor;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(bookTitle, bookAuthor);
+//    }
+//}
+//class Book implements Comparable<Book> {
+//    private String bookTitle;
+//    private int publicationYear;
+//
+//    public Book(String bookTitle, int publicationYear) {
+//        this.bookTitle = bookTitle;
+//        this.publicationYear = publicationYear;
+//    }
+//
+//    public String getBookTitle() {
+//        return bookTitle;
+//    }
+//
+//    @Override
+//    public int compareTo(Book other) {
+//        int yearCompare = Integer.compare(this.publicationYear, other.publicationYear);
+//
+//        if (yearCompare != 0) {
+//            return yearCompare;
+//        }
+//
+//        return this.bookTitle.compareTo(other.bookTitle);
 //    }
 //}
