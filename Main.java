@@ -5031,14 +5031,349 @@ import java.util.regex.Pattern;
 //    System.out.println(firstIndex + " " + lastIndex);
 //}
 // zadacha 2
+//public static void main(String[] args) {
+//    // Создаем список playerScores и заполняем его в указанном порядке
+//    List<Integer> playerScores = Arrays.asList(7, 2, 10, 4, 10, 1);
+//
+//    // Используем Collections.max и Collections.min для поиска экстремумов
+//    int highestScore = Collections.max(playerScores);
+//    int lowestScore = Collections.min(playerScores);
+//
+//    // Выводим максимум и минимум через пробел
+//    System.out.println(highestScore + " " + lowestScore);
+//}
+//Введение в Stream API: зачем нужны потоки
+//zadacha 1
+//public static void main(String[] args) {
+//    // Создаём последовательность уровней как массив целых чисел
+//    int[] levels = {1, 2, 3, 4, 5};
+//
+//    // Преобразуем массив в поток и обрабатываем каждый элемент отдельно с помощью forEach
+//    Arrays.stream(levels).forEach(level -> System.out.println(level));
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Исходный список категорий в нижнем регистре
+//    List<String> categories = Arrays.asList("java", "stream", "api");
+//
+//    // Преобразуем каждый элемент в верхний регистр и собираем в новый список
+//    List<String> uppercased = categories.stream()
+//            .map(String::toUpperCase)
+//            .collect(Collectors.toList());
+//
+//    // Выводим новый список на экран
+//    System.out.println(uppercased);
+//}
+//Базовые операции Stream API: map, filter, collect
+//zadacha 1
+//public static void main(String[] args) {
+//    List<Integer> orders = List.of(120, 450, 90, 700, 300, 50);
+//
+//    List<String> largeOrders = orders.stream()
+//            .filter(order -> order > 200)
+//            .map(order -> "Order: $" + order)
+//            .collect(Collectors.toList());
+//
+//    System.out.println(largeOrders);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    List<String> emails = List.of(
+//            "Anna@gmail.com",
+//            "BORIS@yahoo.com",
+//            "alex@gmail.com",
+//            "anna@gmail.com",
+//            "test@mail.ru"
+//    );
+//
+//    Set<String> gmailEmails = emails.stream()
+//            .map(String::toLowerCase)
+//            .filter(email -> email.endsWith("@gmail.com"))
+//            .collect(Collectors.toSet());
+//
+//    System.out.println(gmailEmails);
+//}
+//zadacha 3
+//public static void main(String[] args) {
+//    List<String> codes = List.of("A12", "LONG-777", "B7", "XX-9999", "Q1");
+//
+//    List<String> shortCodes = codes.stream()
+//            .filter(code -> code.length() <= 3)
+//            .map(String::toUpperCase)
+//            .collect(Collectors.toList());
+//
+//    System.out.println(shortCodes);
+//}
+// zadacha 4
+//public static void main(String[] args) {
+//    List<Integer> grades = List.of(45, 82, 91, 30, 76, 100, 59);
+//
+//    List<String> passedGrades = grades.stream()
+//            .filter(grade -> grade >= 60)
+//            .map(grade -> "Passed: " + grade)
+//            .collect(Collectors.toList());
+//
+//    System.out.println(passedGrades);
+//}
+// zadacha 5
+//public static void main(String[] args) {
+//    List<String> users = List.of(
+//            "Anna",
+//            "",
+//            "Boris",
+//            "   ",
+//            "Alex",
+//            "Ivan"
+//    );
+//
+//    List<String> result = users.stream()
+//            .filter(name -> !name.trim().isEmpty())
+//            .map(String::toUpperCase)
+//            .collect(Collectors.toList());
+//
+//    System.out.println(result);
+//}
+// zadacha 6
+//public static void main(String[] args) {
+//    List<Product> products = List.of(
+//            new Product("Laptop", 1200),
+//            new Product("Mouse", 25),
+//            new Product("Keyboard", 80),
+//            new Product("Phone", 900)
+//    );
+//
+//    List<String> result = products.stream()
+//            .filter(product -> product.price > 100)
+//            .map(product -> product.name)
+//            .sorted()
+//            .collect(Collectors.toList());
+//
+//    System.out.println(result);
+//}
+// zadacha 7
+//public static void main(String[] args) {
+//    List<Employee> employees = List.of(
+//            new Employee("Anna", 22),
+//            new Employee("Boris", 17),
+//            new Employee("Alex", 30),
+//            new Employee("Kate", 16)
+//    );
+//
+//    Set<String> result = employees.stream()
+//            .filter(employee -> employee.age >= 18)
+//            .map(employee -> employee.name + " (" + employee.age + ")")
+//            .collect(Collectors.toSet());
+//
+//    System.out.println(result);
+//}
+// zadacha 8
+//public static void main(String[] args) {
+//    List<Order> orders = List.of(
+//            new Order("Anna", 500),
+//            new Order("Boris", 1200),
+//            new Order("Anna", 700),
+//            new Order("Ivan", 300)
+//    );
+//
+//    List<String> result = orders.stream()
+//            .filter(order -> order.amount > 400)
+//            .map(order -> order.customer)
+//            .distinct()
+//            .collect(Collectors.toList());
+//
+//    System.out.println(result);
+//}
+// zadacha 9
+//public static void main(String[] args) {
+//    List<Movie> movies = List.of(
+//            new Movie("Avatar", 8.1),
+//            new Movie("Batman", 6.5),
+//            new Movie("Alien", 9.0),
+//            new Movie("Matrix", 8.7)
+//    );
+//
+//    List<String> result = movies.stream()
+//            .filter(movie -> movie.rating >= 8)
+//            .map(movie -> movie.title)
+//            .map(String::toUpperCase)
+//            .collect(Collectors.toList());
+//
+//    System.out.println(result);
+//}
+// zadacha 10
+//public static void main(String[] args) {
+//    List<Account> accounts = List.of(
+//            new Account("Anna", 1500),
+//            new Account("Boris", -200),
+//            new Account("Ivan", 3000),
+//            new Account("Kate", -50)
+//    );
+//
+//    List<String> result = accounts.stream()
+//            .filter(account -> account.balance < 0)
+//            .map(account -> account.owner)
+//            .sorted()
+//            .collect(Collectors.toList());
+//
+//    System.out.println(result);
+//}
+//zadacha 11
+//public static void main(String[] args) {
+//    List<Student> students = List.of(
+//            new Student("Anna", 90),
+//            new Student("Boris", 45),
+//            new Student("Alex", 75),
+//            new Student("Ivan", 30)
+//    );
+//
+//    List<Student> result = students.stream()
+//            .filter(student -> student.score >= 60)
+//            .sorted(Comparator.comparingInt((Student student) -> student.score).reversed())
+//            .collect(Collectors.toList());
+//
+//    for (Student student : result) {
+//        System.out.println(student.name + " " + student.score);
+//    }
+//}
+// zadacha TASK 1
+//public static void main(String[] args) {
+//    // Исходный список названий предметов
+//    List<String> items = List.of("apple", "banana", "apricot", "cherry", "avocado");
+//
+//    // Оставляем строки на 'a', заменяем каждую строку на её длину и собираем в список
+//    List<Integer> lengths = items.stream()
+//            .filter(item -> item.startsWith("a"))
+//            .map(String::length)
+//            .collect(Collectors.toList());
+//
+//    // Выводим получившийся список длин
+//    System.out.println(lengths);
+//}
+// zadacha TASK 2
+//public static void main(String[] args) {
+//    // Исходные показания датчиков
+//    List<Integer> readings = List.of(3, 7, 2, 9, 4, 6, 8, 5);
+//
+//    // Фильтруем нечётные, превращаем в строки и собираем в список
+//    List<String> oddLabels = readings.stream()
+//            .filter(number -> number % 2 != 0)
+//            .map(number -> "Odd: " + number)
+//            .collect(Collectors.toList());
+//
+//    // Выводим получившийся список на экран
+//    System.out.println(oddLabels);
+//}
+//# **Подмножества Stream API: distinct, limit, skip**
+// zadacha 1
+//public static void main(String[] args) {
+//    // Исходный список гостей в порядке очереди
+//    List<String> waiting = List.of("первый", "второй", "третий", "четвёртый", "пятый");
+//
+//    // Пропускаем первых двух VIP и собираем остальных в новый список
+//    List<String> regularGuests = waiting.stream()
+//            .skip(2)
+//            .collect(Collectors.toList());
+//
+//    // Выводим окончательный список гостей
+//    regularGuests.forEach(System.out::println);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Исходные данные с повторами
+//    List<Integer> sales = List.of(5, 7, 5, 9, 7, 11, 13, 9, 15);
+//
+//    // Удаляем дубликаты и оставляем первые четыре уникальных значения
+//    List<Integer> top4Unique = sales.stream()
+//            .distinct()
+//            .limit(4)
+//            .collect(Collectors.toList());
+//
+//    // Выводим получившийся список
+//    System.out.println(top4Unique);
+//}
+//Методы forEach, peek: побочные действия
+// zadacha 1
+//public static void main(String[] args) {
+//    // Список всех учеников
+//    List<String> students = List.of(
+//            "Анна", "Борис", "Алексей", "Мария",
+//            "Андрей", "Виктор", "Артур", "Галина", "Алиса", "Дмитрий"
+//    );
+//
+//    // Оставляем имена на 'А' и сразу выводим
+//    students.stream()
+//            .filter(name -> name.startsWith("А"))
+//            .forEach(System.out::println);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Исходные показания с датчиков
+//    List<Integer> readings = Arrays.asList(10, 15, 20, 25, 30);
+//
+//    // Фильтруем кратные 10, проверяем через peek, преобразуем в строки и собираем
+//    List<String> report = readings.stream()
+//            .filter(number -> number % 10 == 0)
+//            .peek(System.out::println)
+//            .map(String::valueOf)
+//            .collect(Collectors.toList());
+//
+//    // Выводим итоговый список строк на экран
+//    System.out.println(report);
+//}
+// Преобразование коллекций через Stream
+// zadacha 1
+//public static void main(String[] args) {
+//    // Исходный список зарегистрированных участников с дубликатами
+//    List<String> registered = List.of("Анна", "Сергей", "Анна", "Мария", "Иван", "Сергей");
+//
+//    // Удаляем дубликаты, сохраняя порядок первого появления
+//    List<String> uniqueParticipants = registered.stream()
+//            .distinct()
+//            .collect(Collectors.toList());
+//
+//    // Выводим окончательный список уникальных участников
+//    uniqueParticipants.forEach(System.out::println);
+//}
+// zadacha 2
 public static void main(String[] args) {
-    // Создаем список playerScores и заполняем его в указанном порядке
-    List<Integer> playerScores = Arrays.asList(7, 2, 10, 4, 10, 1);
+    // Импортированный список: есть дубликаты по имени с разными возрастами
+    List<Solution.User> imported = List.of(
+            new Solution.User("Иван", 23),
+            new Solution.User("Анна", 19),
+            new Solution.User("Иван", 28),
+            new Solution.User("Павел", 30),
+            new Solution.User("Анна", 22),
+            new Solution.User("Ева", 20)
+    );
 
-    // Используем Collections.max и Collections.min для поиска экстремумов
-    int highestScore = Collections.max(playerScores);
-    int lowestScore = Collections.min(playerScores);
+    // Формируем "чистую" базу профилей по имени
+    Map<String, Solution.User> uniqueProfiles = imported.stream()
+            .collect(Collectors.toMap(
+                    Solution.User::getName,
+                    Function.identity(),
+                    (first, ignored) -> first,
+                    LinkedHashMap::new
+            ));
 
-    // Выводим максимум и минимум через пробел
-    System.out.println(highestScore + " " + lowestScore);
+    // Выводим итоговую структуру данных
+    uniqueProfiles.forEach((name, user) -> System.out.println(user));
 }
+
+            static class User {
+                private final String name;
+                private final int age;
+
+                public User(String name, int age) {
+                    this.name = name;
+                    this.age = age;
+                }
+
+                public String getName() {
+                    return name;
+                }
+
+                @Override
+                public String toString() {
+                    return name + " — " + age + " лет";
+                }
+            }
