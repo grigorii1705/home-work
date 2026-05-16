@@ -5335,45 +5335,208 @@ import java.util.regex.Pattern;
 //    uniqueParticipants.forEach(System.out::println);
 //}
 // zadacha 2
-public static void main(String[] args) {
-    // Импортированный список: есть дубликаты по имени с разными возрастами
-    List<Solution.User> imported = List.of(
-            new Solution.User("Иван", 23),
-            new Solution.User("Анна", 19),
-            new Solution.User("Иван", 28),
-            new Solution.User("Павел", 30),
-            new Solution.User("Анна", 22),
-            new Solution.User("Ева", 20)
-    );
+//public static void main(String[] args) {
+//    // Импортированный список: есть дубликаты по имени с разными возрастами
+//    List<Solution.User> imported = List.of(
+//            new Solution.User("Иван", 23),
+//            new Solution.User("Анна", 19),
+//            new Solution.User("Иван", 28),
+//            new Solution.User("Павел", 30),
+//            new Solution.User("Анна", 22),
+//            new Solution.User("Ева", 20)
+//    );
+//
+//    // Формируем "чистую" базу профилей по имени
+//    Map<String, Solution.User> uniqueProfiles = imported.stream()
+//            .collect(Collectors.toMap(
+//                    Solution.User::getName,
+//                    Function.identity(),
+//                    (first, ignored) -> first,
+//                    LinkedHashMap::new
+//            ));
+//
+//    // Выводим итоговую структуру данных
+//    uniqueProfiles.forEach((name, user) -> System.out.println(user));
+//}
+//
+//            static class User {
+//                private final String name;
+//                private final int age;
+//
+//                public User(String name, int age) {
+//                    this.name = name;
+//                    this.age = age;
+//                }
+//
+//                public String getName() {
+//                    return name;
+//                }
+//
+//                @Override
+//                public String toString() {
+//                    return name + " — " + age + " лет";
+//                }
+//            }
+//Лямбда-выражения: синтаксис, области видимости
+// zadacha 1
+//public static void main(String[] args) {
+//    // Компаратор, который сравнивает строки по их длине
+//    Comparator<String> lengthComparator = (s1, s2) -> Integer.compare(s1.length(), s2.length());
+//
+//    // Создаем список строк
+//    List<String> names = new ArrayList<>(Arrays.asList("cat", "elephant", "dog"));
+//
+//    // Сортируем список с использованием нашего компаратора
+//    names.sort(lengthComparator);
+//
+//    // Выводим отсортированный список
+//    System.out.println(names);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Создаем функцию-предсказательницу с помощью лямбда-выражения
+//    Function<Integer, String> predictor = number ->
+//            number % 2 == 0 ? "Чётное" : "Нечётное";
+//
+//    // Тестируем функцию на числах 7 и 10
+//    System.out.println(predictor.apply(7));
+//    System.out.println(predictor.apply(10));
+//}
+//Использование лямбда в коллекциях и стримах
+// zadcha 1
+//public static void main(String[] args) {
+//    // Исходный список названий продуктов
+//    List<String> products = new ArrayList<>(Arrays.asList(
+//            "молоко", "сыр", "хлеб", "йогурт", "яблоко"
+//    ));
+//
+//    // Преобразуем каждое название в верхний регистр с помощью replaceAll и лямбды
+//    products.replaceAll(product -> product.toUpperCase());
+//
+//    // Выводим преобразованный список на экран
+//    System.out.println(products);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Исходный список водных объектов
+//    List<String> waterBodies = List.of("река", "море", "озеро", "ручей", "пруд");
+//
+//    // Фильтруем строки длиннее 4 символов, переводим в верхний регистр и собираем в список
+//    List<String> result = waterBodies.stream()
+//            .filter(name -> name.length() > 4)
+//            .map(String::toUpperCase)
+//            .collect(Collectors.toList());
+//
+//    // Выводим итоговый список на экран
+//    System.out.println(result);
+//}
+// Преимущества и недостатки лямбда-выражений
+// zadacha 1
+//public static void main(String[] args) {
+//    // Создаем изменяемый список из трех "секретных сообщений"
+//    List<String> messages = new ArrayList<>(List.of(
+//            "Договорённость достигнута в 23:40",
+//            "Экстренно!",
+//            "Шифр Альфа"
+//    ));
+//
+//    // Сортируем по возрастанию длины с помощью краткого лямбда-компаратора
+//    messages.sort((a, b) -> Integer.compare(a.length(), b.length()));
+//
+//    // Выводим отсортированные сообщения построчно
+//    messages.forEach(System.out::println);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    // Формируем "свиток" с числами от 1 до 5
+//    List<Integer> scroll = new ArrayList<>();
+//
+//    for (int i = 1; i <= 5; i++) {
+//        scroll.add(i);
+//    }
+//
+//    // Очищаем свиток от чётных чисел
+//    scroll.removeIf(number -> number % 2 == 0);
+//
+//    // Выводим итоговый "чистый" свиток
+//    System.out.println(scroll);
+//}
+// Замыкания (closures) в Java: особенности
+// zadacha 1
 
-    // Формируем "чистую" базу профилей по имени
-    Map<String, Solution.User> uniqueProfiles = imported.stream()
-            .collect(Collectors.toMap(
-                    Solution.User::getName,
-                    Function.identity(),
-                    (first, ignored) -> first,
-                    LinkedHashMap::new
-            ));
+        // Метод greeter возвращает "инструкцию", которая запоминает имя
+//        public static Runnable greeter(String name) {
+//            // Лямбда захватывает значение параметра name
+//            return () -> System.out.println("Привет, " + name);
+//        }
+//
+//        public static void main(String[] args) {
+//            // Готовим приветствие для "Анна"
+//            Runnable task = greeter("Анна");
+//
+//            // Выполняем подготовленную задачу
+//            task.run();
+//        }
+// zadacha 2
+//public static void main(String[] args) {
+//    // Создаем динамический список строк
+//    List<String> words = new ArrayList<>();
+//
+//    // Лямбда-выражение типа Runnable
+//    Runnable action = () -> words.add("Hello");
+//
+//    // Запускаем действие
+//    action.run();
+//
+//    // Выводим содержимое списка
+//    System.out.println(words);
+//}
+//Анонимные классы: отличие от лямбда, примеры
+// zadacha 1
+//public static void main(String[] args) {
+//    // Исходный список животных
+//    List<String> animals = new ArrayList<>(Arrays.asList("dog", "cow", "horse", "sheep"));
+//
+//    // Удаляем из списка все строки короче 4 символов
+//    animals.removeIf(new Predicate<String>() {
+//        @Override
+//        public boolean test(String animal) {
+//            return animal.length() < 4;
+//        }
+//    });
+//
+//    // Вывод очищенного списка
+//    System.out.println(animals);
+//}
+// zadacha 2
+//        public class Main {
+//            // Имя "рассказчика" — объекта класса Main
+//            String name = "Main";
+//
+//            // В этом методе демонстрируем разницу между анонимным классом и лямбдой
+//            void test() {
+//                // 1) Анонимный класс с собственным полем name
+//                Runnable anonymous = new Runnable() {
+//                    String name = "Anonymous";
+//
+//                    @Override
+//                    public void run() {
+//                        System.out.println(this.name);
+//                    }
+//                };
+//
+//                // 2) Лямбда-выражение: здесь this — это внешний объект Main
+//                Runnable lambda = () -> System.out.println(this.name);
+//
+//                // Последовательный вызов
+//                anonymous.run();
+//                lambda.run();
+//            }
+//
+//            public static void main(String[] args) {
+//                // Создаем объект Main и запускаем демонстрацию
+//                new Main().test();
+//            }
+//        }
 
-    // Выводим итоговую структуру данных
-    uniqueProfiles.forEach((name, user) -> System.out.println(user));
-}
 
-            static class User {
-                private final String name;
-                private final int age;
-
-                public User(String name, int age) {
-                    this.name = name;
-                    this.age = age;
-                }
-
-                public String getName() {
-                    return name;
-                }
-
-                @Override
-                public String toString() {
-                    return name + " — " + age + " лет";
-                }
-            }

@@ -2887,56 +2887,218 @@ import java.util.stream.Collectors;
 //        uniqueParticipants.forEach(System.out::println);
 //    }
 //}
-import java.util.LinkedHashMap;
+//import java.util.LinkedHashMap;
+//import java.util.List;
+//import java.util.Map;
+//import java.util.function.Function;
+//import java.util.stream.Collectors;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Импортированный список: есть дубликаты по имени с разными возрастами
+//        List<User> imported = List.of(
+//                new User("Иван", 23),
+//                new User("Анна", 19),
+//                new User("Иван", 28),
+//                new User("Павел", 30),
+//                new User("Анна", 22),
+//                new User("Ева", 20)
+//        );
+//
+//        // Формируем "чистую" базу профилей по имени
+//        Map<String, User> uniqueProfiles = imported.stream()
+//                .collect(Collectors.toMap(
+//                        User::getName,
+//                        Function.identity(),
+//                        (first, ignored) -> first,
+//                        LinkedHashMap::new
+//                ));
+//
+//        // Выводим итоговую структуру данных
+//        uniqueProfiles.forEach((name, user) -> System.out.println(user));
+//    }
+//
+//    static class User {
+//        private final String name;
+//        private final int age;
+//
+//        public User(String name, int age) {
+//            this.name = name;
+//            this.age = age;
+//        }
+//
+//        public String getName() {
+//            return name;
+//        }
+//
+//        @Override
+//        public String toString() {
+//            return name + " — " + age + " лет";
+//        }
+//    }
+//}
+//import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.Comparator;
+//import java.util.List;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Компаратор, который сравнивает строки по их длине
+//        Comparator<String> lengthComparator = (s1, s2) -> Integer.compare(s1.length(), s2.length());
+//
+//        // Создаем список строк
+//        List<String> names = new ArrayList<>(Arrays.asList("cat", "elephant", "dog"));
+//
+//        // Сортируем список с использованием нашего компаратора
+//        names.sort(lengthComparator);
+//
+//        // Выводим отсортированный список
+//        System.out.println(names);
+//    }
+//}
+//import java.util.function.Function;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем функцию-предсказательницу с помощью лямбда-выражения
+//        Function<Integer, String> predictor = number ->
+//                number % 2 == 0 ? "Чётное" : "Нечётное";
+//
+//        // Тестируем функцию на числах 7 и 10
+//        System.out.println(predictor.apply(7));
+//        System.out.println(predictor.apply(10));
+//    }
+//}
+//import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.List;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Исходный список названий продуктов
+//        List<String> products = new ArrayList<>(Arrays.asList(
+//                "молоко", "сыр", "хлеб", "йогурт", "яблоко"
+//        ));
+//
+//        // Преобразуем каждое название в верхний регистр с помощью replaceAll и лямбды
+//        products.replaceAll(product -> product.toUpperCase());
+//
+//        // Выводим преобразованный список на экран
+//        System.out.println(products);
+//    }
+//}
 import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Solution {
-    public static void main(String[] args) {
-        // Импортированный список: есть дубликаты по имени с разными возрастами
-        List<User> imported = List.of(
-                new User("Иван", 23),
-                new User("Анна", 19),
-                new User("Иван", 28),
-                new User("Павел", 30),
-                new User("Анна", 22),
-                new User("Ева", 20)
-        );
-
-        // Формируем "чистую" базу профилей по имени
-        Map<String, User> uniqueProfiles = imported.stream()
-                .collect(Collectors.toMap(
-                        User::getName,
-                        Function.identity(),
-                        (first, ignored) -> first,
-                        LinkedHashMap::new
-                ));
-
-        // Выводим итоговую структуру данных
-        uniqueProfiles.forEach((name, user) -> System.out.println(user));
-    }
-
-    static class User {
-        private final String name;
-        private final int age;
-
-        public User(String name, int age) {
-            this.name = name;
-            this.age = age;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        @Override
-        public String toString() {
-            return name + " — " + age + " лет";
-        }
-    }
-}
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Исходный список водных объектов
+//        List<String> waterBodies = List.of("река", "море", "озеро", "ручей", "пруд");
+//
+//        // Фильтруем строки длиннее 4 символов, переводим в верхний регистр и собираем в список
+//        List<String> result = waterBodies.stream()
+//                .filter(name -> name.length() > 4)
+//                .map(String::toUpperCase)
+//                .collect(Collectors.toList());
+//
+//        // Выводим итоговый список на экран
+//        System.out.println(result);
+//    }
+//}
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем изменяемый список из трех "секретных сообщений"
+//        List<String> messages = new ArrayList<>(List.of(
+//                "Договорённость достигнута в 23:40",
+//                "Экстренно!",
+//                "Шифр Альфа"
+//        ));
+//
+//        // Сортируем по возрастанию длины с помощью краткого лямбда-компаратора
+//        messages.sort((a, b) -> Integer.compare(a.length(), b.length()));
+//
+//        // Выводим отсортированные сообщения построчно
+//        messages.forEach(System.out::println);
+//    }
+//}
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Формируем "свиток" с числами от 1 до 5
+//        List<Integer> scroll = new ArrayList<>();
+//
+//        for (int i = 1; i <= 5; i++) {
+//            scroll.add(i);
+//        }
+//
+//        // Очищаем свиток от чётных чисел
+//        scroll.removeIf(number -> number % 2 == 0);
+//
+//        // Выводим итоговый "чистый" свиток
+//        System.out.println(scroll);
+//    }
+//}
+//public class Solution {
+//    // Метод greeter возвращает "инструкцию", которая запоминает имя
+//    public static Runnable greeter(String name) {
+//        // Лямбда захватывает значение параметра name
+//        return () -> System.out.println("Привет, " + name);
+//    }
+//
+//    public static void main(String[] args) {
+//        // Готовим приветствие для "Анна"
+//        Runnable task = greeter("Анна");
+//
+//        // Выполняем подготовленную задачу
+//        task.run();
+//    }
+//}
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем динамический список строк
+//        List<String> words = new ArrayList<>();
+//
+//        // Лямбда-выражение типа Runnable
+//        Runnable action = () -> words.add("Hello");
+//
+//        // Запускаем действие
+//        action.run();
+//
+//        // Выводим содержимое списка
+//        System.out.println(words);
+//    }
+//}
+//import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.List;
+//import java.util.function.Predicate;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Исходный список животных
+//        List<String> animals = new ArrayList<>(Arrays.asList("dog", "cow", "horse", "sheep"));
+//
+//        // Удаляем из списка все строки короче 4 символов
+//        animals.removeIf(new Predicate<String>() {
+//            @Override
+//            public boolean test(String animal) {
+//                return animal.length() < 4;
+//            }
+//        });
+//
+//        // Вывод очищенного списка
+//        System.out.println(animals);
+//    }
+//}
 
 
 
