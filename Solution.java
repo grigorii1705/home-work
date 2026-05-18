@@ -3099,6 +3099,134 @@ import java.util.stream.Collectors;
 //        System.out.println(animals);
 //    }
 //}
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
+
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем экземпляр обработчика команд звездолета
+//        StarshipCommandProcessor processor = new StarshipCommandProcessor();
+//
+//        // Ручной вызов метода actionPerformed с передачей null
+//        processor.actionPerformed(null);
+//    }
+//}
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.SwingUtilities;
+//import java.awt.BorderLayout;
+//import java.awt.Font;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = new JFrame("Командный пункт запуска ракеты");
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//            OrderedButton launchButton = new OrderedButton("Инициировать Запуск");
+//            launchButton.setFont(launchButton.getFont().deriveFont(Font.BOLD, 20f));
+//
+//            // Первый агент уведомлений — Топливная система
+//            ActionListener fuelSystemListener = e ->
+//                    System.out.println("Система Дозаправки: Проверка готовности завершена!");
+//
+//            // Второй агент уведомлений — Навигационная система
+//            ActionListener navigationSystemListener = e ->
+//                    System.out.println("Навигационная Система: Расчет курса успешно начат!");
+//
+//            // Добавляем слушателей в строгом порядке
+//            launchButton.addActionListener(fuelSystemListener);
+//            launchButton.addActionListener(navigationSystemListener);
+//
+//            frame.add(launchButton, BorderLayout.CENTER);
+//
+//            frame.setSize(500, 200);
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//
+//    static class OrderedButton extends JButton {
+//        private final List<ActionListener> orderedListeners = new ArrayList<>();
+//
+//        public OrderedButton(String text) {
+//            super(text);
+//        }
+//
+//        @Override
+//        public void addActionListener(ActionListener listener) {
+//            orderedListeners.add(listener);
+//        }
+//
+//        @Override
+//        protected void fireActionPerformed(ActionEvent event) {
+//            for (ActionListener listener : orderedListeners) {
+//                listener.actionPerformed(event);
+//            }
+//        }
+//    }
+//}
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.SwingUtilities;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Создаем UI на Event Dispatch Thread
+//        SwingUtilities.invokeLater(() -> {
+//            // Основное окно управления
+//            JFrame frame = new JFrame("Умный дом");
+//
+//            // При закрытии окна завершаем приложение целиком
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//            // Одна демонстрационная кнопка с приветствием
+//            JButton helloButton = new JButton("Привет, Smart Home!");
+//
+//            // Добавляем кнопку в центр
+//            frame.getContentPane().add(helloButton);
+//
+//            frame.pack();
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//}
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.SwingUtilities;
+//
+//public class Solution {
+//    public static void main(String[] args) {
+//        // Запускаем создание и показ окна в потоке событий Swing
+//        SwingUtilities.invokeLater(Solution::createAndShowGUI);
+//    }
+//
+//    static void createAndShowGUI() {
+//        JFrame frame = new JFrame("Умный дом");
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//        JButton activateButton = new JButton("Активировать Термостат");
+//
+//        // Обработчик события нажатия на кнопку
+//        activateButton.addActionListener(e ->
+//                System.out.println("Кнопка активации термостата была нажата!")
+//        );
+//
+//        frame.getContentPane().add(activateButton);
+//
+//        frame.pack();
+//        frame.setLocationRelativeTo(null);
+//        frame.setVisible(true);
+//    }
+//}
+
+
+
 
 
 

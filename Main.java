@@ -1,3 +1,6 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -12,6 +15,7 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+import java.util.List;
 import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -5538,5 +5542,525 @@ import java.util.regex.Pattern;
 //                new Main().test();
 //            }
 //        }
+//Swing
+//zadacha 1
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.JTextField;
+//import javax.swing.SwingUtilities;
+//import java.awt.FlowLayout;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = new JFrame("My Task Manager");
+//
+//            frame.setSize(300, 200);
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.setLayout(new FlowLayout());
+//
+//            JTextField textField = new JTextField(15);
+//            JButton button = new JButton("Кнопка");
+//
+//            frame.add(textField);
+//            frame.add(button);
+//
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//}
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.SwingUtilities;
+//import java.awt.FlowLayout;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = new JFrame("My Task Manager");
+//
+//            frame.setSize(300, 200);
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.setLayout(new FlowLayout());
+//
+//            JButton addButton = new JButton("Добавить");
+//            JButton deleteButton = new JButton("Удалить");
+//
+//            frame.add(addButton);
+//            frame.add(deleteButton);
+//
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//}
+//Почему вторая кнопка может заменять первую
+//
+//У JFrame по умолчанию используется BorderLayout.
+//
+//Если писать так:
+//
+//        frame.add(addButton);
+//frame.add(deleteButton);
+//то обе кнопки добавляются в одну и ту же область CENTER. В итоге вторая кнопка заменяет первую.
+//
+//Чтобы этого не было, нужно задать другой layout, например:
+//
+//        frame.setLayout(new FlowLayout());
+//        6. Как организовать Task Manager
+//
+//Я бы сделал так:
+//
+//JTextField — поле, куда пользователь вводит текст задачи.
+//        JButton "Добавить" — берёт текст из поля и добавляет задачу в список.
+//JList или JTextArea — показывает все задачи.
+//        JButton "Удалить" — удаляет выбранную задачу.
+//Данные задач хранить в DefaultListModel<String>, потому что он удобно работает вместе с JList.
+//Пример логики:
+//
+//пользователь вводит задачу
+//нажимает "Добавить"
+//задача появляется в списке
+//поле ввода очищается
+//пользователь выбирает задачу
+//нажимает "Удалить"
+//задача исчезает из списка
+// Расположение элементов
+// zadacha 1
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.JTextField;
+//import javax.swing.SwingUtilities;
+//import java.awt.FlowLayout;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = new JFrame("My Task Manager");
+//
+//            frame.setSize(300, 200);
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.setLayout(new FlowLayout());
+//
+//            JTextField textField = new JTextField(12);
+//            JButton addButton = new JButton("Add");
+//            JButton deleteButton = new JButton("Delete");
+//
+//            frame.add(textField);
+//            frame.add(addButton);
+//            frame.add(deleteButton);
+//
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//}
+//zadacha 2
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.SwingUtilities;
+//import java.awt.BorderLayout;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = new JFrame("BorderLayout Example");
+//
+//            frame.setSize(400, 250);
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.setLayout(new BorderLayout());
+//
+//            frame.add(new JButton("NORTH"), BorderLayout.NORTH);
+//            frame.add(new JButton("SOUTH"), BorderLayout.SOUTH);
+//            frame.add(new JButton("WEST"), BorderLayout.WEST);
+//            frame.add(new JButton("EAST"), BorderLayout.EAST);
+//            frame.add(new JButton("CENTER"), BorderLayout.CENTER);
+//
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//}
+//zadacha 3
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.JTextField;
+//import javax.swing.SwingUtilities;
+//import java.awt.BorderLayout;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = new JFrame("BorderLayout");
+//
+//            frame.setSize(300, 200);
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.setLayout(new BorderLayout());
+//
+//            frame.add(new JButton("Top"), BorderLayout.NORTH);
+//            frame.add(new JButton("Bottom"), BorderLayout.SOUTH);
+//            frame.add(new JTextField(), BorderLayout.CENTER);
+//
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//}
+//zadacha 4
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.JLabel;
+//import javax.swing.JPanel;
+//import javax.swing.JPasswordField;
+//import javax.swing.JTextField;
+//import javax.swing.SwingUtilities;
+//import java.awt.BorderLayout;
+//import java.awt.FlowLayout;
+//import java.awt.Font;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = new JFrame("Login System");
+//
+//            frame.setSize(500, 200);
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.setLayout(new BorderLayout());
+//
+//            JLabel titleLabel = new JLabel("Login System", JLabel.CENTER);
+//            titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
+//
+//            JPanel centerPanel = new JPanel(new FlowLayout());
+//
+//            centerPanel.add(new JLabel("Username"));
+//            centerPanel.add(new JTextField(10));
+//            centerPanel.add(new JLabel("Password"));
+//            centerPanel.add(new JPasswordField(10));
+//            centerPanel.add(new JButton("Login"));
+//
+//            JLabel statusLabel = new JLabel("Status: Not logged in");
+//
+//            frame.add(titleLabel, BorderLayout.NORTH);
+//            frame.add(centerPanel, BorderLayout.CENTER);
+//            frame.add(statusLabel, BorderLayout.SOUTH);
+//
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//}
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
+//public class Main {
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = new JFrame("GridLayout");
+//
+//            frame.setSize(250, 200);
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.setLayout(new GridLayout(2, 2));
+//
+//            frame.add(new JButton("1"));
+//            frame.add(new JButton("2"));
+//            frame.add(new JButton("3"));
+//            frame.add(new JButton("4"));
+//
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//}
+
+// zadacha 5
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.SwingUtilities;
+//import java.awt.GridLayout;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = new JFrame("Grid 3x3");
+//
+//            frame.setSize(300, 300);
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.setLayout(new GridLayout(3, 3));
+//
+//            for (int i = 1; i <= 9; i++) {
+//                frame.add(new JButton(String.valueOf(i)));
+//            }
+//
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//}
+// zadacha 6
+//import javax.swing.BorderFactory;
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.JLabel;
+//import javax.swing.JPanel;
+//import javax.swing.JPasswordField;
+//import javax.swing.JTextField;
+//import javax.swing.SwingUtilities;
+//import java.awt.BorderLayout;
+//import java.awt.FlowLayout;
+//import java.awt.Font;
+//import java.awt.GridLayout;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = new JFrame("Login System");
+//
+//            frame.setSize(650, 220);
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.setLayout(new BorderLayout());
+//
+//            JLabel titleLabel = new JLabel("Login System", JLabel.CENTER);
+//            titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
+//
+//            JPanel centerPanel = new JPanel(new FlowLayout());
+//            centerPanel.add(new JLabel("Username"));
+//            centerPanel.add(new JTextField(10));
+//            centerPanel.add(new JLabel("Password"));
+//            centerPanel.add(new JPasswordField(10));
+//            centerPanel.add(new JButton("Login"));
+//
+//            JLabel statusLabel = new JLabel("Status: Not logged in");
+//
+//            // Правая панель со статусами
+//            JPanel eastPanel = new JPanel(new GridLayout(3, 2, 10, 5));
+//            eastPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+//
+//            eastPanel.add(new JLabel("User:"));
+//            eastPanel.add(new JLabel("Guest"));
+//
+//            eastPanel.add(new JLabel("Role:"));
+//            eastPanel.add(new JLabel("None"));
+//
+//            eastPanel.add(new JLabel("Access:"));
+//            eastPanel.add(new JLabel("Denied"));
+//
+//            frame.add(titleLabel, BorderLayout.NORTH);
+//            frame.add(centerPanel, BorderLayout.CENTER);
+//            frame.add(statusLabel, BorderLayout.SOUTH);
+//            frame.add(eastPanel, BorderLayout.EAST);
+//
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//}
+//zadacha 7
+//import javax.swing.BorderFactory;
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.JLabel;
+//import javax.swing.JPanel;
+//import javax.swing.JPasswordField;
+//import javax.swing.JTextField;
+//import javax.swing.SwingUtilities;
+//import java.awt.BorderLayout;
+//import java.awt.FlowLayout;
+//import java.awt.Font;
+//import java.awt.GridLayout;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        SwingUtilities.invokeLater(() -> {
+//            JFrame frame = new JFrame("Login System");
+//
+//            frame.setSize(750, 220);
+//            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            frame.setLayout(new BorderLayout());
+//
+//            JLabel titleLabel = new JLabel("Login System", JLabel.CENTER);
+//            titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
+//
+//            JPanel centerPanel = new JPanel(new FlowLayout());
+//            centerPanel.add(new JLabel("Username"));
+//            centerPanel.add(new JTextField(10));
+//            centerPanel.add(new JLabel("Password"));
+//            centerPanel.add(new JPasswordField(10));
+//            centerPanel.add(new JButton("Login"));
+//
+//            JLabel statusLabel = new JLabel("Status: Not logged in");
+//
+//            // Левая панель с кнопками
+//            JPanel westPanel = new JPanel(new GridLayout(2, 1, 5, 5));
+//            westPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+//
+//            westPanel.add(new JButton("Up"));
+//            westPanel.add(new JButton("Down"));
+//
+//            // Правая панель со статусами
+//            JPanel eastPanel = new JPanel(new GridLayout(3, 2, 10, 5));
+//            eastPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+//
+//            eastPanel.add(new JLabel("User:"));
+//            eastPanel.add(new JLabel("Guest"));
+//
+//            eastPanel.add(new JLabel("Role:"));
+//            eastPanel.add(new JLabel("None"));
+//
+//            eastPanel.add(new JLabel("Access:"));
+//            eastPanel.add(new JLabel("Denied"));
+//
+//            frame.add(titleLabel, BorderLayout.NORTH);
+//            frame.add(centerPanel, BorderLayout.CENTER);
+//            frame.add(statusLabel, BorderLayout.SOUTH);
+//            frame.add(westPanel, BorderLayout.WEST);
+//            frame.add(eastPanel, BorderLayout.EAST);
+//
+//            frame.setLocationRelativeTo(null);
+//            frame.setVisible(true);
+//        });
+//    }
+//}
+//Слушатели (Listeners) и интерфейсы событий
+//public static void main(String[] args) {
+//    // Создаем экземпляр обработчика команд звездолета
+//    StarshipCommandProcessor processor = new StarshipCommandProcessor();
+//
+//    // Ручной вызов метода actionPerformed с передачей null
+//    processor.actionPerformed(null);
+//}
+// zadacha 2
+//public static void main(String[] args) {
+//    SwingUtilities.invokeLater(() -> {
+//        JFrame frame = new JFrame("Командный пункт запуска ракеты");
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//        Solution.OrderedButton launchButton = new Solution.OrderedButton("Инициировать Запуск");
+//        launchButton.setFont(launchButton.getFont().deriveFont(Font.BOLD, 20f));
+//
+//        // Первый агент уведомлений — Топливная система
+//        ActionListener fuelSystemListener = e ->
+//                System.out.println("Система Дозаправки: Проверка готовности завершена!");
+//
+//        // Второй агент уведомлений — Навигационная система
+//        ActionListener navigationSystemListener = e ->
+//                System.out.println("Навигационная Система: Расчет курса успешно начат!");
+//
+//        // Добавляем слушателей в строгом порядке
+//        launchButton.addActionListener(fuelSystemListener);
+//        launchButton.addActionListener(navigationSystemListener);
+//
+//        frame.add(launchButton, BorderLayout.CENTER);
+//
+//        frame.setSize(500, 200);
+//        frame.setLocationRelativeTo(null);
+//        frame.setVisible(true);
+//    });
+//}
+//
+//        static class OrderedButton extends JButton {
+//            private final List<ActionListener> orderedListeners = new ArrayList<>();
+//
+//            public OrderedButton(String text) {
+//                super(text);
+//            }
+//
+//            @Override
+//            public void addActionListener(ActionListener listener) {
+//                orderedListeners.add(listener);
+//            }
+//
+//            @Override
+//            protected void fireActionPerformed(ActionEvent event) {
+//                for (ActionListener listener : orderedListeners) {
+//                    listener.actionPerformed(event);
+//                }
+//            }
+//        }
+//События в Swing и AWT: основы, примеры
+//zadacha 1
+//public static void main(String[] args) {
+//    // Создаем UI на Event Dispatch Thread
+//    SwingUtilities.invokeLater(() -> {
+//        // Основное окно управления
+//        JFrame frame = new JFrame("Умный дом");
+//
+//        // При закрытии окна завершаем приложение целиком
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//        // Одна демонстрационная кнопка с приветствием
+//        JButton helloButton = new JButton("Привет, Smart Home!");
+//
+//        // Добавляем кнопку в центр
+//        frame.getContentPane().add(helloButton);
+//
+//        frame.pack();
+//        frame.setLocationRelativeTo(null);
+//        frame.setVisible(true);
+//    });
+//}
+//zadacha 2
+//import javax.swing.JButton;
+//import javax.swing.JFrame;
+//import javax.swing.SwingUtilities;
+//
+//
+//    public static void main(String[] args) {
+//        // Запускаем создание и показ окна в потоке событий Swing
+//        SwingUtilities.invokeLater(Solution::createAndShowGUI);
+//    }
+//
+//    private static void createAndShowGUI() {
+//        JFrame frame = new JFrame("Умный дом");
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//
+//        JButton activateButton = new JButton("Активировать Термостат");
+//
+//        // Обработчик события нажатия на кнопку
+//        activateButton.addActionListener(e ->
+//                System.out.println("Кнопка активации термостата была нажата!")
+//        );
+//
+//        frame.getContentPane().add(activateButton);
+//
+//        frame.pack();
+//        frame.setLocationRelativeTo(null);
+//        frame.setVisible(true);
+//    }
+//Создание и обработка собственных событий
+//import java.util.EventObject;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        MagicalPulseEvent event = new MagicalPulseEvent(
+//                "Crystal Tower",
+//                "Приветствие из Хрустальной Башни!"
+//        );
+//
+//        System.out.println(event.getPulseMessage());
+//    }
+//}
+//
+//class MagicalPulseEvent extends EventObject {
+//    private final String pulseMessage;
+//
+//    public MagicalPulseEvent(Object source, String pulseMessage) {
+//        super(source);
+//        this.pulseMessage = pulseMessage;
+//    }
+//
+//    public String getPulseMessage() {
+//        return pulseMessage;
+//    }
+//}
+
+
+
+
+
+
+
+
 
 
