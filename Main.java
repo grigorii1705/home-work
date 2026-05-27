@@ -1,25 +1,3 @@
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URI;
-import java.net.URL;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.time.*;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.util.*;
-import java.util.List;
-import java.util.function.Predicate;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 // obertka
     // zadacha 1
     // 1. Создаем строковую переменную
@@ -5750,9 +5728,7 @@ import java.util.regex.Pattern;
 //        });
 //    }
 //}
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
+
 
 //public class Main {
 //    public static void main(String[] args) {
@@ -6054,8 +6030,474 @@ import javax.swing.SwingUtilities;
 //        return pulseMessage;
 //    }
 //}
+//SERVER
+// zadacha 1
+//public static void main(String[] args) {
+//    // В main не держим бизнес-логику: здесь только сборка сценария
+//    TextRequest request = new TextRequest("find book");
+//    TextHandler handler = new TextHandler();
+//
+//    // Сначала получаем готовый ответ, потом выводим только его тело
+//    TextResponse response = handler.handle(request);
+//    System.out.println(response.body());
+//}
+//
+//
+//        // Явная модель входа: отдельно от обработки и отдельно от результата
+//        record TextRequest(String text) {
+//        }
+//
+//        // Явная модель ответа: в ней хранится уже готовая строка для вывода
+//        record TextResponse(String body) {
+//        }
+//
+//        static class TextHandler {
+//            public TextResponse handle(TextRequest request) {
+//                // Формируем ответ на основе входного текста
+//                return new TextResponse("You sent: " + request.text());
+//            }
+//        }
+// zadacha 2
+//public static void main(String[] args) {
+//    // Создаём запрос
+//    ActionRequest request =
+//            new ActionRequest(
+//                    "uppercase",
+//                    "clean code"
+//            );
+//
+//    // Передаём обработчику
+//    ActionHandler handler =
+//            new ActionHandler();
+//
+//    ActionResponse response =
+//            handler.handle(request);
+//
+//    // Выводим результат
+//    System.out.println(
+//            "result=" + response.result()
+//    );
+//}
+//
+//
+//        // Запрос
+//        record ActionRequest(
+//                String action,
+//                String value
+//        ) { }
+//
+//        // Ответ
+//        record ActionResponse(
+//                String result
+//        ) { }
+//
+//        // Обработчик
+//        static class ActionHandler {
+//
+//            public ActionResponse handle(
+//                    ActionRequest request
+//            ) {
+//
+//                String result;
+//
+//                if ("uppercase".equals(
+//                        request.action()
+//                )) {
+//
+//                    result =
+//                            request.value()
+//                                    .toUpperCase();
+//
+//                } else {
+//
+//                    result =
+//                            request.value();
+//                }
+//
+//                return new ActionResponse(
+//                        result
+//                );
+//            }
+//        }
+//От запроса до ответа
+// zadacha 1
+//public static void main(String[] args) {
+//
+//    MovieCatalogApi movieCatalogApi =
+//            new MovieCatalogApi();
+//
+//    FavoriteMovieStorage favoriteMovieStorage =
+//            new FavoriteMovieStorage();
+//
+//    FavoriteMovieService favoriteMovieService =
+//            new FavoriteMovieService(
+//                    movieCatalogApi,
+//                    favoriteMovieStorage
+//            );
+//
+//    Movie savedMovie =
+//            favoriteMovieService
+//                    .addFavoriteByGenre("sci-fi");
+//
+//    int total =
+//            favoriteMovieStorage
+//                    .getMovies()
+//                    .size();
+//
+//    System.out.println(
+//            "saved: " + savedMovie.title()
+//    );
+//
+//    System.out.println(
+//            "total: " + total
+//    );
+//}
+// zadacha 2
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//
+//
+//    public static void main(String[] args) {
+//        // Ручная сборка зависимостей
+//        PromoApi promoApi = new PromoApi();
+//        UsedPromoStorage usedPromoStorage = new UsedPromoStorage();
+//        PromoService promoService =
+//                new PromoService(
+//                        promoApi,
+//                        usedPromoStorage
+//                );
+//
+//        // Запрос → сервис → ответ
+//        PromoResponse response =
+//                promoService.apply(
+//                        new PromoRequest("JAVA")
+//                );
+//
+//        // Вывод результата
+//        System.out.println(
+//                response.message()
+//        );
+//
+//        System.out.println(
+//                "used codes: "
+//                        + usedPromoStorage.count()
+//        );
+//    }
+//
+//
+//record PromoRequest(String code) { }
+//
+//record PromoResponse(String message) { }
+//
+//static class PromoApi {
+//
+//    public int getDiscount(String code) {
+//
+//        if ("JAVA".equals(code)) {
+//            return 15;
+//        }
+//
+//        return 0;
+//    }
+//}
+//
+//static class UsedPromoStorage {
+//
+//    private final List<String> usedCodes =
+//            new ArrayList<>();
+//
+//    public void save(String code) {
+//        usedCodes.add(code);
+//    }
+//
+//    public int count() {
+//        return usedCodes.size();
+//    }
+//}
+//
+//static class PromoService {
+//
+//    private final PromoApi promoApi;
+//    private final UsedPromoStorage usedPromoStorage;
+//
+//    public PromoService(
+//            PromoApi promoApi,
+//            UsedPromoStorage usedPromoStorage
+//    ) {
+//        this.promoApi = promoApi;
+//        this.usedPromoStorage =
+//                usedPromoStorage;
+//    }
+//
+//    public PromoResponse apply(
+//            PromoRequest request
+//    ) {
+//
+//        int discount =
+//                promoApi.getDiscount(
+//                        request.code()
+//                );
+//
+//        usedPromoStorage.save(
+//                request.code()
+//        );
+//
+//        String message =
+//                "saved code "
+//                        + request.code()
+//                        + " with discount "
+//                        + discount;
+//
+//        return new PromoResponse(
+//                message
+//        );
+//    }
+//}
+//Под капотом бекенда
+// zadacha 1
+//public static void main(String[] args) {
+//    SearchBackend backend = new SearchBackend();
+//
+//    SearchRequest request = new SearchRequest("clean code");
+//    SearchResponse response = backend.handle(request);
+//
+//    System.out.println(response.result());
+//}
+//
+//
+//        record SearchRequest(String query) {
+//        }
+//
+//        record SearchResponse(String result) {
+//        }
+//
+//        static class SearchBackend {
+//            public SearchResponse handle(SearchRequest request) {
+//                System.out.println("[log] query=" + request.query());
+//
+//                SearchResponse response = new SearchResponse("found: " + request.query());
+//
+//                System.out.println("[log] result=" + response.result());
+//
+//                return response;
+//            }
+//        }
+// zadacha 2
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Main {
+//    record AddBookRequest(String query) {
+//    }
+//
+//    record AddBookResponse(String message) {
+//    }
+//
+//    record Book(String title) {
+//    }
+//
+//    static class CatalogStub {
+//        Book findByQuery(String query) {
+//            if ("clean code".equals(query)) {
+//                return new Book("Clean Code");
+//            }
+//            return null;
+//        }
+//    }
+//
+//    static class ReadingListStorage {
+//        private final List<String> titles = new ArrayList<>();
+//
+//        void save(Book book) {
+//            titles.add(book.title());
+//        }
+//
+//        int size() {
+//            return titles.size();
+//        }
+//    }
+//
+//    static class ReadLaterBackend {
+//        private final CatalogStub catalog;
+//        private final ReadingListStorage storage;
+//
+//        ReadLaterBackend(CatalogStub catalog, ReadingListStorage storage) {
+//            this.catalog = catalog;
+//            this.storage = storage;
+//        }
+//
+//        AddBookResponse handle(AddBookRequest request) {
+//            System.out.println("[log] request=" + request.query());
+//
+//            Book book = catalog.findByQuery(request.query());
+//            System.out.println("[log] catalog=" + book.title());
+//
+//            storage.save(book);
+//            System.out.println("[log] storageSize=" + storage.size());
+//
+//            return new AddBookResponse("added: " + book.title());
+//        }
+//    }
+//
+//    public static void main(String[] args) {
+//        ReadLaterBackend backend = new ReadLaterBackend(
+//                new CatalogStub(),
+//                new ReadingListStorage()
+//        );
+//
+//        AddBookRequest request = new AddBookRequest("clean code");
+//        AddBookResponse response = backend.handle(request);
+//
+//        System.out.println(response.message());
+//    }
+//}
+// Один проект, две фазы и один результат
+// zadacha 1
+//public class Main {
+//    record AppConfig(String defaultQuery) {
+//    }
+//
+//    record SearchResponse(String result) {
+//    }
+//
+//    static class SearchHandler {
+//        private final AppConfig config;
+//
+//        SearchHandler(AppConfig config) {
+//            this.config = config;
+//        }
+//
+//        SearchResponse handle() {
+//            System.out.println("[log] defaultQuery=" + config.defaultQuery());
+//            return new SearchResponse("search: " + config.defaultQuery());
+//        }
+//    }
+//
+//    public static void main(String[] args) {
+//        AppConfig config = new AppConfig("clean code");
+//
+//        SearchHandler handler = new SearchHandler(config);
+//        SearchResponse response = handler.handle();
+//
+//        System.out.println(response.result());
+//    }
+//}
+// zadacha 2
+//public class Main {
+//    record AppConfig(int minLength) {
+//    }
+//
+//    record SaveTitleRequest(String title) {
+//    }
+//
+//    record SaveTitleResponse(String status, String message) {
+//    }
+//
+//    static class SaveTitleHandler {
+//        private final AppConfig config;
+//
+//        SaveTitleHandler(AppConfig config) {
+//            this.config = config;
+//        }
+//
+//        SaveTitleResponse handle(SaveTitleRequest request) {
+//            System.out.println("[log] title=" + request.title());
+//
+//            if (request.title().length() < config.minLength()) {
+//                return new SaveTitleResponse("ERROR", "title is too short");
+//            }
+//
+//            return new SaveTitleResponse("OK", "saved: " + request.title());
+//        }
+//    }
+//
+//    private static void print(SaveTitleResponse response) {
+//        System.out.println(response.status() + " " + response.message());
+//    }
+//
+//    public static void main(String[] args) {
+//        AppConfig config = new AppConfig(3);
+//        SaveTitleHandler handler = new SaveTitleHandler(config);
+//
+//        print(handler.handle(new SaveTitleRequest("Java")));
+//        print(handler.handle(new SaveTitleRequest("AI")));
+//    }
+//}
+// Маршрут изучения Java Server
+// zadacha 1
+//public class Main {
+//    record CatalogBook(String title, String author) {
+//    }
+//
+//    record ReadingItem(String title) {
+//    }
+//
+//    static class ReadLaterApplication {
+//        public void start() {
+//            CatalogBook catalogBook = new CatalogBook("Clean Code", "Robert C. Martin");
+//            ReadingItem readingItem = new ReadingItem(catalogBook.title());
+//
+//            System.out.println("project=ReadLater Starter");
+//            System.out.println("readingItem=" + readingItem.title());
+//        }
+//    }
+//
+//    public static void main(String[] args) {
+//        new ReadLaterApplication().start();
+//    }
+//}
+// zadacha 2
+import java.util.ArrayList;
+import java.util.List;
 
+public class Main {
+    record CatalogBook(String title, String author) {
+    }
 
+    record ReadingItem(String title) {
+    }
+
+    static class CatalogPart {
+        public CatalogBook search(String query) {
+            if ("clean code".equals(query)) {
+                return new CatalogBook("Clean Code", "Robert C. Martin");
+            }
+            return null;
+        }
+    }
+
+    static class ReadingListPart {
+        private final List<ReadingItem> items = new ArrayList<>();
+
+        public void add(CatalogBook book) {
+            items.add(new ReadingItem(book.title()));
+        }
+
+        public List<ReadingItem> getAll() {
+            return items;
+        }
+    }
+
+    static class ReadLaterApplication {
+        private final CatalogPart catalogPart = new CatalogPart();
+        private final ReadingListPart readingListPart = new ReadingListPart();
+
+        public void start() {
+            CatalogBook book = catalogPart.search("clean code");
+            readingListPart.add(book);
+
+            List<ReadingItem> items = readingListPart.getAll();
+
+            System.out.println("saved=" + items.get(0).title());
+            System.out.println("total=" + items.size());
+        }
+    }
+
+    public static void main(String[] args) {
+        new ReadLaterApplication().start();
+    }
+}
 
 
 
